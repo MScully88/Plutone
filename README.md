@@ -1,4 +1,3 @@
 # Plutone
 
-first commit
-second commit
+Style Guide
