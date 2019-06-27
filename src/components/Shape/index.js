@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Shape.module.scss";
+import React from 'react';
+import styles from './Shape.module.scss';
 
 function index() {
   return (

@@ -1,6 +1,6 @@
-import React from "react";
-import Shape from "./components/Shape";
-import "./App.module.scss";
+import React from 'react';
+import Shape from './components/Shape';
+import './App.css';
 
 function App() {
   return (
