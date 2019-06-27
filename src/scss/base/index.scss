@@ -1,0 +1,58 @@
+@import 'reset';
+@import 'base';
+@import 'colors';
+@import 'mixins';
+@import 'reset';
+@import 'typography';
+@import 'layout';
+@import 'variables';
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-quotes;
+}
+
+p {
+  font-weight: $base-font-weight;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: $base-font-weight;
+  line-height: 1.15;
+  margin: 0;
+}
+
+h1 {
+  font-size: $font-size-xxl;
+}
+
+h2 {
+  font-size: $font-size-xl;
+}
+
+h3 {
+  font-size: $font-size-lg;
+}
+
+h4 {
+  font-size: $font-size-md;
+}
+
+h5 {
+  font-size: $font-size-sm-md;
+}
+
+.ml {
+  margin: 0.1rem;
+}

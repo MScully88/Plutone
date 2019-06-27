@@ -1,0 +1,30 @@
+/* =======================
+    FONT WEIGHTS
+======================= */
+
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+/* =======================
+    BASE FONTS
+======================= */
+
+$base-font-family: Helvetica, sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 1rem;
+$base-line-height: 1.4;
+
+/* =======================
+    BASE FIXED FONTS
+======================= */
+
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+/* =======================
+    HEADINGS
+======================= */
+
+$header-font-weight: $bold;
