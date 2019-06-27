@@ -1,0 +1,106 @@
+/* =======================
+    Base
+======================= */
+
+$primary-color: lightsalmon;
+$secondary-color: #6b7a8f;
+$tertiary-color: #f7c331;
+$quaternary-color: #dcc7aa;
+$quinary-color: #f7882f;
+
+// B&W
+$black: #333;
+$white: #f8f8f8;
+$dark: #030305;
+$light-grey: #f9f9f9;
+$dark-grey: #4a474d;
+$mangrove-black: #000000;
+
+// Main
+$pink: #ff7fc9;
+$pink-deep: #e34b87;
+
+// Party
+$blue: #1e29d4; // h1
+$green: #2fc428; // h1
+$yellow: #ddea0a; // h1
+$red: #ff0d3d; // h1
+$purple: #b82b9c; // h1
+
+// Extras
+$blue-dark: #2411a8;
+$purple-dark: #322992;
+$green-light: #99d707;
+$pink-deep-shadow: #f7317f;
+
+$peach-light: #ffc0c0;
+$electric: rgb(146, 255, 225);
+
+$bg-dark: $dark;
+$bg-light: $light-grey;
+
+/* =======================
+    Gradients
+======================= */
+
+$gradient-purple: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+
+$gradient-green: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+
+$gradient-blue: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+
+$gradient-yellow: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+
+$gradient-orange: linear-gradient(
+  to right,
+  #ff8177 0%,
+  #ff867a 0%,
+  #ff8c7f 21%,
+  #f99185 52%,
+  #cf556c 78%,
+  #b12a5b 100%
+);
+
+$gradient-lightblue: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+/* =======================
+    Text
+======================= */
+
+$text-light: $light-grey;
+$text-dark: $dark-grey;
+
+$link-hover-decoration: none;
+$strong-color: $pink;
+
+/* =======================
+    links
+======================= */
+
+// Link Main
+$link-color: $pink;
+$link-active-color: $pink-deep;
+$link-hover-color: $pink-deep;
+$link-hover-shadow: 3px 2px 8px $purple;
+
+$link-timeline-color: $pink;
+$link-timeline-timeline-color: rgba($text-light, 0.4);
+
+$link-color-light: $blue;
+$link-hover-shadow-light: 3px 2px 8px #3446c1;
+
+// Set Yellow
+$link-hover-color-2: $yellow;
+$link-hover-shadow-yellow: 3px 2px 8px $green-light;
+
+// Set Blue
+$link-hover-color-3: $blue;
+$link-hover-shadow-3: 3px 2px 8px $purple-dark;
+
+/* =======================
+    Buttons
+======================= */
+
+$btn-landing-color: $blue;
+$btn-landing-hover-color: $yellow;
+$btn-landing-hover-shadow: 3px 2px 8px $green-light;

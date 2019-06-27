@@ -1,0 +1,55 @@
+/* =======================
+    FONT FAMILY
+======================= */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
+
+$font-family-quotes: 'Raleway', 'Gill Sans', Arial, sans-serif;
+
+/* =======================
+    FONT WEIGHT
+======================= */
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+$font-weight-body: $font-weight-normal;
+$font-weight-title: $font-weight-semi-bold;
+
+/* =======================
+    FONT SIZE
+======================= */
+
+$font-size-sm: 0.8rem;
+$font-size-base: 1rem;
+$font-size-sm-md: 1.25rem;
+$font-size-md: 1.563rem;
+$font-size-lg: 1.953rem;
+$font-size-xl: 2.441rem;
+$font-size-xxl: 3.052rem;
+
+$font-size-body: $font-size-base;
+$font-size-h1: $font-size-xxl;
+
+$font-size-link-xxl: $font-size-md;
+$font-size-link-timeline: $font-size-md;
+
+/* =======================
+    SPACING
+======================= */
+
+$line-height-base: 1.5;
+$line-height-sm: 1.2;
+$line-height-link-timeline: $line-height-sm;
+$line-height-btn-landing: $line-height-sm;
+
+$letter-spacing-base: 0.18rem;
+$letter-spacing-base-md: 0.2rem;
+$letter-spacing-sm: 0.08rem; // for nav-links
+
+$quote-letter-spacing: 0.05rem;
+$quote-line-height-base: 1.2;
+
+$ml: 0.5rem;

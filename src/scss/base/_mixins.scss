@@ -1,0 +1,40 @@
+@import 'colors';
+@import 'typography';
+
+/* =======================
+    BUTTONS
+======================= */
+
+@mixin button {
+  border-radius: 0.2em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: $font-size-base;
+  font-weight: $light;
+  line-height: 1;
+  padding: 0.8rem 0.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $font-family-quotes;
+
+  &:hover,
+  &:focus {
+    // color: $lightblue;
+    outline: 0;
+  }
+
+  &:hover {
+    color: lightcyan;
+  }
+}
+
+@mixin container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
