@@ -12,6 +12,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test-func": "jest --watchALL",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier  — write src/**/*.js",
@@ -34,6 +35,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-jest-enzyme": "^7.0.2",
