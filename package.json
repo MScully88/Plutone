@@ -1,5 +1,5 @@
 {
-  "name": "version",
+  "name": "Plutone",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "now-build": "react-scripts build",
     "test-func": "jest --watchALL",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
