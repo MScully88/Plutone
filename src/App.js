@@ -1,5 +1,6 @@
 import React from 'react';
 import Shape from './components/Shape';
+
 import './App.module.scss';
 
 function App() {

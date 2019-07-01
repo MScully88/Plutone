@@ -1,6 +1,8 @@
 # Plutone
 
-Plutone is a group project that...
+Plutone is an experiment that aims to bring audio and visuals together, creating an interactive soundscape experience through the browser.
+
+The musical planet Plutone has been split into mutliple pieces and has been spread throughout space. Bring all of the pieces back together to return Plutone to its former glory.
 
 > “The internet can seem like a mall at times, we need more spaces like parks and oceans”. – Ruth John
 
