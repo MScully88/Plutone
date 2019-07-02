@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Router, Route, Switch } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactTimeout from 'react-timeout';
 import Home from './Pages/Home';
 import Plutone from './Pages/Plutone';
@@ -12,7 +12,9 @@ const App = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    this.props.setTimeOut(setLoading(false), 5000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
   }, []);
 
   return (
@@ -21,8 +23,8 @@ const App = () => {
         <Loading />
       ) : (
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/Plutone" component={Plutone} />
+          <Route path="/" exact component={Home} />
+          <Route path="/Plutone" component={Plutone} />
         </Switch>
       )}
     </Router>
