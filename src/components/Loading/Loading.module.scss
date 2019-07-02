@@ -4,6 +4,8 @@
   color: $primary-color;
 }
 
+// Loading bars
+
 .splashContainer {
   background-color: #000000;
   min-height: 100vh;
@@ -48,5 +50,29 @@
   }
   40% {
     transform: scale(1);
+  }
+}
+
+// Loading text
+
+h1 {
+  position: absolute;
+  top: 35%;
+  left: 43%;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 3em;
+}
+h1:before {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  max-width: 7em;
+  white-space: nowrap;
+  color: #ffffff;
+  animation: loadingTitle 2s linear;
+}
+@keyframes loadingTitle {
+  0% {
+    max-width: 0;
   }
 }
