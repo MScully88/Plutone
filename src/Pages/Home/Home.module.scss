@@ -1,16 +1,23 @@
 @import '../../scss/base/index.scss';
 
-.color {
-  color: $primary-color;
-}
-
-.home {
-  background-color: #000000;
-  min-height: 100vh;
-  color: whitesmoke;
+html {
   overflow: hidden;
 }
-.home h3 {
+
+// BEM Block
+
+.block {
+  background-color: #000000;
+  min-height: 100vh;
+  overflow: hidden;
+  color: $white;
+}
+
+// BEM Elements
+
+// Title
+
+.block__elem__title {
   position: absolute;
   top: 45%;
   left: 10%;
@@ -23,6 +30,25 @@
   -o-animation: fadein 4s; /* Opera < 12.1 */
   animation: fadein 4s;
 }
+
+// Links
+
+.block__elem__links {
+  text-decoration: none;
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  font-size: 2rem;
+  color: $white;
+
+  -webkit-animation: fadeinB 8s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinB 8s; /* Firefox < 16 */
+  -ms-animation: fadeinB 8s; /* Internet Explorer */
+  -o-animation: fadeinB 8s; /* Opera < 12.1 */
+  animation: fadeinB 8s;
+}
+
+// Keyframes for __elem__title
 
 @keyframes fadein {
   from {
@@ -73,19 +99,7 @@
   }
 }
 
-.home a {
-  text-decoration: none;
-  position: absolute;
-  top: 70%;
-  left: 10%;
-  color: whitesmoke;
-
-  -webkit-animation: fadeinB 6s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadeinB 6s; /* Firefox < 16 */
-  -ms-animation: fadeinB 6s; /* Internet Explorer */
-  -o-animation: fadeinB 6s; /* Opera < 12.1 */
-  animation: fadeinB 6s;
-}
+// Keyframes for __elem__links
 
 @keyframes fadeinB {
   from {
@@ -135,32 +149,3 @@
     opacity: 1;
   }
 }
-
-// .signal {
-//   border: 3px solid #333;
-//   border-radius: 30px;
-//   height: 40px;
-//   left: 50%;
-//   margin: -15px 0 0 -15px;
-//   opacity: 0;
-//   position: absolute;
-//   top: 55%;
-//   width: 40px;
-
-//   animation: pulsate 1s ease-out;
-//   animation-iteration-count: infinite;
-// }
-
-// @keyframes pulsate {
-//   0% {
-//     transform: scale(0.1);
-//     opacity: 0;
-//   }
-//   50% {
-//     opacity: 1;
-//   }
-//   100% {
-//     transform: scale(1.2);
-//     opacity: 0;
-//   }
-// }
