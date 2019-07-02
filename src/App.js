@@ -1,14 +1,32 @@
-import React from 'react';
-import Shape from './components/Shape';
-
+import React, { useState, useEffect } from 'react';
+import { Router, Route, Switch } from 'react-router';
+import ReactTimeout from 'react-timeout';
+import Home from './Pages/Home';
+import Plutone from './Pages/Plutone';
+import Loading from './components/Loading';
 import './App.module.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <Shape />
-    </div>
-  );
-}
+// const Plutone = lazy(() => import('./Pages/Plutone'));
 
-export default App;
+const App = () => {
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    this.props.setTimeOut(setLoading(false), 5000);
+  }, []);
+
+  return (
+    <Router>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Plutone" component={Plutone} />
+        </Switch>
+      )}
+    </Router>
+  );
+};
+
+export default ReactTimeout(App);
