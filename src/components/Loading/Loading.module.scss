@@ -1,47 +1,84 @@
 @import '../../scss/base/index.scss';
 
-.color {
-  color: $primary-color;
+// BEM Block
+
+.block {
+  background-color: #000000;
+  min-height: 100vh;
+  overflow: hidden;
+  color: $white;
+}
+
+// BEM Elements
+
+// Title
+
+.block__elem__title {
+  position: absolute;
+  top: 35%;
+  left: 41%;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 3em;
+}
+
+.block__elem__title:before {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  max-width: 7em;
+  white-space: nowrap;
+  color: $white;
+  animation: TitleElemAnimation 2s linear;
+}
+
+// Keyframes for __elem__title
+
+@keyframes TitleElemAnimation {
+  0% {
+    max-width: 0;
+  }
 }
 
 // Loading bars
 
-.splashContainer {
-  background-color: #000000;
-  min-height: 100vh;
-}
-
-.loading {
+.block__elem__loadBars {
   position: absolute;
   top: 50%;
   left: 50%;
 }
-.loadingBar {
+
+.block__elem__loadingBar {
   display: inline-block;
   width: 12px;
   height: 50px;
   border-radius: 4px;
   margin-right: 3px;
-  animation: loading 1s ease-in-out infinite;
+  animation: LoadElemAnimation 1s ease-in-out infinite;
 }
-.loadingBar:nth-child(1) {
+
+.block__elem__loadingBar:nth-child(1) {
   background-color: #ffffff;
   animation-delay: 0;
 }
-.loadingBar:nth-child(2) {
+
+.block__elem__loadingBar:nth-child(2) {
   background-color: #bfc0bf;
   animation-delay: 0.09s;
 }
-.loadingBar:nth-child(3) {
+
+.block__elem__loadingBar:nth-child(3) {
   background-color: #7f7f7f;
   animation-delay: 0.18s;
 }
-.loadingBar:nth-child(4) {
+
+.block__elem__loadingBar:nth-child(4) {
   background-color: #404040;
   animation-delay: 0.27s;
 }
 
-@keyframes loading {
+// Keyframes for __elem__loadingBar
+
+@keyframes LoadElemAnimation {
   0% {
     transform: scale(1);
   }
@@ -50,29 +87,5 @@
   }
   40% {
     transform: scale(1);
-  }
-}
-
-// Loading text
-
-h1 {
-  position: absolute;
-  top: 35%;
-  left: 43%;
-  color: rgba(0, 0, 0, 0.3);
-  font-size: 3em;
-}
-h1:before {
-  content: attr(data-text);
-  position: absolute;
-  overflow: hidden;
-  max-width: 7em;
-  white-space: nowrap;
-  color: #ffffff;
-  animation: loadingTitle 2s linear;
-}
-@keyframes loadingTitle {
-  0% {
-    max-width: 0;
   }
 }
