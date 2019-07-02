@@ -1,12 +1,12 @@
 import React from 'react';
-import Shape from './components/Shape';
-
+// import Shape from './components/Shape';
+import Loading from './components/Loading';
 import './App.module.scss';
 
 function App() {
   return (
     <div className="App">
-      <Shape />
+      <Loading />
     </div>
   );
 }
