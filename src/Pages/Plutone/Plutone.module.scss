@@ -1,0 +1,11 @@
+@import '../../scss/base/index.scss';
+
+// BEM Block
+
+.block {
+  background-image: url('./Images/trianglify.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
