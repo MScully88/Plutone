@@ -15,8 +15,8 @@
 
 .block__elem__title {
   position: absolute;
-  top: 35%;
-  left: 44%;
+  top: 40%;
+  left: 42%;
   color: rgba(0, 0, 0, 0.3);
   font-size: 2em;
 }
@@ -45,7 +45,7 @@
 .block__elem__loadBars {
   position: absolute;
   top: 50%;
-  left: 48%;
+  left: 44.6%;
 }
 
 .block__elem__loadingBar {
@@ -80,24 +80,30 @@
 }
 
 .block__elem__loadingBar:nth-child(5) {
-  background-color: #404040;
+  background-color: #5f6995;
   animation-delay: 0.6s;
+  height: 60px;
 }
 
 .block__elem__loadingBar:nth-child(6) {
-  background-color: #7f7f7f;
+  background-color: #404040;
   animation-delay: 0.75s;
 }
 
 .block__elem__loadingBar:nth-child(7) {
-  background-color: #bfc0bf;
+  background-color: #7f7f7f;
   animation-delay: 0.9s;
-  height: 30px;
 }
 
 .block__elem__loadingBar:nth-child(8) {
-  background-color: #ffffff;
+  background-color: #bfc0bf;
   animation-delay: 1.05s;
+  height: 30px;
+}
+
+.block__elem__loadingBar:nth-child(9) {
+  background-color: #ffffff;
+  animation-delay: 1.2s;
   height: 10px;
 }
 
