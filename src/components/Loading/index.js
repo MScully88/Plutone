@@ -12,6 +12,10 @@ function Loading() {
         <div className={styles.block__elem__loadingBar} />
         <div className={styles.block__elem__loadingBar} />
         <div className={styles.block__elem__loadingBar} />
+        <div className={styles.block__elem__loadingBar} />
+        <div className={styles.block__elem__loadingBar} />
+        <div className={styles.block__elem__loadingBar} />
+        <div className={styles.block__elem__loadingBar} />
       </div>
     </div>
   );
