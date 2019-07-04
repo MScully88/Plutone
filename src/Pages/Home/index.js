@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Tone from 'tone';
 import { Link } from 'react-router-dom';
+import Amb from '../../Sounds/LowAmb.wav';
 import styles from './Home.module.scss';
 
 const Home = () => {
+  useEffect(() => {
+    const buffer = new Tone.Buffer(Amb);
+    const player = new Tone.Player({
+      url: buffer,
+      autostart: true,
+      loop: false,
+      fadeIn: 3,
+      fadeOut: 3,
+      volume: -20,
+    }).toMaster();
+  }, []);
+
   return (
     <>
       <div className={styles.block}>
