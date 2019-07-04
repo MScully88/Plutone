@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Tone from 'tone';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
 
 const Home = () => {
+  useEffect(() => {
+    new Tone();
+  }, []);
+
   return (
     <>
       <div className={styles.block}>
