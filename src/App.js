@@ -15,10 +15,10 @@ import './App.module.scss';
 
 const App = () => {
   const [areTracksLoading, setTracksLoading] = useState(true);
-  const [shardTrack, setshardTrack] = useState(null);
+  const [shardTrack, setShardTrack] = useState(null);
 
   const trackLoad = trackObj => {
-    if (shardTrack === null) setshardTrack(trackObj);
+    if (shardTrack === null) setShardTrack(trackObj);
   };
 
   useEffect(() => {
