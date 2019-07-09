@@ -1,8 +1,8 @@
 @import '../../scss/base/index.scss';
 
-// BEM Block
+// BEM loadingContainer
 
-.block {
+.loadingContainer {
   background-color: #000000;
   min-height: 100vh;
   overflow: hidden;
@@ -13,7 +13,7 @@
 
 // Title
 
-.block__elem__title {
+.loadingContainer__title {
   position: absolute;
   top: 40%;
   left: 42%;
@@ -21,7 +21,7 @@
   font-size: 2em;
 }
 
-.block__elem__title:before {
+.loadingContainer__title:before {
   content: attr(data-text);
   position: absolute;
   overflow: hidden;
@@ -42,13 +42,13 @@
 
 // Loading bars
 
-.block__elem__loadBars {
+.loadingContainer__loadBars {
   position: absolute;
   top: 50%;
   left: 44.6%;
 }
 
-.block__elem__loadingBar {
+.loadingContainer__loadingBar {
   display: inline-block;
   width: 8px;
   height: 50px;
@@ -57,51 +57,51 @@
   animation: LoadElemAnimation 1s ease-in-out infinite;
 }
 
-.block__elem__loadingBar:nth-child(1) {
+.loadingContainer__loadingBar:nth-child(1) {
   background-color: #ffffff;
   animation-delay: 0;
   height: 10px;
 }
 
-.block__elem__loadingBar:nth-child(2) {
+.loadingContainer__loadingBar:nth-child(2) {
   background-color: #bfc0bf;
   animation-delay: 0.15s;
   height: 30px;
 }
 
-.block__elem__loadingBar:nth-child(3) {
+.loadingContainer__loadingBar:nth-child(3) {
   background-color: #7f7f7f;
   animation-delay: 0.3s;
 }
 
-.block__elem__loadingBar:nth-child(4) {
+.loadingContainer__loadingBar:nth-child(4) {
   background-color: #404040;
   animation-delay: 0.45s;
 }
 
-.block__elem__loadingBar:nth-child(5) {
+.loadingContainer__loadingBar:nth-child(5) {
   background-color: #5f6995;
   animation-delay: 0.6s;
   height: 60px;
 }
 
-.block__elem__loadingBar:nth-child(6) {
+.loadingContainer__loadingBar:nth-child(6) {
   background-color: #404040;
   animation-delay: 0.75s;
 }
 
-.block__elem__loadingBar:nth-child(7) {
+.loadingContainer__loadingBar:nth-child(7) {
   background-color: #7f7f7f;
   animation-delay: 0.9s;
 }
 
-.block__elem__loadingBar:nth-child(8) {
+.loadingContainer__loadingBar:nth-child(8) {
   background-color: #bfc0bf;
   animation-delay: 1.05s;
   height: 30px;
 }
 
-.block__elem__loadingBar:nth-child(9) {
+.loadingContainer__loadingBar:nth-child(9) {
   background-color: #ffffff;
   animation-delay: 1.2s;
   height: 10px;

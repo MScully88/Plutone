@@ -7,6 +7,7 @@ import styles from './Home.module.scss';
 const Home = () => {
   useEffect(() => {
     const buffer = new Tone.Buffer(Amb);
+    // eslint-disable-next-line
     const player = new Tone.Player({
       url: buffer,
       autostart: true,
@@ -19,11 +20,11 @@ const Home = () => {
 
   return (
     <>
-      <div className={styles.block}>
-        <h3 className={styles.block__elem__title}>P L U T O N E | Welcome</h3>
+      <div className={styles.homeContainer}>
+        <h3 className={styles.homeContainer__title}>P L U T O N E | Welcome</h3>
       </div>
-      <div className={styles.block}>
-        <Link className={styles.block__elem__links} to="/Plutone">
+      <div className={styles.homeContainer}>
+        <Link className={styles.homeContainer__links} to="/Plutone">
           E N T E R
         </Link>
       </div>

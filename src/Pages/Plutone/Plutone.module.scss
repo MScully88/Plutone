@@ -1,7 +1,5 @@
 @import '../../scss/base/index.scss';
 
-// BEM Block
-
 .plutoneContainer {
   background-image: url('./Images/trianglify.svg');
   background-position: center;
@@ -10,14 +8,14 @@
   min-height: 100vh;
   //   background-color: #000000;
 
-  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s; /* Firefox < 16 */
-  -ms-animation: fadein 3s; /* Internet Explorer */
-  -o-animation: fadein 3s; /* Opera < 12.1 */
-  animation: fadein 3s;
+  -webkit-animation: fadeinBg 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinBg 3s; /* Firefox < 16 */
+  -ms-animation: fadeinBg 3s; /* Internet Explorer */
+  -o-animation: fadeinBg 3s; /* Opera < 12.1 */
+  animation: fadeinBg 3s;
 }
 
-@keyframes fadein {
+@keyframes fadeinBg {
   from {
     opacity: 0;
   }
@@ -27,7 +25,7 @@
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadein {
+@-moz-keyframes fadeinBg {
   from {
     opacity: 0;
   }
@@ -37,7 +35,7 @@
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
+@-webkit-keyframes fadeinBg {
   from {
     opacity: 0;
   }
@@ -47,7 +45,7 @@
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadein {
+@-ms-keyframes fadeinBg {
   from {
     opacity: 0;
   }
@@ -57,7 +55,7 @@
 }
 
 /* Opera < 12.1 */
-@-o-keyframes fadein {
+@-o-keyframes fadeinBg {
   from {
     opacity: 0;
   }

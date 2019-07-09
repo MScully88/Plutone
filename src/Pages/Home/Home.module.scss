@@ -4,36 +4,30 @@ html {
   overflow: hidden;
 }
 
-// BEM Block
-
-.block {
+.homeContainer {
   background-color: #000000;
   min-height: 100vh;
   overflow: hidden;
   color: $white;
 }
 
-// BEM Elements
-
-// Title
-
-.block__elem__title {
+.homeContainer__title {
   position: absolute;
   top: 45%;
   left: 10%;
   font-size: 5rem;
   text-align: center;
 
-  -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 4s; /* Firefox < 16 */
-  -ms-animation: fadein 4s; /* Internet Explorer */
-  -o-animation: fadein 4s; /* Opera < 12.1 */
-  animation: fadein 4s;
+  -webkit-animation: fadeinTitle 4s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinTitle 4s; /* Firefox < 16 */
+  -ms-animation: fadeinTitle 4s; /* Internet Explorer */
+  -o-animation: fadeinTitle 4s; /* Opera < 12.1 */
+  animation: fadeinTitle 4s;
 }
 
 // Links
 
-.block__elem__links {
+.homeContainer__links {
   text-decoration: none;
   position: absolute;
   top: 70%;
@@ -41,16 +35,16 @@ html {
   font-size: 2rem;
   color: $white;
 
-  -webkit-animation: fadeinB 8s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadeinB 8s; /* Firefox < 16 */
-  -ms-animation: fadeinB 8s; /* Internet Explorer */
-  -o-animation: fadeinB 8s; /* Opera < 12.1 */
-  animation: fadeinB 8s;
+  -webkit-animation: fadeinTitleEnter 8s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinTitleEnter 8s; /* Firefox < 16 */
+  -ms-animation: fadeinTitleEnter 8s; /* Internet Explorer */
+  -o-animation: fadeinTitleEnter 8s; /* Opera < 12.1 */
+  animation: fadeinTitleEnter 8s;
 }
 
 // Keyframes for __elem__title
 
-@keyframes fadein {
+@keyframes fadeinTitle {
   from {
     opacity: 0;
   }
@@ -60,7 +54,7 @@ html {
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadein {
+@-moz-keyframes fadeinTitle {
   from {
     opacity: 0;
   }
@@ -70,7 +64,7 @@ html {
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
+@-webkit-keyframes fadeinTitle {
   from {
     opacity: 0;
   }
@@ -80,7 +74,7 @@ html {
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadein {
+@-ms-keyframes fadeinTitle {
   from {
     opacity: 0;
   }
@@ -90,7 +84,7 @@ html {
 }
 
 /* Opera < 12.1 */
-@-o-keyframes fadein {
+@-o-keyframes fadeinTitle {
   from {
     opacity: 0;
   }
@@ -101,7 +95,7 @@ html {
 
 // Keyframes for __elem__links
 
-@keyframes fadeinB {
+@keyframes fadeinTitleEnter {
   from {
     opacity: 0;
   }
@@ -111,7 +105,7 @@ html {
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadeinB {
+@-moz-keyframes fadeinTitleEnter {
   from {
     opacity: 0;
   }
@@ -121,7 +115,7 @@ html {
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadeinB {
+@-webkit-keyframes fadeinTitleEnter {
   from {
     opacity: 0;
   }
@@ -131,7 +125,7 @@ html {
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadeinB {
+@-ms-keyframes fadeinTitleEnter {
   from {
     opacity: 0;
   }
@@ -141,7 +135,7 @@ html {
 }
 
 /* Opera < 12.1 */
-@-o-keyframes fadeinB {
+@-o-keyframes fadeinTitleEnter {
   from {
     opacity: 0;
   }
