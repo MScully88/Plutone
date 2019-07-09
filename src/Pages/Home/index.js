@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Tone from 'tone';
 import { Link } from 'react-router-dom';
 import Amb from '../../Sounds/LowAmb.wav';
@@ -11,9 +11,9 @@ const Home = () => {
       url: buffer,
       autostart: true,
       loop: false,
-      fadeIn: 3,
+      fadeIn: 0,
       fadeOut: 3,
-      volume: -20,
+      volume: -10,
     }).toMaster();
   }, []);
 
