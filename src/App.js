@@ -17,7 +17,8 @@ const App = () => {
   const [songStems, setSongStems] = useState(null);
 
   const trackLoad = trackObj => {
-    setSongStems(trackObj);
+    if (songStems === null) setSongStems(trackObj);
+    console.log(songStems);
     // tracks.get(songStems[1]).start();
   };
 
