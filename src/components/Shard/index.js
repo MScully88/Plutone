@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Shape.module.scss';
 
-const Shard = ({ songStems, instArray, instIndex }) => {
+const Shard = ({ shardTrack, instArray, instIndex }) => {
   useEffect(() => {
-    songStems.get(instArray[instIndex]).start();
-  }, [songStems, instArray, instIndex]);
+    shardTrack.get(instArray[instIndex]).start();
+  }, [shardTrack, instArray, instIndex]);
 
   return (
     <div>
@@ -17,7 +17,7 @@ const Shard = ({ songStems, instArray, instIndex }) => {
 };
 
 Shard.propTypes = {
-  songStems: PropTypes.object,
+  shardTrack: PropTypes.object,
   instArray: PropTypes.array,
   instIndex: PropTypes.number,
 };

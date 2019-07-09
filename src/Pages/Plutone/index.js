@@ -4,7 +4,7 @@ import uuid from 'uuid/v1';
 import styles from './Plutone.module.scss';
 import Shard from '../../components/Shard';
 
-const Plutone = ({ songStems }) => {
+const Plutone = ({ shardTrack }) => {
   const [instArray] = useState([
     'baseStartMain',
     'bassMain',
@@ -18,14 +18,16 @@ const Plutone = ({ songStems }) => {
   return (
     <div id="plutoneContainer" className={styles.plutoneContainer}>
       {instArray.map((inst, index) => {
-        return <Shard key={uuid()} instIndex={index} songStems={songStems} instArray={instArray} />;
+        return (
+          <Shard key={uuid()} instIndex={index} shardTrack={shardTrack} instArray={instArray} />
+        );
       })}
     </div>
   );
 };
 
 Plutone.propTypes = {
-  songStems: PropTypes.object,
+  shardTrack: PropTypes.object,
 };
 
 export default Plutone;
