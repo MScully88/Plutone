@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Shape.module.scss';
+import styles from './Shard.module.scss';
 
 const Shard = ({ shardTrack, instArray, instIndex }) => {
   useEffect(() => {
@@ -8,11 +8,11 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
   }, [shardTrack, instArray, instIndex]);
 
   return (
-    <div>
+    <>
       <button type="button" className={styles.color}>
         I'm a shape that is using css modules
       </button>
-    </div>
+    </>
   );
 };
 
