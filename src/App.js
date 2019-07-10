@@ -33,7 +33,8 @@ const App = () => {
         fxMain,
       },
       {
-        volume: -3,
+        volume: -100,
+        mute: false,
         onload: () => {
           setTracksLoading(false);
         },
