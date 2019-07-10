@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Tone from 'tone';
 import { Link } from 'react-router-dom';
-import Amb from '../../Sounds/LowAmb.wav';
+import Amb from '../../Sounds/LowAmb_V3.mp3';
 import styles from './Home.module.scss';
 
 const Home = () => {
