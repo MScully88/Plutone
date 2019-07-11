@@ -1,0 +1,122 @@
+@import '../../scss/base/index.scss';
+
+// BEM loadingContainer
+
+.loadingContainer {
+  background-color: #000000;
+  min-height: 100vh;
+  overflow: hidden;
+  color: $white;
+}
+
+// BEM Elements
+
+// Title
+
+.loadingContainer__title {
+  position: absolute;
+  top: 40%;
+  left: 42%;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 2em;
+}
+
+.loadingContainer__title:before {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  max-width: 7em;
+  white-space: nowrap;
+  color: $white;
+  animation: TitleElemAnimation 1s linear;
+  animation-iteration-count: infinite;
+}
+
+// Keyframes for __elem__title
+
+@keyframes TitleElemAnimation {
+  0% {
+    max-width: 0;
+  }
+}
+
+// Loading bars
+
+.loadingContainer__loadBars {
+  position: absolute;
+  top: 50%;
+  left: 44.6%;
+}
+
+.loadingContainer__loadingBar {
+  display: inline-block;
+  width: 8px;
+  height: 50px;
+  border-radius: 4px;
+  margin-right: 3px;
+  animation: LoadElemAnimation 1s ease-in-out infinite;
+}
+
+.loadingContainer__loadingBar:nth-child(1) {
+  background-color: #ffffff;
+  animation-delay: 0;
+  height: 10px;
+}
+
+.loadingContainer__loadingBar:nth-child(2) {
+  background-color: #bfc0bf;
+  animation-delay: 0.15s;
+  height: 30px;
+}
+
+.loadingContainer__loadingBar:nth-child(3) {
+  background-color: #7f7f7f;
+  animation-delay: 0.3s;
+}
+
+.loadingContainer__loadingBar:nth-child(4) {
+  background-color: #404040;
+  animation-delay: 0.45s;
+}
+
+.loadingContainer__loadingBar:nth-child(5) {
+  background-color: #5f6995;
+  animation-delay: 0.6s;
+  height: 60px;
+}
+
+.loadingContainer__loadingBar:nth-child(6) {
+  background-color: #404040;
+  animation-delay: 0.75s;
+}
+
+.loadingContainer__loadingBar:nth-child(7) {
+  background-color: #7f7f7f;
+  animation-delay: 0.9s;
+}
+
+.loadingContainer__loadingBar:nth-child(8) {
+  background-color: #bfc0bf;
+  animation-delay: 1.05s;
+  height: 30px;
+}
+
+.loadingContainer__loadingBar:nth-child(9) {
+  background-color: #ffffff;
+  animation-delay: 1.2s;
+  height: 10px;
+}
+
+// Keyframes for __elem__loadingBar
+
+@keyframes LoadElemAnimation {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
