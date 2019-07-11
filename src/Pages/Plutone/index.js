@@ -19,7 +19,9 @@ const Plutone = ({ shardTrack }) => {
     <div id="plutoneContainer" className={styles.plutoneContainer}>
       {instArray.map((inst, index) => {
         return (
-          <Shard key={uuid()} instIndex={index} shardTrack={shardTrack} instArray={instArray} />
+          <div className={styles.shard}>
+            <Shard key={uuid()} instIndex={index} shardTrack={shardTrack} instArray={instArray} />
+          </div>
         );
       })}
     </div>

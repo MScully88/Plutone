@@ -16,10 +16,16 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
 
   return (
     <>
-      <div>
-        <button type="button" className={styles.color} onClick={playSoundOnClick}>
-          I'm {instArray[instIndex]}
-        </button>
+      <div className={styles.slideContainer}>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="1"
+          className={styles.slider}
+          id="myRange"
+          onClick={playSoundOnClick}
+        />
       </div>
     </>
   );
