@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
-import Tone from 'tone';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+
 import styles from './Shard.module.scss';
 
 const Shard = ({ shardTrack, instArray, instIndex }) => {
-  const playSoundOnClick = () => {
-    const vol = new Tone.Volume(0);
-    shardTrack.get(instArray[instIndex]).chain(vol, Tone.Master);
+  const [shardVolume, setShardVolume] = useState(0);
+
+  const handleChange = event => {
+    const toNumber = parseFloat(event.target.value);
+    setShardVolume(toNumber);
+    shardTrack.get(instArray[instIndex]).volume.value = toNumber;
   };
 
   useEffect(() => {
@@ -18,14 +21,15 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
     <>
       <div className={styles.slideContainer}>
         <input
+          // className={styles.slider}
+          defaultValue={shardVolume}
           type="range"
-          min="1"
-          max="100"
-          value="1"
-          className={styles.slider}
-          id="myRange"
-          onClick={playSoundOnClick}
+          min="0"
+          max="85"
+          onChange={handleChange}
+          step="2"
         />
+        <div>{shardVolume}</div>
       </div>
     </>
   );
