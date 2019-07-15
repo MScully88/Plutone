@@ -14,8 +14,8 @@ html {
 .homeContainer__title {
   position: absolute;
   top: 45%;
-  left: 10%;
-  font-size: 5rem;
+  left: 5%;
+  font-size: 4.7rem;
   text-align: center;
 
   -webkit-animation: fadeinTitle 4s; /* Safari, Chrome and Opera > 12.1 */
@@ -31,7 +31,7 @@ html {
   text-decoration: none;
   position: absolute;
   top: 70%;
-  left: 10%;
+  left: 5%;
   font-size: 2rem;
   color: $white;
 
@@ -52,8 +52,18 @@ html {
 
 .homeContainer__image {
   position: absolute;
-  top: 45vh;
-  left: 70vw;
+  top: 30vh;
+  right: 5%;
+}
+
+img {
+  height: 50vh;
+
+  -webkit-animation: fadeInImage 7s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeInImage 7s; /* Firefox < 16 */
+  -ms-animation: fadeInImage 7s; /* Internet Explorer */
+  -o-animation: fadeInImage 7s; /* Opera < 12.1 */
+  animation: fadeInImage 7s;
 }
 
 a {
@@ -154,6 +164,57 @@ a {
 
 /* Opera < 12.1 */
 @-o-keyframes fadeinTitleEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Keyframes for __elem__title
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeInImage {
   from {
     opacity: 0;
   }
