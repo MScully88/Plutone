@@ -9,7 +9,6 @@ html {
   min-height: 100vh;
   overflow: hidden;
   color: $white;
-  z-index: -1;
 }
 
 .homeContainer__title {
@@ -18,7 +17,6 @@ html {
   left: 10%;
   font-size: 5rem;
   text-align: center;
-  z-index: 0;
 
   -webkit-animation: fadeinTitle 4s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadeinTitle 4s; /* Firefox < 16 */
