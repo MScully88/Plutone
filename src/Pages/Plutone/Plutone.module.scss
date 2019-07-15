@@ -15,10 +15,50 @@
   animation: fadeinBg 3s;
 }
 
-.shard {
-  margin-bottom: 3vh;
+.shard:nth-child(1) {
+  position: absolute;
+  transform: rotate(25deg);
+  top: 10vh;
+  left: 2vw;
 }
 
+.shard:nth-child(2) {
+  position: absolute;
+  top: 40vh;
+  left: 2vw;
+}
+
+.shard:nth-child(3) {
+  position: absolute;
+  top: 70vh;
+  left: 2vw;
+  transform: rotate(-40deg);
+}
+
+.shard:nth-child(4) {
+  position: absolute;
+  top: 45vh;
+  left: 25vw;
+  transform: rotate(-90deg);
+}
+.shard:nth-child(5) {
+  position: absolute;
+  top: 15vh;
+  right: 2vw;
+  transform: rotate(155deg);
+}
+.shard:nth-child(6) {
+  position: absolute;
+  top: 40vh;
+  right: 2vw;
+  transform: rotate(180deg);
+}
+.shard:nth-child(7) {
+  position: absolute;
+  top: 70vh;
+  right: 2vw;
+  transform: rotate(210deg);
+}
 @keyframes fadeinBg {
   from {
     opacity: 0;
