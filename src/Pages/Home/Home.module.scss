@@ -47,7 +47,13 @@ html {
   text-decoration: none;
   position: absolute;
   bottom: 10%;
-  left: 10%;
+  right: 10%;
+}
+
+.homeContainer__image {
+  position: absolute;
+  top: 45vh;
+  left: 70vw;
 }
 
 a {
