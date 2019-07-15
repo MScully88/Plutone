@@ -21,7 +21,7 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
     <>
       <div className={styles.slideContainer}>
         <input
-          // className={styles.slider}
+          className={styles.slider}
           defaultValue={shardVolume}
           type="range"
           min="0"
@@ -29,7 +29,7 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
           onChange={handleChange}
           step="2"
         />
-        <div>{shardVolume}</div>
+        {/* <div>{shardVolume}</div> */}
       </div>
     </>
   );
