@@ -28,6 +28,10 @@ const Home = () => {
           E N T E R
         </Link>
       </div>
+      <div className={styles.homeContainer__github}>
+        <a href="https://github.com/MScully88">Michael Scully | </a>
+        <a href="https://github.com/ctocco">Claudio Tocco</a>
+      </div>
     </>
   );
 };

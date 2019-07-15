@@ -42,6 +42,18 @@ html {
   animation: fadeinTitleEnter 8s;
 }
 
+.homeContainer__github {
+  color: $white;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+}
+
+a {
+  color: $white;
+}
+
 // Keyframes for __elem__title
 
 @keyframes fadeinTitle {
