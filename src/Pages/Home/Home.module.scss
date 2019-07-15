@@ -14,8 +14,8 @@ html {
 .homeContainer__title {
   position: absolute;
   top: 45%;
-  left: 10%;
-  font-size: 5rem;
+  left: 5%;
+  font-size: 4.7rem;
   text-align: center;
 
   -webkit-animation: fadeinTitle 4s; /* Safari, Chrome and Opera > 12.1 */
@@ -31,7 +31,7 @@ html {
   text-decoration: none;
   position: absolute;
   top: 70%;
-  left: 10%;
+  left: 5%;
   font-size: 2rem;
   color: $white;
 
@@ -53,7 +53,7 @@ html {
 .homeContainer__image {
   position: absolute;
   top: 30vh;
-  left: 55vw;
+  right: 5%;
 }
 
 img {
