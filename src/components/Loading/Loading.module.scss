@@ -21,25 +21,6 @@
   font-size: 1.8em;
 }
 
-// .loadingContainer__title:before {
-//   content: attr(data-text);
-//   position: absolute;
-//   overflow: hidden;
-//   max-width: 7em;
-//   white-space: nowrap;
-//   color: $white;
-//   animation: TitleElemAnimation 1s linear;
-//   animation-iteration-count: infinite;
-// }
-
-// Keyframes for __elem__title
-
-// @keyframes TitleElemAnimation {
-//   0% {
-//     max-width: 0;
-//   }
-// }
-
 // Loading bars
 
 .loadingContainer__loadBars {
