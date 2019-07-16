@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
+import Tone from 'tone';
 import styles from './Shard.module.scss';
 
 const Shard = ({ shardTrack, instArray, instIndex }) => {
@@ -13,8 +13,13 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
   };
 
   useEffect(() => {
+    Tone.Transport.start();
+    Tone.Transport.bpm.value = 92;
     const track = shardTrack.get(instArray[instIndex]);
-    track.start();
+    const loop = new Tone.Loop(time => {
+      track.start();
+      console.log(time);
+    }, '8m').start(0);
   }, [shardTrack, instArray, instIndex]);
 
   return (
