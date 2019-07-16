@@ -15,37 +15,37 @@
 
 .loadingContainer__title {
   position: absolute;
-  top: 40%;
-  left: 42%;
-  color: rgba(0, 0, 0, 0.3);
-  font-size: 2em;
+  top: 40vh;
+  left: 43.9vw;
+  color: $white;
+  font-size: 1.8em;
 }
 
-.loadingContainer__title:before {
-  content: attr(data-text);
-  position: absolute;
-  overflow: hidden;
-  max-width: 7em;
-  white-space: nowrap;
-  color: $white;
-  animation: TitleElemAnimation 1s linear;
-  animation-iteration-count: infinite;
-}
+// .loadingContainer__title:before {
+//   content: attr(data-text);
+//   position: absolute;
+//   overflow: hidden;
+//   max-width: 7em;
+//   white-space: nowrap;
+//   color: $white;
+//   animation: TitleElemAnimation 1s linear;
+//   animation-iteration-count: infinite;
+// }
 
 // Keyframes for __elem__title
 
-@keyframes TitleElemAnimation {
-  0% {
-    max-width: 0;
-  }
-}
+// @keyframes TitleElemAnimation {
+//   0% {
+//     max-width: 0;
+//   }
+// }
 
 // Loading bars
 
 .loadingContainer__loadBars {
   position: absolute;
-  top: 50%;
-  left: 44.6%;
+  top: 50vh;
+  left: 44.8vw;
 }
 
 .loadingContainer__loadingBar {
@@ -72,6 +72,7 @@
 .loadingContainer__loadingBar:nth-child(3) {
   background-color: #7f7f7f;
   animation-delay: 0.3s;
+  height: 40px;
 }
 
 .loadingContainer__loadingBar:nth-child(4) {
@@ -93,6 +94,7 @@
 .loadingContainer__loadingBar:nth-child(7) {
   background-color: #7f7f7f;
   animation-delay: 0.9s;
+  height: 40px;
 }
 
 .loadingContainer__loadingBar:nth-child(8) {
