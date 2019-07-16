@@ -14,7 +14,7 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
 
   useEffect(() => {
     Tone.Transport.start();
-    Tone.Transport.bpm.value = 80;
+    Tone.Transport.bpm.value = 92;
     const track = shardTrack.get(instArray[instIndex]);
     const loop = new Tone.Loop(time => {
       track.start();
