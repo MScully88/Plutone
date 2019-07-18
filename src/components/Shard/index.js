@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Tone from 'tone';
 import styles from './Shard.module.scss';
+import Center from './Images/center.svg';
 
 const Shard = ({ shardTrack, instArray, instIndex }) => {
   const [shardVolume, setShardVolume] = useState(0);
@@ -39,7 +40,9 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
           <input
             className={styles.kickMain}
             defaultValue={shardVolume}
-            type="button"
+            type="image"
+            alt="center"
+            src={Center}
             min="0"
             max="85"
             onChange={handleChange}

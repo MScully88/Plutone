@@ -13,17 +13,17 @@
 .slider {
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 50vw;
+  width: 47vw;
   height: 30vh;
   background: transparent;
   outline: none;
   -moz-outline: none;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 // /* Mouse-over effects */
 .slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 0.8; /* Fully shown on mouse-over */
 }
 
 // /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
@@ -31,10 +31,11 @@
   -webkit-appearance: none; /* Override default look */
   -moz-appearance: none;
   appearance: none;
-  width: 25vw;
-  height: 30vh;
-  background-image: url(./Images/center.svg);
-  background-size: 100%;
+  width: 19vw;
+  height: 20vh;
+  background-image: url(./Images/shard.svg);
+  transform: rotate(180deg);
+  background-size: 99%;
   background-repeat: none;
   cursor: pointer;
 }
@@ -43,7 +44,8 @@
   -moz-appearance: none;
   width: 25vw;
   height: 30vh;
-  background-image: url(./Images/center.svg);
+  background-image: url(./Images/shard.svg);
+  transform: rotate(180deg);
   background-size: 75%;
   cursor: pointer;
 }

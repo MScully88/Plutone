@@ -26,37 +26,38 @@
   position: absolute;
   top: 40vh;
   left: 2vw;
+  transform: rotate(-10deg);
 }
 
 .shard:nth-child(3) {
   position: absolute;
-  top: 70vh;
-  left: 2vw;
-  transform: rotate(-40deg);
+  top: 35vh;
+  left: 35vw;
+  z-index: 1;
 }
 
 .shard:nth-child(4) {
   position: absolute;
-  top: 45vh;
-  left: 25vw;
-  transform: rotate(-90deg);
+  top: 65vh;
+  left: 2vw;
+  transform: rotate(-35deg);
 }
 .shard:nth-child(5) {
   position: absolute;
-  top: 15vh;
-  right: 2vw;
-  transform: rotate(155deg);
+  top: 10vh;
+  right: 5vw;
+  transform: rotate(153deg);
 }
 .shard:nth-child(6) {
   position: absolute;
   top: 40vh;
-  right: 2vw;
-  transform: rotate(180deg);
+  right: 4vw;
+  transform: rotate(185deg);
 }
 .shard:nth-child(7) {
   position: absolute;
-  top: 70vh;
-  right: 2vw;
+  top: 65vh;
+  right: 7vw;
   transform: rotate(210deg);
 }
 @keyframes fadeinBg {
