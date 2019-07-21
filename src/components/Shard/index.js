@@ -14,6 +14,13 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
     shardTrack.get(instArray[instIndex]).volume.value = toNumber;
   };
 
+  const triggerReverb = () => {
+    const reverb = new Tone.Reverb().toMaster();
+    reverb.generate().then(() => {
+      shardTrack.connect(reverb);
+    });
+  };
+
   useEffect(() => {
     if (instArray[instIndex] === 'kickMain') {
       setKickMainValue(true);
@@ -35,6 +42,17 @@ const Shard = ({ shardTrack, instArray, instIndex }) => {
 
   return (
     <>
+      <div>
+        <input
+          className={styles.slider}
+          defaultValue={shardVolume}
+          type="range"
+          min="0"
+          max="20"
+          onChange={triggerReverb}
+          step="2"
+        />
+      </div>
       <div className={styles.slideContainer}>
         {isKickMain ? (
           <input
