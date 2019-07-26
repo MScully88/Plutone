@@ -24,16 +24,16 @@ const App = () => {
   useEffect(() => {
     const tracks = new Tone.Players(
       {
-        baseStartMain,
+        // baseStartMain,
         bassMain,
-        kickMain,
-        drumsMain,
         synthStr,
+        // fxMain,
         keysMain,
-        fxMain,
+        drumsMain,
+        kickMain,
       },
       {
-        volume: -100,
+        volume: -85,
         mute: false,
         onload: () => {
           setTracksLoading(false);
