@@ -4,51 +4,19 @@ import uuid from 'uuid/v1';
 import { Stage, Layer, Path } from 'react-konva';
 import styles from './Plutone.module.scss';
 import Shard from '../../components/Shard';
-import { kickMain, drumsMain } from '../../helpers/shapes';
+import { kickMain, drumsMain, keysMain, bassMain, synthStr } from '../../helpers/shapes';
 
 const Plutone = ({ shardTrack }) => {
   const [instArray] = useState([
     // 'baseStartMain',
-    // 'bassMain',
-    'drumsMain',
-    'kickMain',
-
-    // 'synthStr',
-    // 'keysMain',
     // 'fxMain',
+    'synthStr', // right
+    'bassMain', // bottom
+    'keysMain', // left
+    'drumsMain', // top
+    'kickMain', // centre
   ]);
-  const [objectArray] = useState([drumsMain, kickMain]);
-  console.log(objectArray);
-
-  // const Shard = ({ shardTrack, instArray, instIndex }) => {
-  //   const [shardVolume, setShardVolume] = useState(0);
-  //   const [isKickMain, setKickMainValue] = useState(false);
-
-  const handleChange = pos => {
-    console.log(pos);
-    // const toNumber = parseFloat(event.target.value);
-    // setShardVolume(toNumber);
-    // shardTrack.get(instArray[instIndex]).volume.value = toNumber;
-  };
-
-  //   useEffect(() => {
-  //     if (instArray[instIndex] === 'kickMain') {
-  //       setKickMainValue(true);
-  //       shardTrack.get(instArray[instIndex]).volume.value = 85;
-  //     }
-  //     // only using this value once
-  //     // eslint-disable-next-line
-  //   }, []);
-
-  //   useEffect(() => {
-  //     Tone.Transport.start();
-  //     Tone.Transport.bpm.value = 92;
-  //     const track = shardTrack.get(instArray[instIndex]);
-  //     // eslint-disable-next-line no-unused-vars
-  //     const loop = new Tone.Loop(time => {
-  //       track.start();
-  //     }, '8m').start(0);
-  //   }, [shardTrack, instArray, instIndex]);
+  const [objectArray] = useState([drumsMain, keysMain, bassMain, synthStr, kickMain]);
 
   return (
     <>
@@ -57,7 +25,7 @@ const Plutone = ({ shardTrack }) => {
           <Layer
             draggable
             dragBoundFunc={pos => {
-              handleChange(pos);
+              // handleChange(pos);
               const x = 0;
               const y = 0;
               const radius = 50;
@@ -97,6 +65,7 @@ const Plutone = ({ shardTrack }) => {
           {instArray.map((instrument, index) => {
             return (
               <Shard
+                key={uuid}
                 instIndex={index}
                 instArray={instrument}
                 shardTrack={shardTrack}
