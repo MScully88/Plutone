@@ -6,24 +6,67 @@ import { Layer, Path } from 'react-konva';
 // import Center from './Images/center.svg';
 
 const Shard = ({ shardTrack, instArray, instIndex, shape }) => {
-  console.log(shardTrack);
   const [shardVolume, setShardVolume] = useState(0);
   const [isKickMain, setKickMainValue] = useState(false);
-  const shard = shape[instIndex];
+  // setting x and y dependent on what handle is being triggered
+  const [isX, setX] = useState(null);
+  const [isY, setY] = useState(null);
 
-  //   const handleChange = event => {
-  //     //   const toNumber = parseFloat(event.target.value);
-  //     //   setShardVolume(70);
-  //     shardTrack.get(instArray[instIndex]).volume.value = 70;
-  //   };
-  //   useEffect(() => {
-  //     if (instArray === 'kickMain') {
-  //       //   setKickMainValue(true);
-  //       shardTrack.get(instArray).volume.value = 70;
-  //     }
-  //     // only using this value once
-  //     // eslint-disable-next-line
-  //   }, []);
+  // this is getting the objects using index
+  const shard = shape[instIndex];
+  // this is getting the name for conditional movement
+  const instValue = instArray;
+
+  useEffect(() => {
+    if (instArray === 'kickMain') {
+      setKickMainValue(true);
+      shardTrack.get(instArray).volume.value = 70;
+    }
+    // only using this value once
+    // eslint-disable-next-line
+  }, []);
+
+  const handleKeysMain = pos => {
+    if (pos < 178 && pos > 0) {
+      setX(pos);
+      setY(0);
+    }
+    if (pos < 70) {
+      shardTrack.get(instArray).volume.value = pos;
+    }
+  };
+
+  const handleStrSynth = pos => {
+    const plusPos = Math.abs(pos);
+    if (pos < 0 && pos > -150) {
+      setX(pos);
+      setY(0);
+    }
+    if (plusPos < 70 && pos < 0) {
+      shardTrack.get(instArray).volume.value = plusPos;
+    }
+  };
+
+  const handleDrumsMain = pos => {
+    if (pos > 0 && pos < 178) {
+      setX(0);
+      setY(pos);
+    }
+    if (pos < 70) {
+      shardTrack.get(instArray).volume.value = pos;
+    }
+  };
+
+  const handleBassMain = pos => {
+    const plusPos = Math.abs(pos);
+    if (pos < 0 && pos > -200) {
+      setX(0);
+      setY(pos);
+    }
+    if (plusPos < 70 && pos < 0) {
+      shardTrack.get(instArray).volume.value = plusPos;
+    }
+  };
 
   useEffect(() => {
     Tone.Transport.start();
@@ -37,7 +80,27 @@ const Shard = ({ shardTrack, instArray, instIndex, shape }) => {
 
   return (
     <>
-      <Layer draggable>
+      <Layer
+        draggable
+        dragBoundFunc={pos => {
+          if (instValue === 'keysMain') {
+            handleKeysMain(pos.x);
+          }
+          if (instValue === 'synthStr') {
+            handleStrSynth(pos.x);
+          }
+          if (instValue === 'drumsMain') {
+            handleDrumsMain(pos.y);
+          }
+          if (instValue === 'bassMain') {
+            handleBassMain(pos.y);
+          }
+          return {
+            x: isX,
+            y: isY,
+          };
+        }}
+      >
         {shard.map(({ x, y, data, fill, stroke, strokeWidth, scale }) => {
           return (
             <Path
@@ -56,10 +119,10 @@ const Shard = ({ shardTrack, instArray, instIndex, shape }) => {
   );
 };
 
-// Shard.propTypes = {
-//   shardTrack: PropTypes.object,
-//   instArray: PropTypes.array,
-//   instIndex: PropTypes.number,
-// };
+Shard.propTypes = {
+  shardTrack: PropTypes.object,
+  instArray: PropTypes.array,
+  instIndex: PropTypes.number,
+};
 
 export default Shard;
