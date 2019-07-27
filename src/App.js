@@ -33,7 +33,7 @@ const App = () => {
         kickMain,
       },
       {
-        volume: -85,
+        volume: -90,
         mute: false,
         onload: () => {
           setTracksLoading(false);
