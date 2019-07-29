@@ -12,15 +12,15 @@ import Home from './Pages/Home';
 import Plutone from './Pages/Plutone';
 import Loading from './components/Loading';
 import './App.module.scss';
+import { SoundContextProvider } from './context/sound-context';
 
-const App = () => {
+const App = props => {
   const [areTracksLoading, setTracksLoading] = useState(true);
   const [shardTrack, setShardTrack] = useState(null);
 
   const trackLoad = trackObj => {
     if (shardTrack === null) setShardTrack(trackObj);
   };
-
   useEffect(() => {
     const tracks = new Tone.Players(
       {
@@ -44,19 +44,23 @@ const App = () => {
   });
 
   return (
-    <Router>
-      {areTracksLoading ? (
-        <Loading />
-      ) : (
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route
-            path="/Plutone"
-            render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}
-          />
-        </Switch>
-      )}
-    </Router>
+    <SoundContextProvider>
+      <>
+        <Router>
+          {areTracksLoading ? (
+            <Loading />
+          ) : (
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route
+                path="/Plutone"
+                render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}
+              />
+            </Switch>
+          )}
+        </Router>
+      </>
+    </SoundContextProvider>
   );
 };
 
