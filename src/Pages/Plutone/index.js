@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-// import uuid from 'uuid/v3';
+import uuid from 'uuid/v1';
 import { Stage } from 'react-konva';
 import styles from './Plutone.module.scss';
 import Shard from '../../components/Shard';
 import { kickMain, drumsMain, keysMain, bassMain, synthStr } from '../../helpers/shapes';
+import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moons';
+import Moon from '../../components/Moon';
 
 const Plutone = ({ shardTrack }) => {
-  const [instArray] = useState([
+  const [instrumentArray] = useState([
     // 'baseStartMain',
     // 'fxMain',
     'drumsMain', // top
@@ -17,19 +19,23 @@ const Plutone = ({ shardTrack }) => {
     'kickMain', // centre
   ]);
   const [objectArray] = useState([drumsMain, keysMain, bassMain, synthStr, kickMain]);
+  const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
 
   return (
     <>
       <div id={styles.plutoneContainer}>
         <Stage width={700} height={780} className={styles.stageInnerContainer}>
-          {instArray.map((instrument, index) => {
+          {moonArray.map((moon, index) => {
+            return <Moon moon={moon} />;
+          })}
+          {instrumentArray.map((instrument, index) => {
             return (
               <Shard
-                key={index}
-                instIndex={index}
-                instArray={instrument}
+                key={uuid(index)}
+                instrumentIndex={index}
+                instrumentName={instrument}
                 shardTrack={shardTrack}
-                shape={objectArray}
+                shapeObject={objectArray}
               />
             );
           })}
@@ -40,28 +46,9 @@ const Plutone = ({ shardTrack }) => {
 };
 
 Plutone.propTypes = {
+  instrumentName: PropTypes.string,
   shardTrack: PropTypes.object,
+  shapeObject: PropTypes.object,
 };
 
 export default Plutone;
-
-// <Layer
-// draggable
-// dragBoundFunc={pos => {
-//   // handleChange(pos);
-//   const x = 0;
-//   const y = 0;
-//   const radius = 50;
-//   const scale = radius / Math.sqrt(Math.pow(pos.x - x, 2) + Math.pow(pos.y - y, 2));
-//   if (scale < 1) {
-//     return {
-//       y: Math.round((pos.y - y) * scale + y),
-//       x: Math.round((pos.x - x) * scale + x),
-//     };
-//   }
-//   return pos;
-// }}
-// className={styles.shapeLayer}
-// >
-// put moon here
-// </Layer>
