@@ -44,23 +44,21 @@ const App = props => {
   });
 
   return (
-    <SoundContextProvider>
-      <>
-        <Router>
-          {areTracksLoading ? (
-            <Loading />
-          ) : (
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route
-                path="/Plutone"
-                render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}
-              />
-            </Switch>
-          )}
-        </Router>
-      </>
-    </SoundContextProvider>
+    <>
+      <Router>
+        {areTracksLoading ? (
+          <Loading />
+        ) : (
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route
+              path="/Plutone"
+              render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}
+            />
+          </Switch>
+        )}
+      </Router>
+    </>
   );
 };
 
