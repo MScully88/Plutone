@@ -22,7 +22,7 @@ const Moon = ({ moon }) => {
       {moon.map(({ x, y, data, fill, stroke, strokeWidth, scale }, index) => {
         return (
           <Path
-            key={index}
+            key={`${index}_MOON`}
             x={x}
             y={y}
             data={data}
