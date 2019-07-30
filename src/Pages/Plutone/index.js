@@ -26,7 +26,7 @@ const Plutone = ({ shardTrack }) => {
       <div id={styles.plutoneContainer}>
         <Stage width={700} height={780} className={styles.stageInnerContainer}>
           {moonArray.map((moon, index) => {
-            return <Moon moon={moon} />;
+            return <Moon key={uuid(index)} moon={moon} />;
           })}
           {instrumentArray.map((instrument, index) => {
             return (
