@@ -7,6 +7,7 @@ import Shard from '../../components/Shard';
 import { kickMain, drumsMain, keysMain, bassMain, synthStr } from '../../helpers/shapes';
 import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moons';
 import Moon from '../../components/Moon';
+import { SoundContextProvider } from '../../context/sound-context';
 
 const Plutone = ({ shardTrack }) => {
   const [instrumentArray] = useState([
@@ -26,7 +27,7 @@ const Plutone = ({ shardTrack }) => {
       <div id={styles.plutoneContainer}>
         <Stage width={700} height={780} className={styles.stageInnerContainer}>
           {moonArray.map((moon, index) => {
-            return <Moon moon={moon} />;
+            return <Moon key={uuid(index)} moon={moon} />;
           })}
           {instrumentArray.map((instrument, index) => {
             return (
