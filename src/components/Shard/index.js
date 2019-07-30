@@ -1,8 +1,10 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Tone from 'tone';
-import { Layer, Path } from 'react-konva';
+import { Group, Layer, Path } from 'react-konva';
+import Konva from 'konva';
+import { moveShard1 } from '../../context/moving-shapes';
 // import styles from './Shard.module.scss';
 
 const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => {
@@ -11,9 +13,10 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // setting x and y dependent on what handle is being triggered
   const [isX, setX] = useState(null);
   const [isY, setY] = useState(null);
+  const inputEL = useRef(null);
+  const layerEL = useRef(null);
   // Array of objects with the paths for each layer
   const shard = shapeObject[instrumentIndex];
-
   const maxVolume = 70;
 
   // const { sounds, setSounds } = useContext(SoundContext);
@@ -23,7 +26,12 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
       setKickMainValue(true);
       shardTrack.get(instrumentName).volume.value = maxVolume;
     }
+
     // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    moveShard1(inputEL.current, layerEL.current);
   }, []);
 
   useEffect(() => {
@@ -98,6 +106,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   return (
     <>
       <Layer
+        ref={layerEL}
         draggable
         dragBoundFunc={pos => {
           let coordinates = null;
@@ -114,6 +123,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
         {shard.map(({ x, y, data, fill, stroke, strokeWidth, scale }, index) => {
           return (
             <Path
+              ref={inputEL}
               key={instrumentName + index}
               x={x}
               y={y}
