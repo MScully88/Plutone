@@ -7,7 +7,6 @@ import Shard from '../../components/Shard';
 import { kickMain, drumsMain, keysMain, bassMain, synthStr } from '../../helpers/shapes';
 import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moons';
 import Moon from '../../components/Moon';
-import { SoundContextProvider } from '../../context/sound-context';
 
 const Plutone = ({ shardTrack }) => {
   const [instrumentArray] = useState([
