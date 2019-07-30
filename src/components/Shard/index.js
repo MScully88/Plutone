@@ -3,11 +3,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Tone from 'tone';
 import { Layer, Path } from 'react-konva';
-// import { SoundContext } from '../../context/sound-context';
 // import styles from './Shard.module.scss';
 
 const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => {
-  // const { sounds } = useContext(SoundContext);
   // eslint-disable-next-line no-unused-vars
   const [isKickMain, setKickMainValue] = useState(false);
   // setting x and y dependent on what handle is being triggered
@@ -25,6 +23,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
       setKickMainValue(true);
       shardTrack.get(instrumentName).volume.value = maxVolume;
     }
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
