@@ -33,11 +33,14 @@ const moveDrumsMainTop = (layer, isDrag) => {
   const animTop = new Konva.Animation(frame => {
     layer.y(amplitudeTop * Math.sin((frame.time * 2 * Math.PI) / periodTop) + centerXTop);
   }, layer);
-  animTop.start();
-
-  //   if (isDrag) {
-  //     animTop.stop();
-  //   }
+  function animation() {
+    if (!isDrag) {
+      animTop.start();
+    } else {
+      animTop.stop();
+    }
+  }
+  animation();
 };
 
 // // Bottom
