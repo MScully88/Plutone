@@ -161,8 +161,8 @@ const baseStartMain = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 1,
+      y: 1,
     },
   },
   {
@@ -173,8 +173,8 @@ const baseStartMain = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 1,
+      y: 1,
     },
   },
 ];
@@ -192,8 +192,8 @@ const fx2 = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 1,
+      y: 1,
     },
   },
   {
@@ -204,8 +204,8 @@ const fx2 = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 1,
+      y: 1,
     },
   },
 ];
@@ -223,8 +223,8 @@ const solo = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 1,
+      y: 1,
     },
   },
   {
@@ -235,8 +235,8 @@ const solo = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 1,
+      y: 1,
     },
   },
 ];
@@ -254,8 +254,8 @@ const fx1 = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 1,
+      y: 1,
     },
   },
   {
@@ -266,8 +266,8 @@ const fx1 = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 1,
+      y: 1,
     },
   },
 ];
