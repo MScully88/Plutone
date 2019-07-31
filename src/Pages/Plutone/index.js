@@ -42,13 +42,14 @@ const Plutone = ({ shardTrack }) => {
     kickMain,
   ]);
   const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
+  const [moonName] = useState(['filterTopL', 'flangerTopR', 'filterBottomR', 'flangerBottomL']);
 
   return (
     <>
       <div id={styles.plutoneContainer}>
         <Stage width={700} height={780} className={styles.stageInnerContainer}>
           {moonArray.map((moon, index) => {
-            return <Moon key={uuid(index)} moon={moon} />;
+            return <Moon key={uuid(index)} moon={moon} moonName={moonName[index]} />;
           })}
           {instrumentArray.map((instrument, index) => {
             return (
