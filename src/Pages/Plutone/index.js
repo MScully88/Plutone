@@ -4,21 +4,43 @@ import uuid from 'uuid/v1';
 import { Stage } from 'react-konva';
 import styles from './Plutone.module.scss';
 import Shard from '../../components/Shard';
-import { kickMain, drumsMain, keysMain, bassMain, synthStr } from '../../helpers/shapes';
+import {
+  kickMain,
+  drumsMain,
+  keysMain,
+  bassMain,
+  synthStr,
+  baseStartMain,
+  fx1,
+  fx2,
+  solo,
+} from '../../helpers/shapes';
 import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moons';
 import Moon from '../../components/Moon';
 
 const Plutone = ({ shardTrack }) => {
   const [instrumentArray] = useState([
-    // 'baseStartMain',
-    // 'fxMain',
     'drumsMain', // top
-    'keysMain', // left
-    'bassMain', // bottom
+    'solo', // topR
     'synthStr', // right
+    'fx1', // bottomR
+    'bassMain', // bottom
+    'fx2', // bottomL
+    'keysMain', // left
+    'baseStartMain', // topL
     'kickMain', // centre
   ]);
-  const [objectArray] = useState([drumsMain, keysMain, bassMain, synthStr, kickMain]);
+  const [objectArray] = useState([
+    drumsMain,
+    solo,
+    synthStr,
+    fx1,
+    bassMain,
+    fx2,
+    keysMain,
+    baseStartMain,
+    kickMain,
+  ]);
   const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
 
   return (
