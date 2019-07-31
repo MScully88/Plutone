@@ -1,7 +1,6 @@
 import Konva from 'konva';
 
-const stageWidth = 700;
-
+// const stageWidth = 700;
 // Horizontal Movement Functionality
 // Left
 const moveKeysMainLeft = layer => {
