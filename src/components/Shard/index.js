@@ -13,20 +13,20 @@ import {
 // import styles from './Shard.module.scss';
 
 const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => {
-  // eslint-disable-next-line no-unused-vars
+  // useRef to target node element of the shapes
+  const inputEL = useRef(null);
+  const layerEL = useRef(null);
+  // eslint-disable-next-line no-unused-vars // if kick play straight away
   const [isKickMain, setKickMainValue] = useState(false);
   // setting x and y dependent on what handle is being triggered
   const [isX, setX] = useState(null);
   const [isY, setY] = useState(null);
-  const inputEL = useRef(null);
-  const layerEL = useRef(null);
+  // onMouseDrag start and end change this value
   const [isDrag, setDrag] = useState(false);
   // Array of objects with the paths for each layer
   const shard = shapeObject[instrumentIndex];
   const maxVolume = 70;
-
-  // const { sounds, setSounds } = useContext(SoundContext);
-
+  // sets kick to play on render
   useEffect(() => {
     if (instrumentName === 'kickMain') {
       setKickMainValue(true);
@@ -51,7 +51,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     // if (instrumentName === 'kickMain') {
     //   moveKickMainCenter(layerEL.current);
     // }
-  });
+  }, [instrumentName]);
 
   useEffect(() => {
     Tone.Transport.start();
@@ -96,6 +96,13 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
 
   // fx1 bottomR
 
+  const handlefx1 = ({ x, y }) => {
+    const angle = 32; // angle in degrees
+    const angleRad = angle * (Math.PI / 180); // angle in radians
+    setX(x + Math.cos(angleRad));
+    setY(y + Math.sin(angleRad));
+  };
+
   // bottom
   const handleBassMain = ({ y }) => {
     const plusPos = Math.abs(y);
@@ -108,8 +115,13 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // fx2 bottomL
-
+  // fx2 bottomR
+  const handlefx2 = ({ x, y }) => {
+    const angle = 32; // angle in degrees
+    const angleRad = angle * (Math.PI / 180); // angle in radians
+    setX(x + Math.cos(angleRad));
+    setY(y + Math.sin(angleRad));
+  };
   // left
   const handleKeysMain = ({ x }) => {
     if (x < 178 && x > 0) {
@@ -121,33 +133,61 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
+  // baseStartMain bottomL
+  const handlebaseStartMain = ({ x, y }) => {
+    const angle = 32; // angle in degrees
+    const angleRad = angle * (Math.PI / 180); // angle in radians
+    setX(x + Math.cos(angleRad));
+    setY(y + Math.sin(angleRad));
+  };
+
   const getSoundHandler = soundName => {
     let handler = null;
+    // top
     if (soundName === 'drumsMain') {
       handler = handleDrumsMain;
     }
+    // topR
     if (soundName === 'solo') {
       handler = handleSolo;
     }
+    // right
     if (soundName === 'keysMain') {
       handler = handleKeysMain;
     }
+    // bottomR
+    if (soundName === 'fx1') {
+      handler = handlefx1;
+    }
+    // bottom
     if (soundName === 'synthStr') {
       handler = handleStrSynth;
     }
+    // bottomR
+    if (soundName === 'fx2') {
+      handler = handlefx2;
+    }
+    // left
     if (soundName === 'bassMain') {
       handler = handleBassMain;
+    }
+    // bottomLeft
+    if (soundName === 'baseStartMain') {
+      handler = handlebaseStartMain;
     }
     return handler;
   };
 
   return (
     <>
+      {/* //this targets the node to trigger animation */}
       <Layer ref={layerEL}>
         <Group
           draggable
+          // pos gives x and y values on mouse drag event
           dragBoundFunc={pos => {
             let coordinates = null;
+            // triggers Soundhandler and also passing in X and Y as values
             if (instrumentName !== 'kickMain') {
               getSoundHandler(instrumentName)(pos);
               coordinates = {
