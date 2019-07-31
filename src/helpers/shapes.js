@@ -148,169 +148,128 @@ const synthStr = [
   },
 ];
 
-export { kickMain, drumsMain, keysMain, bassMain, synthStr };
+// Top Left Shard
 
-// // Circular Movement Functionality
+const baseStartMain = [
+  {
+    x: 120,
+    y: 175,
+    data:
+      'M166.836 98.7795L95.3599 33.9856L87.2448 40.033L160.136 106.861L61.6165 16.9837L54.834 24.5623L21.0567 18.5394L31.782 51.049L98.5387 105.003L106.846 95.206L143.073 127.442L148.104 121.373L160.136 106.861L166.836 98.7795Z',
+    // fill: "#C4C4C4",
+    fill: '#b04dfa',
+    stroke: 'black',
+    strokeWidth: 1,
+    scale: {
+      x: 0.6,
+      y: 0.6,
+    },
+  },
+  {
+    x: 120,
+    y: 175,
+    data:
+      'M148.104 121.373L78.055 58.2717M78.055 58.2717L48.0514 32.1409L54.834 24.5623M78.055 58.2717L70.6195 62.9702L106.846 95.206M54.834 24.5623L61.6165 16.9837L160.136 106.861L87.2448 40.033L95.3599 33.9856L166.836 98.7795L143.073 127.442L106.846 95.206M54.834 24.5623L21.0567 18.5394L31.782 51.049L98.5387 105.003L106.846 95.206',
+    stroke: 'black',
+    strokeWidth: 1,
+    scale: {
+      x: 0.6,
+      y: 0.6,
+    },
+  },
+];
 
-// let circleFunc1 = new Konva.Group({
-//   draggable: true,
-//   dragBoundFunc: function(pos) {
-//     console.log(pos);
-//     let x = 0;
-//     let y = 0;
-//     let radius = 50;
-//     let scale =
-//       radius / Math.sqrt(Math.pow(pos.x - x, 2) + Math.pow(pos.y - y, 2));
-//     if (scale < 1)
-//       return {
-//         y: Math.round((pos.y - y) * scale + y),
-//         x: Math.round((pos.x - x) * scale + x)
-//       };
-//     else return pos;
-//   }
-// });
+// Bottom Left Shard
 
-// let circleFunc2 = new Konva.Group({
-//   draggable: true,
-//   dragBoundFunc: function(pos) {
-//     console.log(pos);
-//     let x = 0;
-//     let y = 0;
-//     let radius = 50;
-//     let scale =
-//       radius / Math.sqrt(Math.pow(pos.x - x, 2) + Math.pow(pos.y - y, 2));
-//     if (scale < 1)
-//       return {
-//         y: Math.round((pos.y - y) * scale + y),
-//         x: Math.round((pos.x - x) * scale + x)
-//       };
-//     else return pos;
-//   }
-// });
+const fx2 = [
+  {
+    x: 135,
+    y: 535,
+    data:
+      'M130.504 4.95757L121.442 1.09333L99.9365 7.38084L1.22412 108.913L25.0037 140.888L30.9241 133.262L52.5324 125.336L64.2075 140.888L72.908 129.474L76.9807 130.875L135.343 24.7308L132.923 14.8442L131.714 9.90087L130.504 4.95757Z',
+    // fill: "#C4C4C4",
+    fill: '#b04dfa',
+    stroke: 'black',
+    strokeWidth: 1,
+    scale: {
+      x: 0.6,
+      y: 0.6,
+    },
+  },
+  {
+    x: 135,
+    y: 535,
+    data:
+      'M130.504 4.95757L121.442 1.09333M130.504 4.95757L131.714 9.90087L132.923 14.8442M130.504 4.95757L42.3758 118.507M121.442 1.09333L15.1486 110.026L39.8731 116.631L42.3758 118.507M121.442 1.09333L99.9365 7.38084L1.22411 108.913L25.0037 140.888L30.9241 133.262M30.9241 133.262L42.3758 118.507M30.9241 133.262L52.5324 125.336L64.2075 140.888L72.908 129.474M132.923 14.8442L135.343 24.7308L76.9807 130.875L72.908 129.474M132.923 14.8442L68.8352 128.073L72.908 129.474',
+    stroke: 'black',
+    strokeWidth: 1,
+    scale: {
+      x: 0.6,
+      y: 0.6,
+    },
+  },
+];
 
-// let circleFunc3 = new Konva.Group({
-//   draggable: true,
-//   dragBoundFunc: function(pos) {
-//     console.log(pos);
-//     let x = 0;
-//     let y = 0;
-//     let radius = 50;
-//     let scale =
-//       radius / Math.sqrt(Math.pow(pos.x - x, 2) + Math.pow(pos.y - y, 2));
-//     if (scale < 1)
-//       return {
-//         y: Math.round((pos.y - y) * scale + y),
-//         x: Math.round((pos.x - x) * scale + x)
-//       };
-//     else return pos;
-//   }
-// });
+// Top Right Shard
 
-// let circleFunc4 = new Konva.Group({
-//   draggable: true,
-//   dragBoundFunc: function(pos) {
-//     console.log(pos);
-//     let x = 0;
-//     let y = 0;
-//     let radius = 50;
-//     let scale =
-//       radius / Math.sqrt(Math.pow(pos.x - x, 2) + Math.pow(pos.y - y, 2));
-//     if (scale < 1)
-//       return {
-//         y: Math.round((pos.y - y) * scale + y),
-//         x: Math.round((pos.x - x) * scale + x)
-//       };
-//     else return pos;
-//   }
-// });
+const solo = [
+  {
+    x: 490,
+    y: 165,
+    data:
+      'M28.0057 149.992L109.246 97.962L105.533 88.5471L21.9595 141.41L134.486 69.8437L128.947 61.3143L143.599 30.2902L109.415 32.1343L39.8721 82.4454L47.1536 93.0272L6.56098 119.556L11.1016 126L21.9595 141.41L28.0057 149.992Z',
+    // fill: "#C4C4C4",
+    fill: '#b04dfa',
+    stroke: 'black',
+    strokeWidth: 1,
+    scale: {
+      x: 0.6,
+      y: 0.6,
+    },
+  },
+  {
+    x: 490,
+    y: 165,
+    data:
+      'M11.1016 126L90.3352 74.9047M90.3352 74.9047L123.407 52.7849L128.947 61.3143M90.3352 74.9047L87.7463 66.4988L47.1536 93.0272M128.947 61.3143L134.486 69.8437L21.9595 141.41L105.533 88.5471L109.246 97.962L28.0057 149.992L6.56098 119.556L47.1536 93.0272M128.947 61.3143L143.599 30.2902L109.415 32.1343L39.8721 82.4454L47.1536 93.0272',
+    stroke: 'black',
+    strokeWidth: 1,
+    scale: {
+      x: 0.6,
+      y: 0.6,
+    },
+  },
+];
 
-// // Horizontal Movement Functionality
+// Bottom Right Shard
 
-// let horizontalFunc1 = new Konva.Group({
-//   draggable: true,
-//   dragBoundFunc: function(pos) {
-//     return {
-//       x: pos.x,
-//       y: this.absolutePosition().y
-//     };
-//   }
-// });
+const fx1 = [
+  {
+    x: 480,
+    y: 535,
+    data:
+      'M6.70788 1.42055L0.629837 9.17383L1.13714 31.5736L73.6611 153.201L110.701 138.507L104.867 130.815L102.804 107.891L120.848 100.639L112.075 89.2813L114.482 85.71L27.0597 1.86434L16.8838 1.64244L11.7958 1.5315L6.70788 1.42055Z',
+    // fill: "#C4C4C4",
+    fill: '#b04dfa',
+    stroke: 'black',
+    strokeWidth: 1,
+    scale: {
+      x: 0.6,
+      y: 0.6,
+    },
+  },
+  {
+    x: 480,
+    y: 535,
+    data:
+      'M6.70788 1.42055L0.629837 9.17383M6.70788 1.42055L11.7958 1.5315L16.8838 1.64244M6.70788 1.42055L93.579 115.935M0.629837 9.17383L78.3397 140.039L91.1194 117.866L93.579 115.935M0.629837 9.17383L1.13714 31.5736L73.6611 153.201L110.701 138.507L104.867 130.815M104.867 130.815L93.579 115.935M104.867 130.815L102.804 107.891L120.848 100.639L112.075 89.2813M16.8838 1.64244L27.0597 1.86434L114.482 85.71L112.075 89.2813M16.8838 1.64244L109.667 92.8527L112.075 89.2813',
+    stroke: 'black',
+    strokeWidth: 1,
+    scale: {
+      x: 0.6,
+      y: 0.6,
+    },
+  },
+];
 
-// let horizontalFunc2 = new Konva.Group({
-//   draggable: true,
-//   dragBoundFunc: function(pos) {
-//     return {
-//       x: pos.x,
-//       y: this.absolutePosition().y
-//     };
-//   }
-// });
-
-// // Vertical Movement Functionality
-
-// let verticalFunc1 = new Konva.Group({
-//   draggable: true,
-//   dragBoundFunc: function(pos) {
-//     return {
-//       x: this.absolutePosition().x,
-//       y: pos.y
-//     };
-//   }
-// });
-
-// let verticalFunc2 = new Konva.Group({
-//   draggable: true,
-//   dragBoundFunc: function(pos) {
-//     return {
-//       x: this.absolutePosition().x,
-//       y: pos.y
-//     };
-//   }
-// });
-
-// // Functionality added to each layer
-
-// fx1Layer.add(circleFunc1);
-// fx2Layer.add(circleFunc2);
-// fx3Layer.add(circleFunc3);
-// fx4Layer.add(circleFunc4);
-// leftLayer.add(horizontalFunc1);
-// topLayer.add(verticalFunc1);
-// bottomLayer.add(verticalFunc2);
-// rightLayer.add(horizontalFunc2);
-
-// // Centre SVG path added to center layer
-
-// centerLayer.add(centerSvg101, centerSvg102);
-
-// // Each SVG path added to the functionality
-
-// circleFunc1.add(fxSvg101, fxSvg102, fxSvg103, fxSvg104);
-
-// circleFunc2.add(fxSvg201, fxSvg202);
-
-// circleFunc3.add(fxSvg301, fxSvg302);
-
-// circleFunc4.add(fxSvg401, fxSvg402);
-
-// horizontalFunc1.add(leftSvg101, leftSvg102);
-
-// horizontalFunc2.add(rightSvg101, rightSvg102);
-
-// verticalFunc1.add(topSvg101, topSvg102);
-
-// verticalFunc2.add(bottomSvg101, bottomSvg102);
-
-// // Each completed layer added to the main application stage/canvas
-
-// plutoneContainer.add(
-//   fx1Layer,
-//   fx2Layer,
-//   fx3Layer,
-//   fx4Layer,
-//   centerLayer,
-//   leftLayer,
-//   topLayer,
-//   bottomLayer,
-//   rightLayer
-// );
+export { kickMain, drumsMain, keysMain, bassMain, synthStr, baseStartMain, fx1, fx2, solo };
