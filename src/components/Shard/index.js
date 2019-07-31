@@ -9,7 +9,7 @@ import {
   moveKeysMainLeft,
   moveSynthStrRight,
   moveKickMainCenter,
-} from '../../context/moving-shapes';
+} from '../../helpers/moving-shapes';
 // import styles from './Shard.module.scss';
 
 const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => {
@@ -51,7 +51,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     // if (instrumentName === 'kickMain') {
     //   moveKickMainCenter(layerEL.current);
     // }
-  }, []);
+  });
 
   useEffect(() => {
     Tone.Transport.start();
@@ -63,16 +63,26 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }, '8m').start(0);
   }, [shardTrack, instrumentName, instrumentIndex]);
 
-  const handleKeysMain = ({ x }) => {
-    if (x < 178 && x > 0) {
-      setX(x);
-      setY(0);
+  // top
+  const handleDrumsMain = ({ y }) => {
+    if (y > 0 && y < 178) {
+      setX(0);
+      setY(y);
     }
-    if (x < maxVolume) {
-      shardTrack.get(instrumentName).volume.value = x;
+    if (y < maxVolume) {
+      shardTrack.get(instrumentName).volume.value = y;
     }
   };
 
+  // topR Solo
+  const handleSolo = ({ x, y }) => {
+    const angle = 32; // angle in degrees
+    const angleRad = angle * (Math.PI / 180); // angle in radians
+    setX(x + Math.cos(angleRad));
+    setY(y + Math.sin(angleRad));
+  };
+
+  // right
   const handleStrSynth = ({ x }) => {
     const plusPos = Math.abs(x);
     if (x < 0 && x > -150) {
@@ -84,16 +94,9 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  const handleDrumsMain = ({ y }) => {
-    if (y > 0 && y < 178) {
-      setX(0);
-      setY(y);
-    }
-    if (y < maxVolume) {
-      shardTrack.get(instrumentName).volume.value = y;
-    }
-  };
+  // fx1 bottomR
 
+  // bottom
   const handleBassMain = ({ y }) => {
     const plusPos = Math.abs(y);
     if (y < 0 && y > -200) {
@@ -105,16 +108,32 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
+  // fx2 bottomL
+
+  // left
+  const handleKeysMain = ({ x }) => {
+    if (x < 178 && x > 0) {
+      setX(x);
+      setY(0);
+    }
+    if (x < maxVolume) {
+      shardTrack.get(instrumentName).volume.value = x;
+    }
+  };
+
   const getSoundHandler = soundName => {
     let handler = null;
+    if (soundName === 'drumsMain') {
+      handler = handleDrumsMain;
+    }
+    if (soundName === 'solo') {
+      handler = handleSolo;
+    }
     if (soundName === 'keysMain') {
       handler = handleKeysMain;
     }
     if (soundName === 'synthStr') {
       handler = handleStrSynth;
-    }
-    if (soundName === 'drumsMain') {
-      handler = handleDrumsMain;
     }
     if (soundName === 'bassMain') {
       handler = handleBassMain;
