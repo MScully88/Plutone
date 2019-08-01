@@ -3,7 +3,6 @@ import { Layer, Path, Group } from 'react-konva';
 import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moving-moons';
 
 const Moon = ({ moon, moonName }) => {
-  console.log(moonName);
   const layerEL = useRef(null);
   useEffect(() => {
     if (moonName === 'filterTopL') {
