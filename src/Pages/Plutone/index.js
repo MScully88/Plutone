@@ -46,8 +46,8 @@ const Plutone = ({ shardTrack }) => {
 
   return (
     <>
-      <div id={styles.plutoneContainer}>
-        <Stage width={700} height={780} className={styles.stageInnerContainer}>
+      <div id={styles.plutoneContainer} className={styles.stars}>
+        <Stage width={780} height={820} className={styles.stageInnerContainer}>
           {moonArray.map((moon, index) => {
             return <Moon key={uuid(index)} moon={moon} moonName={moonName[index]} />;
           })}
