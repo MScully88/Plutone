@@ -2,7 +2,7 @@
 
 const filterTopL = [
   {
-    x: 40,
+    x: 20,
     y: 21,
     data:
       'M22.5467 10.0457L48.312 18.3844L55.9399 47.5586L34.1717 57.965L11.6775 41.0457L17.1121 25.5457L22.5467 10.0457Z',
@@ -10,42 +10,42 @@ const filterTopL = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
   {
-    x: 40,
+    x: 20,
     y: 21,
     data: 'M18.7797 21.1681L32.6577 23.2866L18.7797 35.234L14.765 33.3865',
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
   {
-    x: 40,
+    x: 20,
     y: 21,
     data:
       'M32.1461 23.5541L29.4773 12.901L22.5583 9.68775L34.5431 57.3671L43.859 17.1523L22.5583 48.5925L53.4468 40.0651L49.9873 23.5541L12.1798 40.0651L48.6529 50.7182',
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
   {
-    x: 40,
+    x: 20,
     y: 21,
     data: 'M52.2056 34.1997L35.8643 14.2385',
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
 ];
@@ -60,8 +60,8 @@ const flangerTopR = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
 
@@ -73,8 +73,8 @@ const flangerTopR = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
 ];
@@ -89,8 +89,8 @@ const filterBottomR = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
 
@@ -102,8 +102,8 @@ const filterBottomR = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
 ];
@@ -120,8 +120,8 @@ const flangerBottomL = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
   {
@@ -132,8 +132,8 @@ const flangerBottomL = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 1,
-      y: 1,
+      x: 0.6,
+      y: 0.6,
     },
   },
 ];
