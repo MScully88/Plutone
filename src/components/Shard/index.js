@@ -51,7 +51,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     // if (instrumentName === 'kickMain') {
     //   moveKickMainCenter(layerEL.current);
     // }
-  }, [instrumentName]);
+  }, [instrumentName, isDrag]);
 
   useEffect(() => {
     Tone.Transport.start();
@@ -110,8 +110,9 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
       setX(0);
       setY(y);
     }
-    if (plusPos < 70 && y < 0) {
-      shardTrack.get(instrumentName).volume.value = plusPos;
+    if (plusPos < 200 && y < 0) {
+      // division means the volume can last for the whole drag
+      shardTrack.get(instrumentName).volume.value = plusPos / 2.87;
     }
   };
 
@@ -124,7 +125,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   };
   // left
   const handleKeysMain = ({ x }) => {
-    if (x < 178 && x > 0) {
+    if (x < 200 && x > 0) {
       setX(x);
       setY(0);
     }
