@@ -28,7 +28,7 @@ const flangerTopR = layer => {
 // Circular Movement Functionality & Floating Animation Fx3
 const filterBottomR = layer => {
   const amplitude3 = 29;
-  const period3 = 6000;
+  const period3 = 10000;
   const centerX3 = 58;
   const animFx3 = new Konva.Animation(frame => {
     layer.x(amplitude3 * Math.sin((frame.time * 2 * Math.PI) / period3) + centerX3);
