@@ -9,7 +9,7 @@ const filterTopL = [
       'M22.5467 10.0457L48.312 18.3844L55.9399 47.5586L34.1717 57.965L11.6775 41.0457L17.1121 25.5457L22.5467 10.0457Z',
     fill: '#e8366e',
     stroke: 'white',
-    strokeWidth: 1,
+    strokeWidth: 2,
     scale: {
       x: 0.6,
       y: 0.6,
@@ -58,8 +58,8 @@ const flangerTopR = [
     data:
       'M26.0728 39.246L45 39.246L18.0966 1L15.2367 4.20164L1 20.1395L1 35.5501L18.0966 46.0439L32.7742 80L26.0728 39.246Z',
     fill: '#5fc48a',
-    stroke: 'white',
-    strokeWidth: 1,
+    stroke: 'black',
+    strokeWidth: 2,
     scale: {
       x: 0.6,
       y: 0.6,
@@ -88,7 +88,7 @@ const filterBottomR = [
     data: 'M79 21.4568L39.2656 1L7.74809 25.2674L39.2657 47.2485L79 21.4568Z',
     fill: '#f8f840',
     stroke: 'white',
-    strokeWidth: 1,
+    strokeWidth: 2,
     scale: {
       x: 0.6,
       y: 0.6,
@@ -118,8 +118,8 @@ const flangerBottomL = [
     data:
       'M57 65L49.3229 26.42L33.2011 1L1 34.9076L40.1059 44.274L41.1387 50.7468L28.5948 57.284L42.7974 61.142L57 65Z',
     fill: '#3a7d75',
-    stroke: 'white',
-    strokeWidth: 1,
+    stroke: 'black',
+    strokeWidth: 2,
     scale: {
       x: 0.5,
       y: 0.5,
