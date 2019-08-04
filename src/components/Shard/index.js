@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
@@ -65,7 +66,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
 
   // top
   const handleDrumsMain = ({ y }) => {
-    if (y > 0 && y < 178) {
+    if (y > 0 && y < 175) {
       setX(0);
       setY(y);
     }
@@ -75,6 +76,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   };
 
   // topR Solo
+
   const handleSolo = ({ x, y }) => {
     const angle = 32; // angle in degrees
     const angleRad = angle * (Math.PI / 180); // angle in radians
@@ -85,7 +87,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // right
   const handleStrSynth = ({ x }) => {
     const plusPos = Math.abs(x);
-    if (x < 0 && x > -150) {
+    if (x < 0 && x > -200) {
       setX(x);
       setY(0);
     }
@@ -106,7 +108,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // bottom
   const handleBassMain = ({ y }) => {
     const plusPos = Math.abs(y);
-    if (y < 0 && y > -200) {
+    if (y < 0 && y > -160) {
       setX(0);
       setY(y);
     }
@@ -125,7 +127,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   };
   // left
   const handleKeysMain = ({ x }) => {
-    if (x < 200 && x > 0) {
+    if (x < 220 && x > 0) {
       setX(x);
       setY(0);
     }
