@@ -11,8 +11,8 @@ const filterTopL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.5,
-      y: 0.5,
+      x: 0.6,
+      y: 0.6,
     },
   },
   {
@@ -22,8 +22,8 @@ const filterTopL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.5,
-      y: 0.5,
+      x: 0.6,
+      y: 0.6,
     },
   },
   {
@@ -34,8 +34,8 @@ const filterTopL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.5,
-      y: 0.5,
+      x: 0.6,
+      y: 0.6,
     },
   },
   {
@@ -45,15 +45,15 @@ const filterTopL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.5,
-      y: 0.5,
+      x: 0.6,
+      y: 0.6,
     },
   },
 ];
 
 const flangerTopR = [
   {
-    x: 650,
+    x: 620,
     y: 50,
     data:
       'M26.0728 39.246L45 39.246L18.0966 1L15.2367 4.20164L1 20.1395L1 35.5501L18.0966 46.0439L32.7742 80L26.0728 39.246Z',
@@ -61,21 +61,21 @@ const flangerTopR = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.5,
-      y: 0.5,
+      x: 0.6,
+      y: 0.6,
     },
   },
 
   {
-    x: 650,
+    x: 620,
     y: 50,
     data:
       'M18.0966 25.6834L18.0966 39.246L26.0728 39.246M18.0966 25.6834L26.0728 39.246M18.0966 25.6834L15.2367 4.20164M26.0728 39.246L45 39.246L18.0966 1L15.2367 4.20164M26.0728 39.246L32.7742 80L18.0966 46.0439M18.0966 46.0439L1 35.5501L1 20.1395M18.0966 46.0439L1 20.1395M1 20.1395L15.2367 4.20164M15.0565 2.84796L15.2367 4.20164',
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.5,
-      y: 0.5,
+      x: 0.6,
+      y: 0.6,
     },
   },
 ];
@@ -90,8 +90,8 @@ const filterBottomR = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.5,
-      y: 0.5,
+      x: 0.6,
+      y: 0.6,
     },
   },
 
@@ -103,8 +103,8 @@ const filterBottomR = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.5,
-      y: 0.5,
+      x: 0.6,
+      y: 0.6,
     },
   },
 ];
@@ -113,8 +113,8 @@ const filterBottomR = [
 
 const flangerBottomL = [
   {
-    x: 15,
-    y: 660,
+    x: 20,
+    y: 550,
     data:
       'M57 65L49.3229 26.42L33.2011 1L1 34.9076L40.1059 44.274L41.1387 50.7468L28.5948 57.284L42.7974 61.142L57 65Z',
     fill: '#3a7d75',
@@ -126,8 +126,8 @@ const flangerBottomL = [
     },
   },
   {
-    x: 15,
-    y: 660,
+    x: 20,
+    y: 550,
     data:
       'M49.3229 26.42L57 65L42.7974 61.142M49.3229 26.42L42.7974 61.142M49.3229 26.42L33.2011 1M33.2011 1L1 34.9076L49.3229 46.4816L28.5948 57.284L42.7974 61.142M33.2011 1L42.7974 61.142',
     stroke: 'black',
