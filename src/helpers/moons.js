@@ -11,8 +11,8 @@ const filterTopL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
   {
@@ -22,8 +22,8 @@ const filterTopL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
   {
@@ -34,8 +34,8 @@ const filterTopL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
   {
@@ -45,8 +45,8 @@ const filterTopL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
 ];
@@ -61,8 +61,8 @@ const flangerTopR = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
 
@@ -74,8 +74,8 @@ const flangerTopR = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
 ];
@@ -90,8 +90,8 @@ const filterBottomR = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
 
@@ -103,8 +103,8 @@ const filterBottomR = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
 ];
@@ -121,8 +121,8 @@ const flangerBottomL = [
     stroke: 'white',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
   {
@@ -133,8 +133,8 @@ const flangerBottomL = [
     stroke: 'black',
     strokeWidth: 1,
     scale: {
-      x: 0.6,
-      y: 0.6,
+      x: 0.5,
+      y: 0.5,
     },
   },
 ];
