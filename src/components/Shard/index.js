@@ -75,7 +75,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // topR Solo
+  // topR Solo - needs new track
 
   const handleSolo = ({ x, y }) => {
     if (x < 0 && Math.abs(x) < 94) {
@@ -83,17 +83,19 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
       setX(Math.abs(x) * Math.tan((angle * Math.PI) / 180));
       setY(Math.abs(x));
     }
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    }
   };
 
   // right
   const handleStrSynth = ({ x }) => {
-    const plusPos = Math.abs(x);
     if (x < 0 && x > -200) {
       setX(x);
       setY(0);
     }
-    if (plusPos < 70 && x < 0) {
-      shardTrack.get(instrumentName).volume.value = plusPos;
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
     }
   };
 
@@ -104,6 +106,9 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
       const angle = 45; // angle in degrees
       setX(x * Math.tan((angle * Math.PI) / 180));
       setY(x);
+    }
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
     }
   };
 
@@ -120,12 +125,15 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // trackfx2 bottomL
+  // trackfx2 bottomL - track fx2 needs new track
   const handlefx2 = ({ x, y }) => {
     if (y < 0 && Math.abs(y) < 94) {
       const angle = -45; // angle in degrees
       setX(Math.abs(y));
       setY(Math.abs(y) * Math.tan((angle * Math.PI) / 180));
+    }
+    if (Math.abs(x) < maxVolume && x > 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
     }
   };
   // left
@@ -145,6 +153,9 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
       const angle = 45; // angle in degrees
       setX(y);
       setY(y * Math.tan((angle * Math.PI) / 180));
+    }
+    if (Math.abs(x) < 68 && x > 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
     }
   };
 
