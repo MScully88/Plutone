@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
@@ -65,7 +66,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
 
   // top
   const handleDrumsMain = ({ y }) => {
-    if (y > 0 && y < 178) {
+    if (y > 0 && y < 175) {
       setX(0);
       setY(y);
     }
@@ -74,39 +75,47 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // topR Solo
+  // topR Solo - needs new track
+
   const handleSolo = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (x < 0 && Math.abs(x) < 94) {
+      const angle = -45; // angle in degrees
+      setX(Math.abs(x) * Math.tan((angle * Math.PI) / 180));
+      setY(Math.abs(x));
+    }
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    }
   };
 
   // right
   const handleStrSynth = ({ x }) => {
-    const plusPos = Math.abs(x);
-    if (x < 0 && x > -150) {
+    if (x < 0 && x > -200) {
       setX(x);
       setY(0);
     }
-    if (plusPos < 70 && x < 0) {
-      shardTrack.get(instrumentName).volume.value = plusPos;
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
     }
   };
 
   // fx1 bottomR
 
   const handlefx1 = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (x < 0 && Math.abs(x) < 94) {
+      const angle = 45; // angle in degrees
+      setX(x * Math.tan((angle * Math.PI) / 180));
+      setY(x);
+    }
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    }
   };
 
   // bottom
   const handleBassMain = ({ y }) => {
     const plusPos = Math.abs(y);
-    if (y < 0 && y > -200) {
+    if (y < 0 && y > -160) {
       setX(0);
       setY(y);
     }
@@ -116,16 +125,20 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // fx2 bottomR
+  // trackfx2 bottomL - track fx2 needs new track
   const handlefx2 = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (y < 0 && Math.abs(y) < 94) {
+      const angle = -45; // angle in degrees
+      setX(Math.abs(y));
+      setY(Math.abs(y) * Math.tan((angle * Math.PI) / 180));
+    }
+    if (Math.abs(x) < maxVolume && x > 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    }
   };
   // left
   const handleKeysMain = ({ x }) => {
-    if (x < 200 && x > 0) {
+    if (x < 220 && x > 0) {
       setX(x);
       setY(0);
     }
@@ -134,12 +147,16 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // baseStartMain bottomL
+  // baseStartMain topL
   const handlebaseStartMain = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (y > 0 && y < 94) {
+      const angle = 45; // angle in degrees
+      setX(y);
+      setY(y * Math.tan((angle * Math.PI) / 180));
+    }
+    if (Math.abs(x) < 60 && x > 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    } 
   };
 
   const getSoundHandler = soundName => {
