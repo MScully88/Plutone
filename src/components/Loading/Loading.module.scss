@@ -106,43 +106,60 @@
 
 // Media Queries for the loading page
 
-/* Extra small devices (phones, 600px and down) */
+// Extra small devices (phones, 600px and down)
+
 @media only screen and (max-width: 600px) {
   .loadingContainer__title {
-    left: 45%;
+    left: 40%;
     font-size: 1.5em;
   }
 
   .loadingContainer__loadBars {
     height: 50%;
     width: 50%;
-    left: 45%;
+    left: 40%;
   }
 }
 
-/* Medium devices (landscape tablets, 601px and up) */
+// Medium devices (laptops/desktops, 601px and 992px)
 
-@media only screen and (min-width: 601px) and (max-width: 992px) {
+@media (min-width: 601px) and (max-width: 992px) {
   .loadingContainer__title {
-    left: 42vw;
+    left: 42%;
     font-size: 1.7em;
+  }
+
+  .loadingContainer__loadBars {
+    height: 60%;
+    width: 60%;
+    left: 43%;
+  }
+}
+
+// Large devices (laptops/desktops, 993px and 1200px)
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .loadingContainer__title {
+    left: 42%;
+    font-size: 1.7rem;
   }
 
   .loadingContainer__loadBars {
     height: 75%;
     width: 75%;
-    left: 43vw;
+    left: 43%;
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
+// Extra large devices (large laptops and desktops, 1201px and up)
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 1201px) {
   .loadingContainer__title {
-    left: 42.5vw;
+    left: 44%;
+    font-size: 1.9em;
   }
 
   .loadingContainer__loadBars {
-    left: 43vw;
+    left: 45%;
   }
 }
