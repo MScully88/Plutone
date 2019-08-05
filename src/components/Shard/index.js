@@ -78,10 +78,11 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // topR Solo
 
   const handleSolo = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (x < 0 && Math.abs(x) < 94) {
+      const angle = -45; // angle in degrees
+      setX(Math.abs(x) * Math.tan((angle * Math.PI) / 180));
+      setY(Math.abs(x));
+    }
   };
 
   // right
@@ -99,10 +100,11 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // fx1 bottomR
 
   const handlefx1 = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (x < 0 && Math.abs(x) < 94) {
+      const angle = 45; // angle in degrees
+      setX(x * Math.tan((angle * Math.PI) / 180));
+      setY(x);
+    }
   };
 
   // bottom
@@ -118,12 +120,13 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // fx2 bottomR
+  // trackfx2 bottomL
   const handlefx2 = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (y < 0 && Math.abs(y) < 94) {
+      const angle = -45; // angle in degrees
+      setX(Math.abs(y));
+      setY(Math.abs(y) * Math.tan((angle * Math.PI) / 180));
+    }
   };
   // left
   const handleKeysMain = ({ x }) => {
@@ -136,12 +139,13 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // baseStartMain bottomL
+  // baseStartMain topL
   const handlebaseStartMain = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (y > 0 && y < 94) {
+      const angle = 45; // angle in degrees
+      setX(y);
+      setY(y * Math.tan((angle * Math.PI) / 180));
+    }
   };
 
   const getSoundHandler = soundName => {
