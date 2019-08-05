@@ -103,3 +103,46 @@
     transform: scale(1);
   }
 }
+
+// Media Queries for the loading page
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .loadingContainer__title {
+    left: 45%;
+    font-size: 1.5em;
+  }
+
+  .loadingContainer__loadBars {
+    height: 50%;
+    width: 50%;
+    left: 45%;
+  }
+}
+
+/* Medium devices (landscape tablets, 601px and up) */
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .loadingContainer__title {
+    left: 42vw;
+    font-size: 1.7em;
+  }
+
+  .loadingContainer__loadBars {
+    height: 75%;
+    width: 75%;
+    left: 43vw;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+  .loadingContainer__title {
+    left: 42.5vw;
+  }
+
+  .loadingContainer__loadBars {
+    left: 43vw;
+  }
+}
