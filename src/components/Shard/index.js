@@ -154,9 +154,9 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
       setX(y);
       setY(y * Math.tan((angle * Math.PI) / 180));
     }
-    if (Math.abs(x) < 68 && x > 0) {
+    if (Math.abs(x) < 60 && x > 0) {
       shardTrack.get(instrumentName).volume.value = Math.abs(x);
-    }
+    } 
   };
 
   const getSoundHandler = soundName => {
