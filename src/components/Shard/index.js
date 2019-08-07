@@ -76,7 +76,6 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   };
 
   // topR Solo - needs new track
-
   const handleSolo = ({ x, y }) => {
     if (x < 0 && Math.abs(x) < 94) {
       const angle = -45; // angle in degrees
@@ -100,7 +99,6 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   };
 
   // fx1 bottomR
-
   const handlefx1 = ({ x, y }) => {
     if (x < 0 && Math.abs(x) < 94) {
       const angle = 45; // angle in degrees
@@ -156,7 +154,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
     if (Math.abs(x) < 60 && x > 0) {
       shardTrack.get(instrumentName).volume.value = Math.abs(x);
-    } 
+    }
   };
 
   const getSoundHandler = soundName => {
