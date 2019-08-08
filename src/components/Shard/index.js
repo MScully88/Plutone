@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Tone from 'tone';
-import { Group, Layer, Path } from 'react-konva';
+import { Group, Path } from 'react-konva';
 import {
   moveBassMainBottom,
   moveDrumsMainTop,
@@ -38,7 +38,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
 
   useEffect(() => {
     if (instrumentName === 'drumsMain') {
-      moveDrumsMainTop(layerEL.current, isDrag);
+      moveDrumsMainTop(layerEL.current, inputEL.current);
     }
     if (instrumentName === 'synthStr') {
       moveSynthStrRight(layerEL.current);
@@ -197,7 +197,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   return (
     <>
       {/* //this targets the node to trigger animation */}
-      <Layer ref={layerEL}>
+      <Group ref={layerEL}>
         <Group
           draggable
           // pos gives x and y values on mouse drag event
@@ -236,7 +236,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
             );
           })}
         </Group>
-      </Layer>
+      </Group>
     </>
   );
 };
