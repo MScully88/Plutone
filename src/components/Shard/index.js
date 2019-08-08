@@ -113,7 +113,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // bottom
   const handleBassMain = ({ y }) => {
     const plusPos = Math.abs(y);
-    if (y < 0 && y > -160) {
+    if (y < 0 && y > -150) {
       setX(0);
       setY(y);
     }
