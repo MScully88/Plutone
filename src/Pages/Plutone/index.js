@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
-import { Stage } from 'react-konva';
+import { Stage, Layer } from 'react-konva';
 import styles from './Plutone.module.scss';
 import Shard from '../../components/Shard';
 import {
@@ -72,27 +72,24 @@ const Plutone = ({ shardTrack }) => {
   return (
     <>
       <div id={styles.plutoneContainer} className={styles.stars}>
-        <Stage
-          className={styles.stageInnerContainer}
-          width={window.innerWidth}
-          height={window.innerHeight}
-          scaleX={containerScale}
-          scaleY={containerScale}
-        >
-          {moonArray.map((moon, index) => {
-            return <Moon key={uuid(index)} moon={moon} moonName={moonName[index]} />;
-          })}
-          {instrumentArray.map((instrument, index) => {
-            return (
-              <Shard
-                key={uuid(index)}
-                instrumentIndex={index}
-                instrumentName={instrument}
-                shardTrack={shardTrack}
-                shapeObject={objectArray}
-              />
-            );
-          })}
+        <Stage width={780} height={820} className={styles.stageInnerContainer}>
+          <Layer>
+            {moonArray.map((moon, index) => {
+              return <Moon key={uuid(index)} moon={moon} moonName={moonName[index]} />;
+            })}
+
+            {instrumentArray.map((instrument, index) => {
+              return (
+                <Shard
+                  key={uuid(index)}
+                  instrumentIndex={index}
+                  instrumentName={instrument}
+                  shardTrack={shardTrack}
+                  shapeObject={objectArray}
+                />
+              );
+            })}
+          </Layer>
         </Stage>
       </div>
     </>
