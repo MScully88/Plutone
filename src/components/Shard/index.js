@@ -156,7 +156,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
     if (Math.abs(x) < 60 && x > 0) {
       shardTrack.get(instrumentName).volume.value = Math.abs(x);
-    } 
+    }
   };
 
   const getSoundHandler = soundName => {
@@ -222,21 +222,40 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
             setDrag(false);
           }}
         >
-          {shard.map(({ x, y, data, fill, stroke, strokeWidth, scale }, index) => {
-            return (
-              <Path
-                ref={inputEL}
-                key={instrumentName + index}
-                x={x}
-                y={y}
-                data={data}
-                fill={fill}
-                stroke={stroke}
-                strokeWidth={strokeWidth}
-                scale={scale}
-              />
-            );
-          })}
+          {shard.map(
+            (
+              {
+                x,
+                y,
+                data,
+                fill,
+                stroke,
+                strokeWidth,
+                scale,
+                fillLinearGradientStartPoint,
+                fillLinearGradientEndPoint,
+                fillLinearGradientColorStops,
+              },
+              index,
+            ) => {
+              return (
+                <Path
+                  ref={inputEL}
+                  key={instrumentName + index}
+                  x={x}
+                  y={y}
+                  data={data}
+                  fill={fill}
+                  stroke={stroke}
+                  strokeWidth={strokeWidth}
+                  scale={scale}
+                  fillLinearGradientStartPoint={fillLinearGradientStartPoint}
+                  fillLinearGradientEndPoint={fillLinearGradientEndPoint}
+                  fillLinearGradientColorStops={fillLinearGradientColorStops}
+                />
+              );
+            },
+          )}
         </Group>
       </Layer>
     </>
