@@ -1,6 +1,4 @@
 import Konva from 'konva';
-
-// const stageWidth = 700;
 // Horizontal Movement Functionality
 // Left
 const moveKeysMainLeft = layer => {
@@ -38,7 +36,7 @@ const moveDrumsMainTop = layer => {
 
 // // Bottom
 const moveBassMainBottom = layer => {
-  const amplitudeBottom = 15;
+  const amplitudeBottom = 12;
   const periodBottom = 9000;
   const centerXBottom = 8.75;
   const animBottom = new Konva.Animation(frame => {
