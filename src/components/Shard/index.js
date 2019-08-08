@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Tone from 'tone';
-import { Group, Layer, Path } from 'react-konva';
+import { Group, Path } from 'react-konva';
 import {
   moveBassMainBottom,
   moveDrumsMainTop,
@@ -38,7 +38,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
 
   useEffect(() => {
     if (instrumentName === 'drumsMain') {
-      moveDrumsMainTop(layerEL.current, isDrag);
+      moveDrumsMainTop(layerEL.current, inputEL.current);
     }
     if (instrumentName === 'synthStr') {
       moveSynthStrRight(layerEL.current);
@@ -76,7 +76,6 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   };
 
   // topR Solo - needs new track
-
   const handleSolo = ({ x, y }) => {
     if (x < 0 && Math.abs(x) < 94) {
       const angle = -45; // angle in degrees
@@ -100,7 +99,6 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   };
 
   // fx1 bottomR
-
   const handlefx1 = ({ x, y }) => {
     if (x < 0 && Math.abs(x) < 94) {
       const angle = 45; // angle in degrees
@@ -115,7 +113,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // bottom
   const handleBassMain = ({ y }) => {
     const plusPos = Math.abs(y);
-    if (y < 0 && y > -160) {
+    if (y < 0 && y > -150) {
       setX(0);
       setY(y);
     }
@@ -156,7 +154,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
     if (Math.abs(x) < 60 && x > 0) {
       shardTrack.get(instrumentName).volume.value = Math.abs(x);
-    } 
+    }
   };
 
   const getSoundHandler = soundName => {
@@ -199,7 +197,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   return (
     <>
       {/* //this targets the node to trigger animation */}
-      <Layer ref={layerEL}>
+      <Group ref={layerEL}>
         <Group
           draggable
           // pos gives x and y values on mouse drag event
@@ -222,23 +220,42 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
             setDrag(false);
           }}
         >
-          {shard.map(({ x, y, data, fill, stroke, strokeWidth, scale }, index) => {
-            return (
-              <Path
-                ref={inputEL}
-                key={instrumentName + index}
-                x={x}
-                y={y}
-                data={data}
-                fill={fill}
-                stroke={stroke}
-                strokeWidth={strokeWidth}
-                scale={scale}
-              />
-            );
-          })}
+          {shard.map(
+            (
+              {
+                x,
+                y,
+                data,
+                fill,
+                stroke,
+                strokeWidth,
+                scale,
+                fillLinearGradientStartPoint,
+                fillLinearGradientEndPoint,
+                fillLinearGradientColorStops,
+              },
+              index,
+            ) => {
+              return (
+                <Path
+                  ref={inputEL}
+                  key={instrumentName + index}
+                  x={x}
+                  y={y}
+                  data={data}
+                  fill={fill}
+                  stroke={stroke}
+                  strokeWidth={strokeWidth}
+                  scale={scale}
+                  fillLinearGradientStartPoint={fillLinearGradientStartPoint}
+                  fillLinearGradientEndPoint={fillLinearGradientEndPoint}
+                  fillLinearGradientColorStops={fillLinearGradientColorStops}
+                />
+              );
+            },
+          )}
         </Group>
-      </Layer>
+      </Group>
     </>
   );
 };
