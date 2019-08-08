@@ -110,7 +110,7 @@ const Moon = ({ moon, moonName, shardTrack }) => {
 };
 
 Moon.propTypes = {
-  moon: PropTypes.object,
+  moon: PropTypes.array,
   moonName: PropTypes.string,
   shardTrack: PropTypes.object,
 };
