@@ -1,20 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
 import Tone from 'tone';
-import { Layer, Path, Group } from 'react-konva';
+import { Path, Group } from 'react-konva';
 import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moving-moons';
-import Shard from '../Shard';
 
 const Moon = ({ moon, moonName, shardTrack }) => {
-  const [filter, setFilter] = useState(null);
   const [wetPingPong, setWetPingPong] = useState(0);
 
-  useEffect(() => {
-    const filter = new Tone.Filter(1000, 'highpass').toMaster();
-    // filter.start()
-    const wet = new Tone.Effect(0.5);
-    const track = filter.chain(wet, Tone.Master);
-  }, []);
+  useEffect(() => {}, []);
 
   const layerEL = useRef(null);
   useEffect(() => {
@@ -32,28 +26,28 @@ const Moon = ({ moon, moonName, shardTrack }) => {
     }
   }, []);
 
-  const handlefilterTopL = ({ x, y }) => {
+  const handlefilterTopL = ({ x }) => {
     const filterX = Math.abs(x) * 0.01;
     if (x < 1) {
       setWetPingPong(filterX);
     }
   };
 
-  const handleflangerTopR = ({ x, y }) => {
+  const handleflangerTopR = ({ x }) => {
     const filterX = Math.abs(x) * 0.01;
     if (x < 1) {
       setWetPingPong(filterX);
     }
   };
 
-  const handlefilterBottomR = ({ x, y }) => {
+  const handlefilterBottomR = ({ x }) => {
     const filterX = Math.abs(x) * 0.01;
     if (x < 1) {
       setWetPingPong(filterX);
     }
   };
 
-  const handleflangerBottomL = ({ x, y }) => {
+  const handleflangerBottomL = ({ x }) => {
     const filterX = Math.abs(x) * 0.01;
     if (x < 1) {
       setWetPingPong(filterX);
@@ -78,7 +72,7 @@ const Moon = ({ moon, moonName, shardTrack }) => {
   };
 
   return (
-    <Layer ref={layerEL}>
+    <Group ref={layerEL}>
       <Group
         draggable
         dragBoundFunc={pos => {
@@ -111,8 +105,14 @@ const Moon = ({ moon, moonName, shardTrack }) => {
           );
         })}
       </Group>
-    </Layer>
+    </Group>
   );
+};
+
+Moon.propTypes = {
+  moon: PropTypes.object,
+  moonName: PropTypes.string,
+  shardTrack: PropTypes.object,
 };
 
 export default Moon;
