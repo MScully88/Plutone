@@ -9,17 +9,12 @@ const Moon = ({ moon, moonName, shardTrack }) => {
   const [filter, setFilter] = useState(null);
   const [wetPingPong, setWetPingPong] = useState(0);
 
-  // useEffect(() => {
-  //   // const pingPong = new Tone.PingPongDelay('4n', 0.5).toMaster().start();
-  //   // const autoWah = new Tone.AutoWah(50, 6, -30).toMaster().start();
-  //   // // initialize the synth and connect to autowah
-  //   // autoWah.wet.value = wetPingPong;
-  //   // shardTrack.chain(autoWah);
-  //   const pingPong = new Tone.AutoWah(50, 6, -30).toMaster();
-  //   pingPong.wet.value = wetPingPong;
-  //   // const pingPong = new Tone.Effect();
-  //   const drum = shardTrack.connect(pingPong);
-  // }, [wetPingPong]);
+  useEffect(() => {
+    const filter = new Tone.Filter(1000, 'highpass').toMaster();
+    // filter.start()
+    const wet = new Tone.Effect(0.5);
+    const track = filter.chain(wet, Tone.Master);
+  }, []);
 
   const layerEL = useRef(null);
   useEffect(() => {
@@ -50,7 +45,7 @@ const Moon = ({ moon, moonName, shardTrack }) => {
       setWetPingPong(filterX);
     }
   };
-  
+
   const handlefilterBottomR = ({ x, y }) => {
     const filterX = Math.abs(x) * 0.01;
     if (x < 1) {
@@ -65,18 +60,18 @@ const Moon = ({ moon, moonName, shardTrack }) => {
     }
   };
 
-  const getMoonHandler = moonName => {
+  const getMoonHandler = moonNameString => {
     let handler = null;
-    if (moonName === 'filterTopL') {
+    if (moonNameString === 'filterTopL') {
       handler = handlefilterTopL;
     }
-    if (moonName === 'flangerTopR') {
+    if (moonNameString === 'flangerTopR') {
       handler = handleflangerTopR;
     }
-    if (moonName === 'filterBottomR') {
+    if (moonNameString === 'filterBottomR') {
       handler = handlefilterBottomR;
     }
-    if (moonName === 'flangerBottomL') {
+    if (moonNameString === 'flangerBottomL') {
       handler = handleflangerBottomL;
     }
     return handler;
