@@ -43,6 +43,9 @@ const App = props => {
         },
       },
     ).toMaster();
+    const tremolo = new Tone.PingPongDelay().toMaster();
+    tremolo.wet.value = 0;
+    const newTrem = tracks.connect(tremolo).toMaster();
     trackLoad(tracks);
   });
 
