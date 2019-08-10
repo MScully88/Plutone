@@ -6,7 +6,7 @@ The musical planet Plutone has been split into mutliple pieces and has been spre
 
 > “The internet can seem like a mall at times, we need more spaces like parks and oceans”. – Ruth John
 
-##Usage
+## Usage
 
 As this was an experiment please feel free to use view code in order to see how all these
 element work together. For example how to play multiple tracks in Tone.JS using react.
@@ -37,8 +37,6 @@ src
 └── scss
     └── base
 ```
-
-## Usage
 
 1. **Pages**
 
