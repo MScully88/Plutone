@@ -18,6 +18,7 @@ import './App.module.scss';
 const App = props => {
   const [areTracksLoading, setTracksLoading] = useState(true);
   const [shardTrack, setShardTrack] = useState(null);
+  const [fx1Value, setfx1Value] = useState(null);
 
   const trackLoad = trackObj => {
     if (shardTrack === null) setShardTrack(trackObj);
@@ -43,9 +44,7 @@ const App = props => {
         },
       },
     ).toMaster();
-    const tremolo = new Tone.PingPongDelay().toMaster();
-    tremolo.wet.value = 0;
-    const newTrem = tracks.connect(tremolo).toMaster();
+
     trackLoad(tracks);
   });
 
