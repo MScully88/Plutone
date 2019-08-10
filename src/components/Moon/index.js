@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
-import Tone from 'tone';
 import { Path, Group } from 'react-konva';
 import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moving-moons';
 
-const Moon = ({ moon, moonName, shardTrack, handlefilterTopL, handleflangerTopR }) => {
-  const [fx1Amount, setfx1Amount] = useState(0);
-
+const Moon = ({
+  moon,
+  moonName,
+  handlefilterTopL,
+  handleflangerTopR,
+  handleflangerBottomL,
+  handlefilterBottomR,
+}) => {
   const layerEL = useRef(null);
   useEffect(() => {
     if (moonName === 'filterTopL') {
@@ -24,20 +28,6 @@ const Moon = ({ moon, moonName, shardTrack, handlefilterTopL, handleflangerTopR 
     }
   }, []);
 
-  const handlefilterBottomR = ({ x }) => {
-    const filterX = Math.abs(x) * 0.01;
-    if (x < 1) {
-      // setWetPingPong(filterX);
-    }
-  };
-
-  const handleflangerBottomL = ({ x }) => {
-    const filterX = Math.abs(x) * 0.01;
-    if (x < 1) {
-      // setWetPingPong(filterX);
-    }
-  };
-
   const getMoonHandler = (moonNameString, pos) => {
     let handler = null;
     if (moonNameString === 'filterTopL') {
@@ -47,16 +37,16 @@ const Moon = ({ moon, moonName, shardTrack, handlefilterTopL, handleflangerTopR 
       handler = handleflangerTopR(pos);
     }
     if (moonNameString === 'filterBottomR') {
-      handler = handlefilterBottomR;
+      handler = handlefilterBottomR(pos);
     }
     if (moonNameString === 'flangerBottomL') {
-      handler = handleflangerBottomL;
+      handler = handleflangerBottomL(pos);
     }
     return handler;
   };
 
   return (
-    <Group ref={layerEL} fx1Value={fx1Amount}>
+    <Group ref={layerEL}>
       <Group
         draggable
         dragBoundFunc={pos => {
@@ -97,6 +87,10 @@ Moon.propTypes = {
   moon: PropTypes.array,
   moonName: PropTypes.string,
   shardTrack: PropTypes.object,
+  handlefilterTopL: PropTypes.object,
+  handleflangerTopR: PropTypes.object,
+  handleflangerBottomL: PropTypes.object,
+  handlefilterBottomR: PropTypes.object,
 };
 
 export default Moon;
