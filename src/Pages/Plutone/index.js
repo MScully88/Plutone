@@ -45,6 +45,8 @@ const Plutone = ({ shardTrack }) => {
   ]);
   const [pingPongAmount, setPingPongAmount] = useState(0);
   const [chorusAmount, setChorusAmount] = useState(0);
+  const [jcReverbAmount, setjcReverbAmount] = useState(0);
+  const [pitchAmount, setPitchAmount] = useState(0);
   const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
   const [moonName] = useState(['filterTopL', 'flangerTopR', 'filterBottomR', 'flangerBottomL']);
 
@@ -58,7 +60,6 @@ const Plutone = ({ shardTrack }) => {
   const handlefilterTopL = ({ x }) => {
     const calcfx1 = Math.abs(x) * 0.1;
     const parsed = parseFloat(calcfx1).toFixed(2);
-    console.log(parsed);
     if (parsed <= 1) {
       pingPongAmount.wet.value = 1;
     }
@@ -73,7 +74,7 @@ const Plutone = ({ shardTrack }) => {
       octaves: 6,
       sensitivity: -20,
       Q: 8,
-      gain: 2,
+      gain: 0,
       follower: {
         attack: 0.2,
         release: 1,
@@ -87,12 +88,47 @@ const Plutone = ({ shardTrack }) => {
   const handleflangerTopR = ({ x }) => {
     const calcfx1 = Math.abs(x) * 0.1;
     const parsed = parseFloat(calcfx1).toFixed(2);
-    console.log(parsed);
     if (parsed > 1) {
       chorusAmount.wet.value = 0;
     }
     if (parsed < 1) {
       chorusAmount.wet.value = 1;
+    }
+  };
+
+  useEffect(() => {
+    const jcReverb = new Tone.JCReverb(0.7).toMaster();
+    setjcReverbAmount(jcReverb);
+    jcReverb.wet.value = 0;
+    const newFeedBack = shardTrack.connect(jcReverb).toMaster();
+  }, []);
+
+  const handlefilterBottomR = ({ x }) => {
+    const calcfx1 = Math.abs(x) * 0.1;
+    const parsed = parseFloat(calcfx1).toFixed(2);
+    if (parsed > 1) {
+      jcReverbAmount.wet.value = 0;
+    }
+    if (parsed < 1) {
+      jcReverbAmount.wet.value = 1;
+    }
+  };
+
+  useEffect(() => {
+    const pitchShift = new Tone.PitchShift(9).toMaster();
+    setPitchAmount(pitchShift);
+    pitchShift.wet.value = 0;
+    const newPhaser = shardTrack.connect(pitchShift).toMaster();
+  }, []);
+
+  const handleflangerBottomL = ({ x }) => {
+    const calcfx1 = Math.abs(x) * 0.1;
+    const parsed = parseFloat(calcfx1).toFixed(2);
+    if (parsed > 1) {
+      pitchAmount.wet.value = 0;
+    }
+    if (parsed < 1) {
+      pitchAmount.wet.value = 1;
     }
   };
 
@@ -110,6 +146,8 @@ const Plutone = ({ shardTrack }) => {
                   shardTrack={shardTrack}
                   handlefilterTopL={handlefilterTopL}
                   handleflangerTopR={handleflangerTopR}
+                  handlefilterBottomR={handlefilterBottomR}
+                  handleflangerBottomL={handleflangerBottomL}
                 />
               );
             })}
