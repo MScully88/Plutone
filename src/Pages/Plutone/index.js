@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
 import Tone from 'tone';
@@ -20,7 +21,6 @@ import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../he
 import Moon from '../../components/Moon';
 
 const Plutone = ({ shardTrack }) => {
-  const moonRef = useRef(null);
   const [instrumentArray] = useState([
     'drumsMain', // top
     'solo', // topR
@@ -43,12 +43,16 @@ const Plutone = ({ shardTrack }) => {
     baseStartMain,
     kickMain,
   ]);
+  // storing the Tone Effect Object to be manipulated later
   const [pingPongAmount, setPingPongAmount] = useState(0);
   const [chorusAmount, setChorusAmount] = useState(0);
   const [jcReverbAmount, setjcReverbAmount] = useState(0);
   const [pitchAmount, setPitchAmount] = useState(0);
+
   const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
   const [moonName] = useState(['filterTopL', 'flangerTopR', 'filterBottomR', 'flangerBottomL']);
+
+  const [isMuted, setMuted] = useState(false);
 
   useEffect(() => {
     const pingPong = new Tone.PingPongDelay('4n', 0.2).toMaster();
@@ -100,7 +104,7 @@ const Plutone = ({ shardTrack }) => {
     const jcReverb = new Tone.JCReverb(0.7).toMaster();
     setjcReverbAmount(jcReverb);
     jcReverb.wet.value = 0;
-    const newFeedBack = shardTrack.connect(jcReverb).toMaster();
+    const newjcReverb = shardTrack.connect(jcReverb).toMaster();
   }, []);
 
   const handlefilterBottomR = ({ x }) => {
@@ -118,7 +122,7 @@ const Plutone = ({ shardTrack }) => {
     const pitchShift = new Tone.PitchShift(9).toMaster();
     setPitchAmount(pitchShift);
     pitchShift.wet.value = 0;
-    const newPhaser = shardTrack.connect(pitchShift).toMaster();
+    const newPitchShift = shardTrack.connect(pitchShift).toMaster();
   }, []);
 
   const handleflangerBottomL = ({ x }) => {
@@ -132,9 +136,15 @@ const Plutone = ({ shardTrack }) => {
     }
   };
 
+  const muteTrack = () => {
+    setMuted(!isMuted);
+    Tone.Master.mute = isMuted;
+  };
+
   return (
     <>
       <div id={styles.plutoneContainer} className={styles.stars}>
+       {isMuted ? <button onClick={muteTrack}>Mute</button> : <button onClick={muteTrack}>Play</button>} 
         <Stage width={780} height={820} className={styles.stageInnerContainer}>
           <Layer>
             {moonArray.map((moon, index) => {

@@ -15,10 +15,9 @@ import Plutone from './Pages/Plutone';
 import Loading from './components/Loading';
 import './App.module.scss';
 
-const App = props => {
+const App = () => {
   const [areTracksLoading, setTracksLoading] = useState(true);
   const [shardTrack, setShardTrack] = useState(null);
-  const [fx1Value, setfx1Value] = useState(null);
 
   const trackLoad = trackObj => {
     if (shardTrack === null) setShardTrack(trackObj);

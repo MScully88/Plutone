@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
-import Tone from 'tone';
 import { Path, Group } from 'react-konva';
 import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moving-moons';
 
 const Moon = ({
   moon,
   moonName,
-  shardTrack,
   handlefilterTopL,
   handleflangerTopR,
   handleflangerBottomL,
@@ -89,6 +87,10 @@ Moon.propTypes = {
   moon: PropTypes.array,
   moonName: PropTypes.string,
   shardTrack: PropTypes.object,
+  handlefilterTopL: PropTypes.object,
+  handleflangerTopR: PropTypes.object,
+  handleflangerBottomL: PropTypes.object,
+  handlefilterBottomR: PropTypes.object,
 };
 
 export default Moon;
