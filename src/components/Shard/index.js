@@ -213,12 +213,6 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
             }
             return coordinates;
           }}
-          onDragMove={() => {
-            setDrag(true);
-          }}
-          onDragEnd={() => {
-            setDrag(false);
-          }}
         >
           {shard.map(
             (

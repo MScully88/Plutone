@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
+import Tone from 'tone';
 import { Stage, Layer } from 'react-konva';
 import styles from './Plutone.module.scss';
 import Shard from '../../components/Shard';
@@ -19,6 +20,7 @@ import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../he
 import Moon from '../../components/Moon';
 
 const Plutone = ({ shardTrack }) => {
+  const moonRef = useRef(null);
   const [instrumentArray] = useState([
     'drumsMain', // top
     'solo', // topR
@@ -41,33 +43,58 @@ const Plutone = ({ shardTrack }) => {
     baseStartMain,
     kickMain,
   ]);
-
+  const [pingPongAmount, setPingPongAmount] = useState(0);
+  const [chorusAmount, setChorusAmount] = useState(0);
   const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
   const [moonName] = useState(['filterTopL', 'flangerTopR', 'filterBottomR', 'flangerBottomL']);
-  const [containerScale, setContainerScale] = useState(null);
-  const fitStageIntoParentContainer = () => {
-    const CANVAS_VIRTUAL_WIDTH = 780;
-    const CANVAS_VIRTUAL_HEIGHT = 820;
-    // now you may want to make it visible even on small screens
-    // we can just scale it
-    const scale = Math.min(
-      window.innerWidth / CANVAS_VIRTUAL_WIDTH,
-      window.innerHeight / CANVAS_VIRTUAL_HEIGHT,
-    );
-    setContainerScale(scale);
-  };
 
-  const toggle = () => {
-    if (window.innerWidth < 780) {
-      fitStageIntoParentContainer();
+  useEffect(() => {
+    const pingPong = new Tone.PingPongDelay('4n', 0.2).toMaster();
+    setPingPongAmount(pingPong);
+    pingPong.wet.value = 0;
+    const newPingPong = shardTrack.connect(pingPong).toMaster();
+  }, []);
+
+  const handlefilterTopL = ({ x }) => {
+    const calcfx1 = Math.abs(x) * 0.1;
+    const parsed = parseFloat(calcfx1).toFixed(2);
+    console.log(parsed);
+    if (parsed <= 1) {
+      pingPongAmount.wet.value = 1;
+    }
+    if (parsed > 1) {
+      pingPongAmount.wet.value = 0;
     }
   };
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      toggle();
-    });
-  });
+    const chorus = new Tone.AutoWah({
+      baseFrequency: 50,
+      octaves: 6,
+      sensitivity: -20,
+      Q: 8,
+      gain: 2,
+      follower: {
+        attack: 0.2,
+        release: 1,
+      },
+    }).toMaster();
+    setChorusAmount(chorus);
+    chorus.wet.value = 0;
+    const newChorus = shardTrack.connect(chorus).toMaster();
+  }, []);
+
+  const handleflangerTopR = ({ x }) => {
+    const calcfx1 = Math.abs(x) * 0.1;
+    const parsed = parseFloat(calcfx1).toFixed(2);
+    console.log(parsed);
+    if (parsed > 1) {
+      chorusAmount.wet.value = 0;
+    }
+    if (parsed < 1) {
+      chorusAmount.wet.value = 1;
+    }
+  };
 
   return (
     <>
@@ -75,7 +102,16 @@ const Plutone = ({ shardTrack }) => {
         <Stage width={780} height={820} className={styles.stageInnerContainer}>
           <Layer>
             {moonArray.map((moon, index) => {
-              return <Moon key={uuid(index)} moon={moon} moonName={moonName[index]} />;
+              return (
+                <Moon
+                  key={uuid(index)}
+                  moon={moon}
+                  moonName={moonName[index]}
+                  shardTrack={shardTrack}
+                  handlefilterTopL={handlefilterTopL}
+                  handleflangerTopR={handleflangerTopR}
+                />
+              );
             })}
 
             {instrumentArray.map((instrument, index) => {

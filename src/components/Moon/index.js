@@ -5,10 +5,8 @@ import Tone from 'tone';
 import { Path, Group } from 'react-konva';
 import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../helpers/moving-moons';
 
-const Moon = ({ moon, moonName, shardTrack }) => {
-  const [wetPingPong, setWetPingPong] = useState(0);
-
-  useEffect(() => {}, []);
+const Moon = ({ moon, moonName, shardTrack, handlefilterTopL, handleflangerTopR }) => {
+  const [fx1Amount, setfx1Amount] = useState(0);
 
   const layerEL = useRef(null);
   useEffect(() => {
@@ -26,41 +24,27 @@ const Moon = ({ moon, moonName, shardTrack }) => {
     }
   }, []);
 
-  const handlefilterTopL = ({ x }) => {
-    const filterX = Math.abs(x) * 0.01;
-    if (x < 1) {
-      setWetPingPong(filterX);
-    }
-  };
-
-  const handleflangerTopR = ({ x }) => {
-    const filterX = Math.abs(x) * 0.01;
-    if (x < 1) {
-      setWetPingPong(filterX);
-    }
-  };
-
   const handlefilterBottomR = ({ x }) => {
     const filterX = Math.abs(x) * 0.01;
     if (x < 1) {
-      setWetPingPong(filterX);
+      // setWetPingPong(filterX);
     }
   };
 
   const handleflangerBottomL = ({ x }) => {
     const filterX = Math.abs(x) * 0.01;
     if (x < 1) {
-      setWetPingPong(filterX);
+      // setWetPingPong(filterX);
     }
   };
 
-  const getMoonHandler = moonNameString => {
+  const getMoonHandler = (moonNameString, pos) => {
     let handler = null;
     if (moonNameString === 'filterTopL') {
-      handler = handlefilterTopL;
+      handler = handlefilterTopL(pos);
     }
     if (moonNameString === 'flangerTopR') {
-      handler = handleflangerTopR;
+      handler = handleflangerTopR(pos);
     }
     if (moonNameString === 'filterBottomR') {
       handler = handlefilterBottomR;
@@ -72,7 +56,7 @@ const Moon = ({ moon, moonName, shardTrack }) => {
   };
 
   return (
-    <Group ref={layerEL}>
+    <Group ref={layerEL} fx1Value={fx1Amount}>
       <Group
         draggable
         dragBoundFunc={pos => {
@@ -80,13 +64,13 @@ const Moon = ({ moon, moonName, shardTrack }) => {
           const y = 0;
           const radius = 25;
           const scale = radius / Math.sqrt(Math.pow(pos.x - x, 2) + Math.pow(pos.y - y, 2));
-          getMoonHandler(moonName)(pos);
           if (scale < 1) {
             return {
               y: Math.round((pos.y - y) * scale + y),
               x: Math.round((pos.x - x) * scale + x),
             };
           }
+          getMoonHandler(moonName, pos);
           return pos;
         }}
       >
