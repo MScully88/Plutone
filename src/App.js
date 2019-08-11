@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Tone from 'tone';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import About from './Pages/About';
 import baseStartMain from './Sounds/Plutone_V2_16072019 baseStart.m4a';
 import solo from './Sounds/Plutone_V3_05082019 bassSolo.m4a';
 import bassMain from './Sounds/Plutone_V2_16072019 bass.m4a';
@@ -54,6 +55,7 @@ const App = () => {
         ) : (
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
             <Route
               path="/Plutone"
               render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}
