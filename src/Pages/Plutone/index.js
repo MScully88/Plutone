@@ -52,8 +52,6 @@ const Plutone = ({ shardTrack }) => {
   const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
   const [moonName] = useState(['filterTopL', 'flangerTopR', 'filterBottomR', 'flangerBottomL']);
 
-  const [isMuted, setMuted] = useState(false);
-
   useEffect(() => {
     const pingPong = new Tone.PingPongDelay('4n', 0.2).toMaster();
     setPingPongAmount(pingPong);
