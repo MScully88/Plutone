@@ -20,10 +20,10 @@ const App = () => {
   const [areTracksLoading, setTracksLoading] = useState(true);
   const [shardTrack, setShardTrack] = useState(null);
 
-  const trackLoad = trackObj => {
-    if (shardTrack === null) setShardTrack(trackObj);
-  };
   useEffect(() => {
+    const trackLoad = trackObj => {
+      if (shardTrack === null) setShardTrack(trackObj);
+    };
     const tracks = new Tone.Players(
       {
         drumsMain, // top
@@ -37,7 +37,7 @@ const App = () => {
         kickMain, // centre
       },
       {
-        volume: -90,
+        volume: -100,
         mute: false,
         onload: () => {
           setTracksLoading(false);
@@ -45,7 +45,7 @@ const App = () => {
       },
     ).toMaster();
     trackLoad(tracks);
-  });
+  }, [shardTrack]);
 
   return (
     <>
@@ -57,7 +57,7 @@ const App = () => {
             <Route path="/" exact component={Home} />
             <Route path="/about" exact component={About} />
             <Route
-              path="/Plutone"
+              path="/plutone"
               render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}
             />
           </Switch>
