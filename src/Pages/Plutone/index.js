@@ -136,15 +136,9 @@ const Plutone = ({ shardTrack }) => {
     }
   };
 
-  const muteTrack = () => {
-    setMuted(!isMuted);
-    Tone.Master.mute = isMuted;
-  };
-
   return (
     <>
       <div id={styles.plutoneContainer} className={styles.stars}>
-       {isMuted ? <button onClick={muteTrack}>Mute</button> : <button onClick={muteTrack}>Play</button>} 
         <Stage width={780} height={820} className={styles.stageInnerContainer}>
           <Layer>
             {moonArray.map((moon, index) => {

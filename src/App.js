@@ -43,7 +43,6 @@ const App = () => {
         },
       },
     ).toMaster();
-
     trackLoad(tracks);
   });
 
