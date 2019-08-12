@@ -17,6 +17,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // useRef to target node element of the shapes
   const inputEL = useRef(null);
   const layerEL = useRef(null);
+  const groupEL = useRef(null);
   // eslint-disable-next-line no-unused-vars // if kick play straight away
   const [isKickMain, setKickMainValue] = useState(false);
   // setting x and y dependent on what handle is being triggered
@@ -194,11 +195,34 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     return handler;
   };
 
+  const changeSize = () => {
+    groupEL.current.to({
+      scaleX: 1.05,
+      scaleY: 1.05,
+      duration: 0.2,
+      offsetX: 15,
+      offsetY: 15,
+    });
+    // to() is a method of `Konva.Node` instances
+  };
+
+  const returnSize = () => {
+    // to() is a method of `Konva.Node` instances
+    groupEL.current.to({
+      scaleX: 1.0,
+      scaleY: 1.0,
+      duration: 0.2,
+      offsetX: 0,
+      offsetY: 0,
+    });
+  };
+
   return (
     <>
       {/* //this targets the node to trigger animation */}
       <Group ref={layerEL}>
         <Group
+          ref={groupEL}
           draggable
           // pos gives x and y values on mouse drag event
           dragBoundFunc={pos => {
@@ -213,6 +237,8 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
             }
             return coordinates;
           }}
+          onDragEnd={returnSize}
+          onDragStart={changeSize}
         >
           {shard.map(
             (
