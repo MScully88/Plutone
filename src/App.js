@@ -11,6 +11,7 @@ import drumsMain from './Sounds/Plutone_V2_16072019 drums.m4a';
 import fx1 from './Sounds/Plutone_V2_16072019 FX.m4a';
 import fx2 from './Sounds/Plutone_V3_05082019 fx2.m4a';
 import Home from './Pages/Home';
+import About from './Pages/About';
 import Plutone from './Pages/Plutone';
 import Loading from './components/Loading';
 import './App.module.scss';
@@ -55,6 +56,7 @@ const App = () => {
         ) : (
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/About" exact component={About} />
             <Route
               path="/Plutone"
               render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}
