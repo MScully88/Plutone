@@ -52,14 +52,12 @@ const Plutone = ({ shardTrack }) => {
   const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
   const [moonName] = useState(['filterTopL', 'flangerTopR', 'filterBottomR', 'flangerBottomL']);
 
-  const [isMuted, setMuted] = useState(false);
-
   useEffect(() => {
     const pingPong = new Tone.PingPongDelay('4n', 0.2).toMaster();
     setPingPongAmount(pingPong);
     pingPong.wet.value = 0;
     const newPingPong = shardTrack.connect(pingPong).toMaster();
-  }, []);
+  }, [shardTrack]);
 
   const handlefilterTopL = ({ x }) => {
     const calcfx1 = Math.abs(x) * 0.1;
@@ -87,7 +85,7 @@ const Plutone = ({ shardTrack }) => {
     setChorusAmount(chorus);
     chorus.wet.value = 0;
     const newChorus = shardTrack.connect(chorus).toMaster();
-  }, []);
+  }, [shardTrack]);
 
   const handleflangerTopR = ({ x }) => {
     const calcfx1 = Math.abs(x) * 0.1;
@@ -105,7 +103,7 @@ const Plutone = ({ shardTrack }) => {
     setjcReverbAmount(jcReverb);
     jcReverb.wet.value = 0;
     const newjcReverb = shardTrack.connect(jcReverb).toMaster();
-  }, []);
+  }, [shardTrack]);
 
   const handlefilterBottomR = ({ x }) => {
     const calcfx1 = Math.abs(x) * 0.1;
@@ -123,7 +121,7 @@ const Plutone = ({ shardTrack }) => {
     setPitchAmount(pitchShift);
     pitchShift.wet.value = 0;
     const newPitchShift = shardTrack.connect(pitchShift).toMaster();
-  }, []);
+  }, [shardTrack]);
 
   const handleflangerBottomL = ({ x }) => {
     const calcfx1 = Math.abs(x) * 0.1;
@@ -136,15 +134,9 @@ const Plutone = ({ shardTrack }) => {
     }
   };
 
-  const muteTrack = () => {
-    setMuted(!isMuted);
-    Tone.Master.mute = isMuted;
-  };
-
   return (
     <>
       <div id={styles.plutoneContainer} className={styles.stars}>
-       {isMuted ? <button onClick={muteTrack}>Mute</button> : <button onClick={muteTrack}>Play</button>} 
         <Stage width={780} height={820} className={styles.stageInnerContainer}>
           <Layer>
             {moonArray.map((moon, index) => {

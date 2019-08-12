@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
 import { Path, Group } from 'react-konva';
@@ -26,7 +26,7 @@ const Moon = ({
     if (moonName === 'flangerBottomL') {
       flangerBottomL(layerEL.current);
     }
-  }, []);
+  }, [moonName]);
 
   const getMoonHandler = (moonNameString, pos) => {
     let handler = null;
