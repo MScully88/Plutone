@@ -28,6 +28,9 @@ const Home = () => {
         <Link className={styles.homeContainer__links} to="/Plutone">
           E N T E R
         </Link>
+        <Link className={styles.homeContainer__links2} to="/About">
+          About
+        </Link>
       </div>
       <div className={styles.homeContainer__image}>
         <img src={Logo} alt="logo" />
