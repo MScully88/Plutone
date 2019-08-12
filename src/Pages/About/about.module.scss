@@ -1,0 +1,34 @@
+.container {
+  border: 1px solid black;
+  justify-content: center;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+}
+
+.splash {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 20px;
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+  quote {
+    margin-top: 20px;
+  }
+}
+.nav {
+  background: black;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  border: 1px solid black;
+  width: 100%;
+}

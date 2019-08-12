@@ -87,10 +87,10 @@ Moon.propTypes = {
   moon: PropTypes.array,
   moonName: PropTypes.string,
   shardTrack: PropTypes.object,
-  handlefilterTopL: PropTypes.object,
-  handleflangerTopR: PropTypes.object,
-  handleflangerBottomL: PropTypes.object,
-  handlefilterBottomR: PropTypes.object,
+  handlefilterTopL: PropTypes.func,
+  handleflangerTopR: PropTypes.func,
+  handleflangerBottomL: PropTypes.func,
+  handlefilterBottomR: PropTypes.func,
 };
 
 export default Moon;

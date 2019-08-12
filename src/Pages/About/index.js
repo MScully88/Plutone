@@ -5,14 +5,16 @@ import styles from './about.module.scss';
 const About = () => {
   return (
     <div className={styles.container}>
-      <nav>
+      <nav className={styles.nav}>
         <Link to="/">Home</Link>
       </nav>
-      <h1>About</h1>
-      <quote>
-        “The internet can seem like a mall at times, we need more spaces like parks and oceans”. –
-        Ruth John
-      </quote>
+      <div className={styles.splash}>
+        <h1>About</h1>
+        <quote>
+          “The internet can seem like a mall at times, we need more spaces like parks and oceans”. –
+          Ruth John
+        </quote>
+      </div>
       <section>
         <h2>What is it?</h2>
         <p>
