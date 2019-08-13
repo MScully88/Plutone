@@ -1,34 +1,107 @@
-.container {
-  border: 1px solid black;
-  justify-content: center;
-  display: flex;
-  height: auto;
-  flex-direction: column;
+@import '../../scss/base/index.scss';
+
+html {
+  overflow: auto;
 }
 
-.splash {
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-
-  margin: 20px;
-  h1 {
-    width: 100%;
-    text-align: center;
-  }
-  quote {
-    margin-top: 20px;
-  }
-}
-.nav {
-  background: black;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.aboutContainer {
+  background-color: #f8f8ff;
+  min-height: 100vh;
+  color: #212121;
 }
 
-section {
-  border: 1px solid black;
-  width: 100%;
+// About container
+
+.about {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  width: 75vw;
+  padding: 15vh;
+  margin-top: 3%;
+  margin-left: 5vw;
+  background-color: #cdcdcd;
+}
+
+// About title
+
+.title {
+  position: absolute;
+  font-size: 2.5rem;
+  left: 10%;
+  top: 45%;
+}
+
+// About text
+
+.text {
+  position: absolute;
+  left: 40%;
+  top: 45%;
+  right: 10%;
+}
+
+// Team
+
+.theTeam {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  width: 75vw;
+  padding: 15vh;
+  margin-top: 3%;
+  margin-left: 5vw;
+  margin-bottom: 3%;
+  background-color: #dcdcda;
+}
+
+// Team title
+
+.theTeam_title {
+  font-size: 2.5rem;
+  position: absolute;
+  left: 75%;
+  top: 130%;
+}
+
+// Team text
+
+.theTeam_text {
+  // margin-top: 10vh;
+  margin-right: 30vw;
+  position: absolute;
+  top: 130%;
+}
+
+// Info
+
+.info {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  width: 75vw;
+  padding: 15vh;
+  margin-top: 3%;
+  margin-left: 5vw;
+  margin-bottom: 3%;
+  background-color: #cdcdcd;
+}
+
+// Info title
+
+.info_title {
+  font-size: 2.5rem;
+  position: absolute;
+  left: 10%;
+  top: 215%;
+}
+
+// Info text
+
+.info_text {
+  // margin-top: 10vh;
+  margin-right: 30vw;
+  position: absolute;
+  top: 215%;
+  left: 30%;
 }
