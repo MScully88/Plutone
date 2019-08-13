@@ -55,7 +55,7 @@ const App = () => {
         ) : (
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/about" exact component={About} />
+            <Route path="/About" exact component={About} />
             <Route
               path="/plutone"
               render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}

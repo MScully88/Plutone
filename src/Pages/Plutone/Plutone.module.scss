@@ -1,5 +1,9 @@
 @import '../../scss/base/index.scss';
 
+html {
+  overflow: hidden;
+}
+
 #plutoneContainer {
   background: linear-gradient;
   animation: bg 20s infinite;

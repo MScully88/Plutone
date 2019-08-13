@@ -1,0 +1,107 @@
+@import '../../scss/base/index.scss';
+
+html {
+  overflow: auto;
+}
+
+.aboutContainer {
+  background-color: #f8f8ff;
+  min-height: 100vh;
+  color: #212121;
+}
+
+// About container
+
+.about {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  width: 75vw;
+  padding: 15vh;
+  margin-top: 3%;
+  margin-left: 5vw;
+  background-color: #cdcdcd;
+}
+
+// About title
+
+.title {
+  position: absolute;
+  font-size: 2.5rem;
+  left: 10%;
+  top: 45%;
+}
+
+// About text
+
+.text {
+  position: absolute;
+  left: 40%;
+  top: 45%;
+  right: 10%;
+}
+
+// Team
+
+.theTeam {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  width: 75vw;
+  padding: 15vh;
+  margin-top: 3%;
+  margin-left: 5vw;
+  margin-bottom: 3%;
+  background-color: #dcdcda;
+}
+
+// Team title
+
+.theTeam_title {
+  font-size: 2.5rem;
+  position: absolute;
+  left: 75%;
+  top: 130%;
+}
+
+// Team text
+
+.theTeam_text {
+  // margin-top: 10vh;
+  margin-right: 30vw;
+  position: absolute;
+  top: 130%;
+}
+
+// Info
+
+.info {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  width: 75vw;
+  padding: 15vh;
+  margin-top: 3%;
+  margin-left: 5vw;
+  margin-bottom: 3%;
+  background-color: #cdcdcd;
+}
+
+// Info title
+
+.info_title {
+  font-size: 2.5rem;
+  position: absolute;
+  left: 10%;
+  top: 215%;
+}
+
+// Info text
+
+.info_text {
+  // margin-top: 10vh;
+  margin-right: 30vw;
+  position: absolute;
+  top: 215%;
+  left: 30%;
+}
