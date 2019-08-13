@@ -1,9 +1,5 @@
 @import '../../scss/base/index.scss';
 
-// html {
-//   overflow: auto;
-// }
-
 .aboutContainer {
   background-color: white;
   min-height: 100vh;
@@ -70,16 +66,14 @@
 
 .claudio {
   position: absolute;
-  // height: 30%;
   top: 55%;
   left: 78%;
-  // margin-top: 5vh;
   display: block;
   width: 50%;
   height: auto;
 }
 
-// image on hover
+// claudio on hover
 
 .image:hover .overlay {
   opacity: 1;
@@ -112,14 +106,14 @@
   background-color: white;
 }
 
-// Image2 container
+// michael container
 
 .image2 {
   position: relative;
   width: 50%;
 }
 
-// Image on hover
+// michael on hover
 
 .image2:hover .overlay2 {
   opacity: 1;
@@ -129,10 +123,8 @@
 
 .michael {
   position: absolute;
-  // height: 30%;
   top: 55%;
   left: 30%;
-  // margin-top: 5vh;
   display: block;
   width: 50%;
   height: auto;
@@ -152,7 +144,7 @@
   text-align: center;
 }
 
-// Michael overlay
+// michael overlay
 
 .overlay2 {
   position: absolute;
