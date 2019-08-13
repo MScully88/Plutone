@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Plutone/static/css/main.9a53673b.chunk.css",
+    "main.js": "/Plutone/static/js/main.20c7c700.chunk.js",
+    "main.js.map": "/Plutone/static/js/main.20c7c700.chunk.js.map",
+    "runtime~main.js": "/Plutone/static/js/runtime~main.847df09e.js",
+    "runtime~main.js.map": "/Plutone/static/js/runtime~main.847df09e.js.map",
+    "static/js/2.252d363c.chunk.js": "/Plutone/static/js/2.252d363c.chunk.js",
+    "static/js/2.252d363c.chunk.js.map": "/Plutone/static/js/2.252d363c.chunk.js.map",
+    "index.html": "/Plutone/index.html",
+    "precache-manifest.4b302860d93fa1e5315d00913f362579.js": "/Plutone/precache-manifest.4b302860d93fa1e5315d00913f362579.js",
+    "service-worker.js": "/Plutone/service-worker.js",
+    "static/css/main.9a53673b.chunk.css.map": "/Plutone/static/css/main.9a53673b.chunk.css.map",
+    "static/media/LowAmb_V3.mp3": "/Plutone/static/media/LowAmb_V3.584122a8.mp3",
+    "static/media/Plutone_V2_16072019 FX.m4a": "/Plutone/static/media/Plutone_V2_16072019 FX.3ef2ca93.m4a",
+    "static/media/Plutone_V2_16072019 baseStart.m4a": "/Plutone/static/media/Plutone_V2_16072019 baseStart.c99a561c.m4a",
+    "static/media/Plutone_V2_16072019 bass.m4a": "/Plutone/static/media/Plutone_V2_16072019 bass.0aa74766.m4a",
+    "static/media/Plutone_V2_16072019 drums.m4a": "/Plutone/static/media/Plutone_V2_16072019 drums.9dbd2702.m4a",
+    "static/media/Plutone_V2_16072019 keys.m4a": "/Plutone/static/media/Plutone_V2_16072019 keys.0b2c68f1.m4a",
+    "static/media/Plutone_V2_16072019 kick.m4a": "/Plutone/static/media/Plutone_V2_16072019 kick.245d9d01.m4a",
+    "static/media/Plutone_V2_16072019 synthStr.m4a": "/Plutone/static/media/Plutone_V2_16072019 synthStr.47441fa4.m4a",
+    "static/media/Plutone_V3_05082019 bassSolo.m4a": "/Plutone/static/media/Plutone_V3_05082019 bassSolo.a2e3ec9e.m4a",
+    "static/media/Plutone_V3_05082019 fx2.m4a": "/Plutone/static/media/Plutone_V3_05082019 fx2.53a78098.m4a",
+    "static/media/claudio.jpg": "/Plutone/static/media/claudio.26a9a694.jpg",
+    "static/media/logo.svg": "/Plutone/static/media/logo.4426bba0.svg",
+    "static/media/michael.jpg": "/Plutone/static/media/michael.be4be8c9.jpg"
+  }
+}
