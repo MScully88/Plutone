@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Tone from 'tone';
 import { Group, Path } from 'react-konva';
+// import styles from './Shard.module.scss';
 import {
   moveBassMainBottom,
   moveDrumsMainTop,
@@ -26,6 +27,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // onMouseDrag start and end change this value
   const [isDrag, setDrag] = useState(false);
   // Array of objects with the paths for each layer
+
   const shard = shapeObject[instrumentIndex];
   const maxVolume = 70;
   // sets kick to play on render
@@ -207,7 +209,6 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   };
 
   const returnSize = () => {
-    // to() is a method of `Konva.Node` instances
     groupEL.current.to({
       scaleX: 1.0,
       scaleY: 1.0,
@@ -215,6 +216,10 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
       offsetX: 0,
       offsetY: 0,
     });
+  };
+
+  const handleOnDragEnd = y => {
+    returnSize();
   };
 
   return (
@@ -237,8 +242,10 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
             }
             return coordinates;
           }}
-          onDragEnd={returnSize}
           onDragStart={changeSize}
+          onDragEnd={pos => {
+            handleOnDragEnd(pos);
+          }}
         >
           {shard.map(
             (
