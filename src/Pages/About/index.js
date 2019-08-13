@@ -20,15 +20,24 @@ const About = () => {
           </p>
         </div>
         <h5 className={styles.title3}>Meet The Team</h5>
-        <div className={styles.images}>
+        <div className={styles.image}>
           <a href="https://github.com/ctocco">
             <img className={styles.claudio} src={Claudio} alt="Claudio" />
-            <div id="claudioName">
-              <h3>Claudio</h3>
+            <div className={styles.overlay}>
+              <div className={styles.name}>
+                <p>Claudio</p>
+              </div>
             </div>
           </a>
+        </div>
+        <div className={styles.image2}>
           <a href="https://github.com/MScully88">
             <img className={styles.michael} src={Michael} alt="Michael" />
+            <div className={styles.overlay2}>
+              <div className={styles.name2}>
+                <p>Michael</p>
+              </div>
+            </div>
           </a>
         </div>
       </div>
