@@ -61,36 +61,106 @@
 
 // Image container
 
-.images {
-  display: flex;
-  justify-content: space-between;
+.image {
+  position: relative;
+  width: 50%;
 }
 
 // claudio image
 
 .claudio {
   position: absolute;
-  height: 30%;
-  top: 50%;
-  left: 40%;
-  margin-top: 5vh;
-}
-
-#claudioName {
-  display: none;
-}
-
-.claudio:hover #claudioName {
+  // height: 30%;
+  top: 55%;
+  left: 78%;
+  // margin-top: 5vh;
   display: block;
+  width: 50%;
+  height: auto;
+}
+
+// image on hover
+
+.image:hover .overlay {
+  opacity: 1;
+}
+
+// claudio name
+
+.name {
   color: black;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+// claudio overlay
+
+.overlay {
+  position: absolute;
+  top: 55%;
+  left: 78%;
+  height: 32.8%;
+  width: 50%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: white;
+}
+
+// Image2 container
+
+.image2 {
+  position: relative;
+  width: 50%;
+}
+
+// Image on hover
+
+.image2:hover .overlay2 {
+  opacity: 1;
 }
 
 // michael image
 
 .michael {
   position: absolute;
-  height: 30%;
+  // height: 30%;
+  top: 55%;
+  left: 30%;
+  // margin-top: 5vh;
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+// michael name
+
+.name2 {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
   top: 50%;
-  left: 65%;
-  margin-top: 5vh;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+// Michael overlay
+
+.overlay2 {
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  height: 32.8%;
+  width: 50%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: white;
 }
