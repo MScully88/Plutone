@@ -55,6 +55,7 @@ const Plutone = ({ shardTrack }) => {
   useEffect(() => {
     const pingPong = new Tone.PingPongDelay('4n', 0.2).toMaster();
     setPingPongAmount(pingPong);
+    // wet equals the amount the effect is brought in from 0 to 1
     pingPong.wet.value = 0;
     const newPingPong = shardTrack.connect(pingPong).toMaster();
   }, [shardTrack]);
