@@ -1,51 +1,51 @@
 @import '../../scss/base/index.scss';
 
-.color {
-  color: $primary-color;
-}
+// .color {
+//   color: $primary-color;
+// }
 
-.slideContainer {
-  width: 100%;
-  height: 100%;
-}
+// .slideContainer {
+//   width: 100%;
+//   height: 100%;
+// }
 
-/* The slider itself */
-.slider {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 47vw;
-  height: 30vh;
-  background: transparent;
-  outline: none;
-  -moz-outline: none;
-  opacity: 0.8;
-}
+// /* The slider itself */
+// .slider {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   width: 47vw;
+//   height: 30vh;
+//   background: transparent;
+//   outline: none;
+//   -moz-outline: none;
+//   opacity: 0.8;
+// }
 
-// /* Mouse-over effects */
-.slider:hover {
-  opacity: 0.8; /* Fully shown on mouse-over */
-}
+// // /* Mouse-over effects */
+// .slider:hover {
+//   opacity: 0.8; /* Fully shown on mouse-over */
+// }
 
-// /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  -moz-appearance: none;
-  appearance: none;
-  width: 19vw;
-  height: 20vh;
-  background-image: url(./Images/shard.svg);
-  transform: rotate(180deg);
-  background-size: 99%;
-  background-repeat: none;
-  cursor: pointer;
-}
+// // /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+// .slider::-webkit-slider-thumb {
+//   -webkit-appearance: none; /* Override default look */
+//   -moz-appearance: none;
+//   appearance: none;
+//   width: 19vw;
+//   height: 20vh;
+//   background-image: url(./Images/shard.svg);
+//   transform: rotate(180deg);
+//   background-size: 99%;
+//   background-repeat: none;
+//   cursor: pointer;
+// }
 
-.slider::-moz-range-thumb {
-  -moz-appearance: none;
-  width: 25vw;
-  height: 30vh;
-  background-image: url(./Images/shard.svg);
-  transform: rotate(180deg);
-  background-size: 75%;
-  cursor: pointer;
-}
+// .slider::-moz-range-thumb {
+//   -moz-appearance: none;
+//   width: 25vw;
+//   height: 30vh;
+//   background-image: url(./Images/shard.svg);
+//   transform: rotate(180deg);
+//   background-size: 75%;
+//   cursor: pointer;
+// }
