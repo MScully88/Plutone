@@ -1,13 +1,14 @@
 @import '../../scss/base/index.scss';
 
-html {
-  overflow: auto;
-}
+// html {
+//   overflow: auto;
+// }
 
 .aboutContainer {
-  background-color: #f8f8ff;
+  background-color: white;
   min-height: 100vh;
   color: #212121;
+  animation: none;
 }
 
 // About container
@@ -15,10 +16,9 @@ html {
 .about {
   display: flex;
   flex-direction: row;
-  height: 50vh;
-  width: 75vw;
-  padding: 15vh;
-  margin-top: 3%;
+  height: 90vh;
+  width: 90vw;
+  margin-top: 5vh;
   margin-left: 5vw;
   background-color: #cdcdcd;
 }
@@ -29,7 +29,16 @@ html {
   position: absolute;
   font-size: 2.5rem;
   left: 10%;
-  top: 45%;
+  top: 50%;
+}
+
+// About title 2
+
+.title2 {
+  position: absolute;
+  top: 19%;
+  left: 40%;
+  font-size: 1.8rem;
 }
 
 // About text
@@ -37,71 +46,51 @@ html {
 .text {
   position: absolute;
   left: 40%;
-  top: 45%;
+  top: 25%;
   right: 10%;
 }
 
-// Team
+// About title 3
 
-.theTeam {
+.title3 {
+  position: absolute;
+  top: 47%;
+  left: 40%;
+  font-size: 1.8rem;
+}
+
+// Image container
+
+.images {
   display: flex;
-  flex-direction: row;
-  height: 50vh;
-  width: 75vw;
-  padding: 15vh;
-  margin-top: 3%;
-  margin-left: 5vw;
-  margin-bottom: 3%;
-  background-color: #dcdcda;
+  justify-content: space-between;
 }
 
-// Team title
+// claudio image
 
-.theTeam_title {
-  font-size: 2.5rem;
+.claudio {
   position: absolute;
-  left: 75%;
-  top: 130%;
+  height: 30%;
+  top: 50%;
+  left: 40%;
+  margin-top: 5vh;
 }
 
-// Team text
+#claudioName {
+  display: none;
+}
 
-.theTeam_text {
-  // margin-top: 10vh;
-  margin-right: 30vw;
+.claudio:hover #claudioName {
+  display: block;
+  color: black;
+}
+
+// michael image
+
+.michael {
   position: absolute;
-  top: 130%;
-}
-
-// Info
-
-.info {
-  display: flex;
-  flex-direction: row;
-  height: 50vh;
-  width: 75vw;
-  padding: 15vh;
-  margin-top: 3%;
-  margin-left: 5vw;
-  margin-bottom: 3%;
-  background-color: #cdcdcd;
-}
-
-// Info title
-
-.info_title {
-  font-size: 2.5rem;
-  position: absolute;
-  left: 10%;
-  top: 215%;
-}
-
-// Info text
-
-.info_text {
-  // margin-top: 10vh;
-  margin-right: 30vw;
-  position: absolute;
-  top: 215%;
-  left: 30%;
+  height: 30%;
+  top: 50%;
+  left: 65%;
+  margin-top: 5vh;
 }
