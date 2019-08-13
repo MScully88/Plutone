@@ -2,12 +2,13 @@
   "name": "plutone",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://MScully88.github.io/Plutone",
+  "homepage": "https://MScully88.github.io/Plutone",
   "dependencies": {
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.4",
     "babel-plugin-import": "^1.12.0",
     "eslint-plugin-babel": "^5.3.0",
+    "gh-pages": "^2.1.1",
     "konva": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -21,6 +22,8 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "now-build": "react-scripts build",
