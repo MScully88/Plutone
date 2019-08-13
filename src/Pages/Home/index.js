@@ -29,7 +29,7 @@ const Home = () => {
           E N T E R
         </Link>
         <Link className={styles.homeContainer__links2} to="/About">
-          About
+          About | P L U T O N E
         </Link>
       </div>
       <div className={styles.homeContainer__image}>
