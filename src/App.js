@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Tone from 'tone';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import About from './Pages/About';
 import baseStartMain from './Sounds/Plutone_V2_16072019 baseStart.m4a';
 import solo from './Sounds/Plutone_V3_05082019 bassSolo.m4a';
 import bassMain from './Sounds/Plutone_V2_16072019 bass.m4a';
@@ -15,15 +16,14 @@ import Plutone from './Pages/Plutone';
 import Loading from './components/Loading';
 import './App.module.scss';
 
-const App = props => {
+const App = () => {
   const [areTracksLoading, setTracksLoading] = useState(true);
   const [shardTrack, setShardTrack] = useState(null);
-  const [fx1Value, setfx1Value] = useState(null);
 
-  const trackLoad = trackObj => {
-    if (shardTrack === null) setShardTrack(trackObj);
-  };
   useEffect(() => {
+    const trackLoad = trackObj => {
+      if (shardTrack === null) setShardTrack(trackObj);
+    };
     const tracks = new Tone.Players(
       {
         drumsMain, // top
@@ -37,16 +37,15 @@ const App = props => {
         kickMain, // centre
       },
       {
-        volume: -90,
+        volume: -100,
         mute: false,
         onload: () => {
           setTracksLoading(false);
         },
       },
     ).toMaster();
-
     trackLoad(tracks);
-  });
+  }, [shardTrack]);
 
   return (
     <>
@@ -56,8 +55,9 @@ const App = props => {
         ) : (
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/About" exact component={About} />
             <Route
-              path="/Plutone"
+              path="/plutone"
               render={routeProps => <Plutone {...routeProps} shardTrack={shardTrack} />}
             />
           </Switch>

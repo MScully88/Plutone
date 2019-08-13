@@ -51,7 +51,7 @@
 }
 
 .loadingContainer__loadingBar:nth-child(3) {
-  background-color: #7f7f7f;
+  background: linear-gradient(#f8f8ff, #77959e);
   animation-delay: 0.3s;
   height: 40px;
 }
@@ -62,7 +62,7 @@
 }
 
 .loadingContainer__loadingBar:nth-child(5) {
-  background-color: #5f6995;
+  background: linear-gradient(#f8f8ff, #77959e);
   animation-delay: 0.6s;
   height: 60px;
 }
@@ -73,7 +73,7 @@
 }
 
 .loadingContainer__loadingBar:nth-child(7) {
-  background-color: #7f7f7f;
+  background: linear-gradient(#f8f8ff, #77959e);
   animation-delay: 0.9s;
   height: 40px;
 }

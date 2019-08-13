@@ -2,14 +2,14 @@
 
 Plutone is an experiment that aims to bring audio and visuals together, creating an interactive soundscape experience through the browser.
 
-The musical planet Plutone has been split into mutliple pieces and has been spread throughout space. Bring all of the pieces back together to return Plutone to its former glory.
+The musical planet Plutone has been split into multiple pieces and has been spread throughout space. Bring all of the pieces back together to return Plutone to its former glory.
 
 > “The internet can seem like a mall at times, we need more spaces like parks and oceans”. – Ruth John
 
 ## Usage
 
 As this was an experiment please feel free to use view code in order to see how all these
-element work together. For example how to play multiple tracks in Tone.JS using react.
+element work together. For example how to play multiple tracks in Tone.JS using React.
 If you have any questions we will try to get back to you as soon as possible.
 
 ## Style Guide
@@ -93,7 +93,7 @@ The base folder contains all our base stylings
 
 7. **eslint and prettier**
 
-For cleaner code I have configured these based on Airbnb eslint styling to insure my code stays clean
+For cleaner code we have configured these based on Airbnb eslint styling to insure my code stays clean
 and readable. [eslint](https://www.npmjs.com/package/eslint-config-airbnb)
 
 ### Tech Stack
@@ -122,8 +122,8 @@ and readable. [eslint](https://www.npmjs.com/package/eslint-config-airbnb)
 
 ## Contributing
 
-We'll be happy to hear your feedback and if you have any quotes you would like to add to the app
-feel free to message us
+We'll be happy to hear your feedback and if you have any suggestions for the app
+feel free to message us!
 
 ### Contributors
 

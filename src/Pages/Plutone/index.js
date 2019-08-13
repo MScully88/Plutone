@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
 import Tone from 'tone';
@@ -20,7 +21,6 @@ import { filterTopL, flangerTopR, filterBottomR, flangerBottomL } from '../../he
 import Moon from '../../components/Moon';
 
 const Plutone = ({ shardTrack }) => {
-  const moonRef = useRef(null);
   const [instrumentArray] = useState([
     'drumsMain', // top
     'solo', // topR
@@ -43,22 +43,26 @@ const Plutone = ({ shardTrack }) => {
     baseStartMain,
     kickMain,
   ]);
+  // storing the Tone Effect Object to be manipulated later
   const [pingPongAmount, setPingPongAmount] = useState(0);
   const [chorusAmount, setChorusAmount] = useState(0);
+  const [jcReverbAmount, setjcReverbAmount] = useState(0);
+  const [pitchAmount, setPitchAmount] = useState(0);
+
   const [moonArray] = useState([filterTopL, flangerTopR, filterBottomR, flangerBottomL]);
   const [moonName] = useState(['filterTopL', 'flangerTopR', 'filterBottomR', 'flangerBottomL']);
 
   useEffect(() => {
     const pingPong = new Tone.PingPongDelay('4n', 0.2).toMaster();
     setPingPongAmount(pingPong);
+    // wet equals the amount the effect is brought in from 0 to 1
     pingPong.wet.value = 0;
     const newPingPong = shardTrack.connect(pingPong).toMaster();
-  }, []);
+  }, [shardTrack]);
 
   const handlefilterTopL = ({ x }) => {
     const calcfx1 = Math.abs(x) * 0.1;
     const parsed = parseFloat(calcfx1).toFixed(2);
-    console.log(parsed);
     if (parsed <= 1) {
       pingPongAmount.wet.value = 1;
     }
@@ -73,7 +77,7 @@ const Plutone = ({ shardTrack }) => {
       octaves: 6,
       sensitivity: -20,
       Q: 8,
-      gain: 2,
+      gain: 0,
       follower: {
         attack: 0.2,
         release: 1,
@@ -82,17 +86,52 @@ const Plutone = ({ shardTrack }) => {
     setChorusAmount(chorus);
     chorus.wet.value = 0;
     const newChorus = shardTrack.connect(chorus).toMaster();
-  }, []);
+  }, [shardTrack]);
 
   const handleflangerTopR = ({ x }) => {
     const calcfx1 = Math.abs(x) * 0.1;
     const parsed = parseFloat(calcfx1).toFixed(2);
-    console.log(parsed);
     if (parsed > 1) {
       chorusAmount.wet.value = 0;
     }
     if (parsed < 1) {
       chorusAmount.wet.value = 1;
+    }
+  };
+
+  useEffect(() => {
+    const jcReverb = new Tone.JCReverb(0.7).toMaster();
+    setjcReverbAmount(jcReverb);
+    jcReverb.wet.value = 0;
+    const newjcReverb = shardTrack.connect(jcReverb).toMaster();
+  }, [shardTrack]);
+
+  const handlefilterBottomR = ({ x }) => {
+    const calcfx1 = Math.abs(x) * 0.1;
+    const parsed = parseFloat(calcfx1).toFixed(2);
+    if (parsed > 1) {
+      jcReverbAmount.wet.value = 0;
+    }
+    if (parsed < 1) {
+      jcReverbAmount.wet.value = 1;
+    }
+  };
+
+  useEffect(() => {
+    const pitchShift = new Tone.PitchShift(9).toMaster();
+    setPitchAmount(pitchShift);
+    pitchShift.wet.value = 0;
+    const newPitchShift = shardTrack.connect(pitchShift).toMaster();
+  }, [shardTrack]);
+
+  const handleflangerBottomL = ({ x }) => {
+    const calcfx1 = Math.abs(x) * 0.1;
+    const parsed = parseFloat(calcfx1).toFixed(2);
+    if (parsed > 1) {
+      pitchAmount.wet.value = 0;
+    }
+    if (parsed < 1) {
+      pitchAmount.wet.value = 1;
     }
   };
 
@@ -110,6 +149,8 @@ const Plutone = ({ shardTrack }) => {
                   shardTrack={shardTrack}
                   handlefilterTopL={handlefilterTopL}
                   handleflangerTopR={handleflangerTopR}
+                  handlefilterBottomR={handlefilterBottomR}
+                  handleflangerBottomL={handleflangerBottomL}
                 />
               );
             })}

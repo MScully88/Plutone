@@ -7,7 +7,6 @@ html {
 .homeContainer {
   background-color: #000000;
   min-height: 100vh;
-  overflow: hidden;
   color: $white;
 }
 
@@ -29,7 +28,17 @@ html {
   animation: fadeinTitleEnter 6s;
 }
 
-img {
+.homeContainer__links2 {
+  margin-top: 5vh;
+
+  -webkit-animation: fadeinTitleEnter 6s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinTitleEnter 6s; /* Firefox < 16 */
+  -ms-animation: fadeinTitleEnter 6s; /* Internet Explorer */
+  -o-animation: fadeinTitleEnter 6s; /* Opera < 12.1 */
+  animation: fadeinTitleEnter 6s;
+}
+
+.homeContainer__image {
   -webkit-animation: fadeInImage 8s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadeInImage 8s; /* Firefox < 16 */
   -ms-animation: fadeInImage 8s; /* Internet Explorer */
@@ -268,6 +277,15 @@ a {
     font-size: 1.5rem;
   }
 
+  // About button
+
+  .homeContainer__links2 {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 1rem;
+  }
+
   // Image
 
   img {
@@ -311,6 +329,16 @@ a {
     font-size: 1.7rem;
   }
 
+  // About button
+
+  .homeContainer__links2 {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
   // Image
 
   img {
@@ -350,6 +378,15 @@ a {
     top: 70%;
     left: 5%;
     font-size: 1.7rem;
+  }
+
+  // About button
+
+  .homeContainer__links2 {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 1.2rem;
   }
 
   // Image
