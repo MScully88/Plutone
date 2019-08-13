@@ -1,13 +1,14 @@
 @import '../../scss/base/index.scss';
 
-html {
-  overflow: auto;
-}
+// html {
+//   overflow: auto;
+// }
 
 .aboutContainer {
-  background-color: #f8f8ff;
+  background-color: white;
   min-height: 100vh;
   color: #212121;
+  animation: none;
 }
 
 // About container
@@ -15,10 +16,9 @@ html {
 .about {
   display: flex;
   flex-direction: row;
-  height: 50vh;
-  width: 75vw;
-  padding: 15vh;
-  margin-top: 3%;
+  height: 90vh;
+  width: 90vw;
+  margin-top: 5vh;
   margin-left: 5vw;
   background-color: #cdcdcd;
 }
@@ -29,7 +29,16 @@ html {
   position: absolute;
   font-size: 2.5rem;
   left: 10%;
-  top: 45%;
+  top: 50%;
+}
+
+// About title 2
+
+.title2 {
+  position: absolute;
+  top: 19%;
+  left: 40%;
+  font-size: 1.8rem;
 }
 
 // About text
@@ -37,71 +46,121 @@ html {
 .text {
   position: absolute;
   left: 40%;
-  top: 45%;
+  top: 25%;
   right: 10%;
 }
 
-// Team
+// About title 3
 
-.theTeam {
-  display: flex;
-  flex-direction: row;
-  height: 50vh;
-  width: 75vw;
-  padding: 15vh;
-  margin-top: 3%;
-  margin-left: 5vw;
-  margin-bottom: 3%;
-  background-color: #dcdcda;
-}
-
-// Team title
-
-.theTeam_title {
-  font-size: 2.5rem;
+.title3 {
   position: absolute;
-  left: 75%;
-  top: 130%;
+  top: 47%;
+  left: 40%;
+  font-size: 1.8rem;
 }
 
-// Team text
+// Image container
 
-.theTeam_text {
-  // margin-top: 10vh;
-  margin-right: 30vw;
+.image {
+  position: relative;
+  width: 50%;
+}
+
+// claudio image
+
+.claudio {
   position: absolute;
-  top: 130%;
+  // height: 30%;
+  top: 55%;
+  left: 78%;
+  // margin-top: 5vh;
+  display: block;
+  width: 50%;
+  height: auto;
 }
 
-// Info
+// image on hover
 
-.info {
-  display: flex;
-  flex-direction: row;
-  height: 50vh;
-  width: 75vw;
-  padding: 15vh;
-  margin-top: 3%;
-  margin-left: 5vw;
-  margin-bottom: 3%;
-  background-color: #cdcdcd;
+.image:hover .overlay {
+  opacity: 1;
 }
 
-// Info title
+// claudio name
 
-.info_title {
-  font-size: 2.5rem;
+.name {
+  color: black;
+  font-size: 20px;
   position: absolute;
-  left: 10%;
-  top: 215%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-// Info text
+// claudio overlay
 
-.info_text {
-  // margin-top: 10vh;
-  margin-right: 30vw;
+.overlay {
   position: absolute;
-  top: 215%;
+  top: 55%;
+  left: 78%;
+  height: 32.8%;
+  width: 50%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: white;
+}
+
+// Image2 container
+
+.image2 {
+  position: relative;
+  width: 50%;
+}
+
+// Image on hover
+
+.image2:hover .overlay2 {
+  opacity: 1;
+}
+
+// michael image
+
+.michael {
+  position: absolute;
+  // height: 30%;
+  top: 55%;
   left: 30%;
+  // margin-top: 5vh;
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+// michael name
+
+.name2 {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+// Michael overlay
+
+.overlay2 {
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  height: 32.8%;
+  width: 50%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: white;
 }
