@@ -12,12 +12,6 @@ html {
   border: 3px solid black;
   display: flex;
   justify-content: center;
-
-  // -webkit-animation: fadeinBg 2s; /* Safari, Chrome and Opera > 12.1 */
-  // -moz-animation: fadeinBg 2s; /* Firefox < 16 */
-  // -ms-animation: fadeinBg 2s; /* Internet Explorer */
-  // -o-animation: fadeinBg 2s; /* Opera < 12.1 */
-  // animation: fadeinBg 2s;
 }
 
 .stars {
@@ -27,60 +21,10 @@ html {
 }
 
 .stageInnerContainer {
-  // border: 1px solid red;
   max-width: 740px;
   max-height: 820px;
-  margin-top: 10vh;
+  margin-top: 4vh;
 }
-
-// @keyframes fadeinBg {
-//   from {
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//   }
-// }
-
-// /* Firefox < 16 */
-// @-moz-keyframes fadeinBg {
-//   from {
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//   }
-// }
-
-// /* Safari, Chrome and Opera > 12.1 */
-// @-webkit-keyframes fadeinBg {
-//   from {
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//   }
-// }
-
-// /* Internet Explorer */
-// @-ms-keyframes fadeinBg {
-//   from {
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//   }
-// }
-
-// /* Opera < 12.1 */
-// @-o-keyframes fadeinBg {
-//   from {
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//   }
-// }
 
 @keyframes bg {
   0%,
