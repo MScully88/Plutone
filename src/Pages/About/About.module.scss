@@ -42,13 +42,6 @@
   // border: 1px solid red;
 }
 
-// About main title
-
-.title {
-  font-size: 2.5rem;
-  margin-left: 2vw;
-}
-
 // about the project content container
 
 .aboutProjectContainer {
@@ -59,16 +52,6 @@
   height: 49%;
 }
 
-// about title
-
-.aboutTitle {
-  font-size: 1.8rem;
-  margin-left: 1vw;
-  strong {
-    font-weight: 500;
-  }
-}
-
 .links {
   color: #212121;
 }
@@ -76,12 +59,10 @@
 // team title
 
 .teamTitle {
-  // display: flex;
-  font-size: 1.8rem;
   margin-left: 1vw;
-  // border: 3px solid greenyellow;
   width: 100%;
   height: auto;
+  font-weight: 500;
 }
 
 // image text container
@@ -115,7 +96,6 @@
   width: 50%;
   height: 100%;
   margin-left: 1vw;
-  // border: 2px solid rebeccapurple;
 }
 
 // claudio image container
@@ -148,4 +128,248 @@
   border-radius: 3%;
   width: 90%;
   height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutProjectContainer {
+    margin-top: 4vh;
+  }
+
+  .title {
+    margin-right: 5vw;
+    font-size: 0.8rem;
+    transform: rotate(-90deg);
+  }
+
+  .text {
+    font-size: 0.55rem;
+  }
+
+  .text p {
+    font-size: 0.6rem;
+  }
+  .aboutTitle {
+    font-size: 1rem;
+    margin-left: 1vw;
+    margin-top: 3vh;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    margin-top: 8vh;
+  }
+  .claudio {
+    margin-top: 2vh;
+    // width: 90%;
+    height: auto;
+  }
+
+  .michael {
+    margin-top: 2vh;
+    // width: 90%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    margin-top: 2vh;
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    margin-top: 2vh;
+    font-size: 0.7rem;
+  }
+
+  .claudioContainer > h5 {
+    font-size: 1rem;
+  }
+
+  .michaelContainer > h5 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .title {
+    margin-left: 2vw;
+    font-size: 1.1rem;
+  }
+
+  .text {
+    font-size: 0.7rem;
+  }
+
+  .text p {
+    font-size: 0.8rem;
+  }
+
+  .aboutTitle {
+    font-size: 1.3rem;
+    margin-left: 1vw;
+    margin-top: 3vh;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    // margin-top: 4vh;
+  }
+
+  .claudio {
+    margin-top: 2vh;
+    // width: 90%;
+    height: auto;
+  }
+
+  .michael {
+    margin-top: 2vh;
+    // width: 90%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    margin-top: 2vh;
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    margin-top: 2vh;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    margin-left: 2vw;
+    font-size: 1.3rem;
+  }
+
+  .text {
+    font-size: 0.7rem;
+  }
+
+  .text p {
+    font-size: 0.85rem;
+  }
+
+  .aboutTitle {
+    font-size: 1.3rem;
+    margin-left: 1vw;
+    strong {
+      font-weight: 500;
+    }
+    margin-top: 1vh;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .claudio {
+    width: 90%;
+    height: auto;
+  }
+
+  .michael {
+    width: 90%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .title {
+    margin-left: 2vw;
+    font-size: 1.6rem;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+
+  .text p {
+    font-size: 0.85rem;
+  }
+
+  .aboutTitle {
+    font-size: 1.3rem;
+    margin-left: 1vw;
+    strong {
+      font-weight: 500;
+    }
+    margin-top: 1vh;
+    // margin-bottom: 1vh;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .claudio {
+    width: 90%;
+    height: auto;
+  }
+
+  .michael {
+    width: 90%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+
+  .text p {
+    font-size: 0.85rem;
+  }
+
+  .aboutTitle {
+    font-size: 1.3rem;
+    margin-left: 1vw;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .claudio {
+    width: 80%;
+    height: auto;
+  }
+
+  .michael {
+    width: 80%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    font-size: 0.8rem;
+  }
 }
