@@ -1,6 +1,7 @@
 @import '../../scss/base/index.scss';
 
 .text {
+  margin-left: 1vw;
   p {
     margin-top: 1rem;
   }
@@ -9,16 +10,17 @@
   }
 }
 
-.aboutContainer {
-  background-color: white;
-  min-height: 100vh;
-  color: #212121;
-  animation: none;
-}
-
 // About container
 
-.about {
+.aboutContainer {
+  background-color: white;
+  height: 100vh;
+  color: #212121;
+}
+
+// Inner container
+
+.innerContainer {
   display: flex;
   flex-direction: row;
   height: 90vh;
@@ -26,77 +28,124 @@
   margin-top: 5vh;
   margin-left: 5vw;
   background-color: #cdcdcd;
+  flex-wrap: wrap;
 }
 
-// About title
+// About title container
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  width: 33%;
+  // border: 1px solid red;
+}
+
+// About main title
 
 .title {
-  position: absolute;
   font-size: 2.5rem;
-  left: 10%;
-  top: 50%;
+  margin-left: 2vw;
 }
 
-// About title 2
+// about the project content container
 
-.title2 {
-  position: absolute;
-  top: 19%;
-  left: 40%;
+.aboutProjectContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 1vw;
+  height: 49%;
+}
+
+// about title
+
+.aboutTitle {
   font-size: 1.8rem;
+  margin-left: 1vw;
+  strong {
+    font-weight: 500;
+  }
 }
 
-// About text
-
-.text {
-  position: absolute;
-  left: 40%;
-  top: 25%;
-  right: 10%;
+.links {
+  color: #212121;
 }
 
-// About title 3
+// team title
 
-.title3 {
-  position: absolute;
-  top: 47%;
-  left: 40%;
+.teamTitle {
+  // display: flex;
   font-size: 1.8rem;
+  margin-left: 1vw;
+  // border: 3px solid greenyellow;
+  width: 100%;
+  height: auto;
 }
 
-// Image container
+// image text container
 
-.image {
-  position: relative;
+.imageTextContainer {
+  width: 64%;
+}
+
+// team container
+
+.teamContainer {
+  display: flex;
+  flex-wrap: wrap;
+  // border: 2px solid gold;
+  height: 49%;
+  margin-left: 1vw;
+}
+
+// team card container
+
+.teamCardContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80%;
+}
+
+// team cards
+
+.teamCard {
   width: 50%;
+  height: 100%;
+  margin-left: 1vw;
+  // border: 2px solid rebeccapurple;
+}
+
+// claudio image container
+
+.claudioContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// michael image container
+
+.michaelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 // claudio image
 
 .claudio {
-  position: absolute;
   border-radius: 3%;
-  // height: 30%;
-  top: 55%;
-  left: 78%;
-  // margin-top: 5vh;
-  display: block;
-  width: 50%;
+  width: 90%;
   height: auto;
 }
 
-.image2 {
-  position: relative;
-  width: 50%;
-}
+// michael image
 
 .michael {
-  position: absolute;
-  // height: 30%;
-  top: 55%;
-  left: 30%;
-  // margin-top: 5vh;
-  display: block;
-  width: 50%;
+  border-radius: 3%;
+  width: 90%;
   height: auto;
 }
