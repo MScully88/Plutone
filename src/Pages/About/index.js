@@ -10,34 +10,32 @@ const About = () => {
         <h3 className={styles.title}>About | P L U T O N E</h3>
         <h5 className={styles.title2}>About The Project</h5>
         <div className={styles.text}>
+          <quote>
+            “The internet can seem like a mall at times, we need more spaces like parks and oceans”.
+            – Ruth John
+          </quote>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
+            Created over the course of seven weeks, Plutone is an experiment that aims to bring
+            audio and visuals together, creating an interactive soundscape experience through the
+            browser. This was our graduating project at Digital Career Institute where we embarked
+            on a year long web development course finishing in August 2019.
+          </p>
+          <p>
+            <strong>Instructions:</strong> The musical planet Plutone has been split into multiple
+            pieces and has been spread throughout space. Bring all of the pieces of the planet back
+            to the center to return Plutone to its former glory. Move the moons around to hear
+            musical effects applied to the song like room reverb or ping pong
           </p>
         </div>
         <h5 className={styles.title3}>Meet The Team</h5>
         <div className={styles.image}>
           <a href="https://github.com/ctocco">
             <img className={styles.claudio} src={Claudio} alt="Claudio" />
-            <div className={styles.overlay}>
-              <div className={styles.name}>
-                <p>Claudio</p>
-              </div>
-            </div>
           </a>
         </div>
         <div className={styles.image2}>
           <a href="https://github.com/MScully88">
             <img className={styles.michael} src={Michael} alt="Michael" />
-            <div className={styles.overlay2}>
-              <div className={styles.name2}>
-                <p>Michael</p>
-              </div>
-            </div>
           </a>
         </div>
       </div>
