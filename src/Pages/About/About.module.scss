@@ -1,8 +1,13 @@
 @import '../../scss/base/index.scss';
 
-// html {
-//   overflow: auto;
-// }
+.text {
+  p {
+    margin-top: 1rem;
+  }
+  strong {
+    font-weight: 800;
+  }
+}
 
 .aboutContainer {
   background-color: white;
@@ -70,6 +75,7 @@
 
 .claudio {
   position: absolute;
+  border-radius: 3%;
   // height: 30%;
   top: 55%;
   left: 78%;
@@ -79,53 +85,10 @@
   height: auto;
 }
 
-// image on hover
-
-.image:hover .overlay {
-  opacity: 1;
-}
-
-// claudio name
-
-.name {
-  color: black;
-  font-size: 20px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-// claudio overlay
-
-.overlay {
-  position: absolute;
-  top: 55%;
-  left: 78%;
-  height: 32.8%;
-  width: 50%;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: white;
-}
-
-// Image2 container
-
 .image2 {
   position: relative;
   width: 50%;
 }
-
-// Image on hover
-
-.image2:hover .overlay2 {
-  opacity: 1;
-}
-
-// michael image
 
 .michael {
   position: absolute;
@@ -136,31 +99,4 @@
   display: block;
   width: 50%;
   height: auto;
-}
-
-// michael name
-
-.name2 {
-  color: black;
-  font-size: 20px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-// Michael overlay
-
-.overlay2 {
-  position: absolute;
-  top: 55%;
-  left: 30%;
-  height: 32.8%;
-  width: 50%;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: white;
 }
