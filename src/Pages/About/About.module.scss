@@ -291,11 +291,11 @@
   }
 
   .text {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .text p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .aboutTitle {
@@ -314,12 +314,12 @@
   }
 
   .claudio {
-    width: 90%;
+    width: 85%;
     height: auto;
   }
 
   .michael {
-    width: 90%;
+    width: 85%;
     height: auto;
   }
 
@@ -329,6 +329,14 @@
 
   .claudioContainer {
     font-size: 0.8rem;
+  }
+
+  .claudioContainer > h5 {
+    font-size: 0.9rem;
+  }
+
+  .michaelContainer > h5 {
+    font-size: 0.9rem;
   }
 }
 
@@ -356,12 +364,12 @@
   }
 
   .claudio {
-    width: 80%;
+    width: 75%;
     height: auto;
   }
 
   .michael {
-    width: 80%;
+    width: 75%;
     height: auto;
   }
 
