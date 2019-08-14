@@ -51,7 +51,7 @@
 }
 
 .loadingContainer__loadingBar:nth-child(3) {
-  background-color: #7f7f7f;
+  background: linear-gradient(#f8f8ff, #77959e);
   animation-delay: 0.3s;
   height: 40px;
 }
@@ -62,7 +62,7 @@
 }
 
 .loadingContainer__loadingBar:nth-child(5) {
-  background-color: #5f6995;
+  background: linear-gradient(#f8f8ff, #77959e);
   animation-delay: 0.6s;
   height: 60px;
 }
@@ -73,7 +73,7 @@
 }
 
 .loadingContainer__loadingBar:nth-child(7) {
-  background-color: #7f7f7f;
+  background: linear-gradient(#f8f8ff, #77959e);
   animation-delay: 0.9s;
   height: 40px;
 }
@@ -101,5 +101,65 @@
   }
   40% {
     transform: scale(1);
+  }
+}
+
+// Media Queries for the loading page
+
+// Extra small devices (phones, 600px and down)
+
+@media only screen and (max-width: 600px) {
+  .loadingContainer__title {
+    left: 40%;
+    font-size: 1.5em;
+  }
+
+  .loadingContainer__loadBars {
+    height: 50%;
+    width: 50%;
+    left: 40%;
+  }
+}
+
+// Medium devices (laptops/desktops, 601px and 992px)
+
+@media (min-width: 601px) and (max-width: 992px) {
+  .loadingContainer__title {
+    left: 42%;
+    font-size: 1.7em;
+  }
+
+  .loadingContainer__loadBars {
+    height: 60%;
+    width: 60%;
+    left: 43%;
+  }
+}
+
+// Large devices (laptops/desktops, 993px and 1200px)
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .loadingContainer__title {
+    left: 42%;
+    font-size: 1.7rem;
+  }
+
+  .loadingContainer__loadBars {
+    height: 75%;
+    width: 75%;
+    left: 43%;
+  }
+}
+
+// Extra large devices (large laptops and desktops, 1201px and up)
+
+@media (min-width: 1201px) {
+  .loadingContainer__title {
+    left: 44%;
+    font-size: 1.9em;
+  }
+
+  .loadingContainer__loadBars {
+    left: 45%;
   }
 }

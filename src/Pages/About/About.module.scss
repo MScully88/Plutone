@@ -1,0 +1,383 @@
+@import '../../scss/base/index.scss';
+
+.text {
+  margin-left: 1vw;
+  p {
+    margin-top: 1rem;
+  }
+  strong {
+    font-weight: 800;
+  }
+}
+
+// About container
+
+.aboutContainer {
+  background-color: white;
+  height: 100vh;
+  color: #212121;
+}
+
+// Inner container
+
+.innerContainer {
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+  width: 90vw;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  background-color: #cdcdcd;
+  flex-wrap: wrap;
+}
+
+// About title container
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  width: 33%;
+  // border: 1px solid red;
+}
+
+// about the project content container
+
+.aboutProjectContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 1vw;
+  height: 49%;
+}
+
+.links {
+  color: #212121;
+}
+
+// team title
+
+.teamTitle {
+  margin-left: 1vw;
+  width: 100%;
+  height: auto;
+  font-weight: 500;
+}
+
+// image text container
+
+.imageTextContainer {
+  width: 64%;
+}
+
+// team container
+
+.teamContainer {
+  display: flex;
+  flex-wrap: wrap;
+  // border: 2px solid gold;
+  height: 49%;
+  margin-left: 1vw;
+}
+
+// team card container
+
+.teamCardContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80%;
+}
+
+// team cards
+
+.teamCard {
+  width: 50%;
+  height: 100%;
+  margin-left: 1vw;
+}
+
+// claudio image container
+
+.claudioContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// michael image container
+
+.michaelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// claudio image
+
+.claudio {
+  border-radius: 3%;
+  width: 90%;
+  height: auto;
+}
+
+// michael image
+
+.michael {
+  border-radius: 3%;
+  width: 90%;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutProjectContainer {
+    margin-top: 4vh;
+  }
+
+  .title {
+    margin-right: 5vw;
+    font-size: 0.8rem;
+    transform: rotate(-90deg);
+  }
+
+  .text {
+    font-size: 0.55rem;
+  }
+
+  .text p {
+    font-size: 0.6rem;
+  }
+  .aboutTitle {
+    font-size: 1rem;
+    margin-left: 1vw;
+    margin-top: 3vh;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    margin-top: 8vh;
+  }
+  .claudio {
+    margin-top: 2vh;
+    // width: 90%;
+    height: auto;
+  }
+
+  .michael {
+    margin-top: 2vh;
+    // width: 90%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    margin-top: 2vh;
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    margin-top: 2vh;
+    font-size: 0.7rem;
+  }
+
+  .claudioContainer > h5 {
+    font-size: 1rem;
+  }
+
+  .michaelContainer > h5 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .title {
+    margin-left: 2vw;
+    font-size: 1.1rem;
+  }
+
+  .text {
+    font-size: 0.7rem;
+  }
+
+  .text p {
+    font-size: 0.8rem;
+  }
+
+  .aboutTitle {
+    font-size: 1.3rem;
+    margin-left: 1vw;
+    margin-top: 3vh;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    // margin-top: 4vh;
+  }
+
+  .claudio {
+    margin-top: 2vh;
+    // width: 90%;
+    height: auto;
+  }
+
+  .michael {
+    margin-top: 2vh;
+    // width: 90%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    margin-top: 2vh;
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    margin-top: 2vh;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    margin-left: 2vw;
+    font-size: 1.3rem;
+  }
+
+  .text {
+    font-size: 0.7rem;
+  }
+
+  .text p {
+    font-size: 0.85rem;
+  }
+
+  .aboutTitle {
+    font-size: 1.3rem;
+    margin-left: 1vw;
+    strong {
+      font-weight: 500;
+    }
+    margin-top: 1vh;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .claudio {
+    width: 90%;
+    height: auto;
+  }
+
+  .michael {
+    width: 90%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .title {
+    margin-left: 2vw;
+    font-size: 1.6rem;
+  }
+
+  .text {
+    font-size: 0.7rem;
+  }
+
+  .text p {
+    font-size: 0.8rem;
+  }
+
+  .aboutTitle {
+    font-size: 1.3rem;
+    margin-left: 1vw;
+    strong {
+      font-weight: 500;
+    }
+    margin-top: 1vh;
+    // margin-bottom: 1vh;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .claudio {
+    width: 85%;
+    height: auto;
+  }
+
+  .michael {
+    width: 85%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer > h5 {
+    font-size: 0.9rem;
+  }
+
+  .michaelContainer > h5 {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+
+  .text p {
+    font-size: 0.85rem;
+  }
+
+  .aboutTitle {
+    font-size: 1.3rem;
+    margin-left: 1vw;
+  }
+
+  .teamTitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .claudio {
+    width: 75%;
+    height: auto;
+  }
+
+  .michael {
+    width: 75%;
+    height: auto;
+  }
+
+  .michaelContainer {
+    font-size: 0.8rem;
+  }
+
+  .claudioContainer {
+    font-size: 0.8rem;
+  }
+}

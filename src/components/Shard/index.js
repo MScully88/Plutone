@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Tone from 'tone';
-import { Group, Layer, Path } from 'react-konva';
+import { Group, Path } from 'react-konva';
+// import styles from './Shard.module.scss';
 import {
   moveBassMainBottom,
   moveDrumsMainTop,
@@ -16,6 +18,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // useRef to target node element of the shapes
   const inputEL = useRef(null);
   const layerEL = useRef(null);
+  const groupEL = useRef(null);
   // eslint-disable-next-line no-unused-vars // if kick play straight away
   const [isKickMain, setKickMainValue] = useState(false);
   // setting x and y dependent on what handle is being triggered
@@ -24,6 +27,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
   // onMouseDrag start and end change this value
   const [isDrag, setDrag] = useState(false);
   // Array of objects with the paths for each layer
+
   const shard = shapeObject[instrumentIndex];
   const maxVolume = 70;
   // sets kick to play on render
@@ -37,7 +41,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
 
   useEffect(() => {
     if (instrumentName === 'drumsMain') {
-      moveDrumsMainTop(layerEL.current, isDrag);
+      moveDrumsMainTop(layerEL.current, inputEL.current);
     }
     if (instrumentName === 'synthStr') {
       moveSynthStrRight(layerEL.current);
@@ -65,7 +69,7 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
 
   // top
   const handleDrumsMain = ({ y }) => {
-    if (y > 0 && y < 178) {
+    if (y > 0 && y < 175) {
       setX(0);
       setY(y);
     }
@@ -74,39 +78,45 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // topR Solo
+  // topR Solo - needs new track
   const handleSolo = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (x < 0 && Math.abs(x) < 94) {
+      const angle = -45; // angle in degrees
+      setX(Math.abs(x) * Math.tan((angle * Math.PI) / 180));
+      setY(Math.abs(x));
+    }
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    }
   };
 
   // right
   const handleStrSynth = ({ x }) => {
-    const plusPos = Math.abs(x);
-    if (x < 0 && x > -150) {
+    if (x < 0 && x > -200) {
       setX(x);
       setY(0);
     }
-    if (plusPos < 70 && x < 0) {
-      shardTrack.get(instrumentName).volume.value = plusPos;
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
     }
   };
 
   // fx1 bottomR
-
   const handlefx1 = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (x < 0 && Math.abs(x) < 94) {
+      const angle = 45; // angle in degrees
+      setX(x * Math.tan((angle * Math.PI) / 180));
+      setY(x);
+    }
+    if (Math.abs(x) < maxVolume && x < 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    }
   };
 
   // bottom
   const handleBassMain = ({ y }) => {
     const plusPos = Math.abs(y);
-    if (y < 0 && y > -200) {
+    if (y < 0 && y > -150) {
       setX(0);
       setY(y);
     }
@@ -116,16 +126,20 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // fx2 bottomR
+  // trackfx2 bottomL - track fx2 needs new track
   const handlefx2 = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (y < 0 && Math.abs(y) < 94) {
+      const angle = -45; // angle in degrees
+      setX(Math.abs(y));
+      setY(Math.abs(y) * Math.tan((angle * Math.PI) / 180));
+    }
+    if (Math.abs(x) < maxVolume && x > 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    }
   };
   // left
   const handleKeysMain = ({ x }) => {
-    if (x < 200 && x > 0) {
+    if (x < 220 && x > 0) {
       setX(x);
       setY(0);
     }
@@ -134,12 +148,16 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     }
   };
 
-  // baseStartMain bottomL
+  // baseStartMain topL
   const handlebaseStartMain = ({ x, y }) => {
-    const angle = 32; // angle in degrees
-    const angleRad = angle * (Math.PI / 180); // angle in radians
-    setX(x + Math.cos(angleRad));
-    setY(y + Math.sin(angleRad));
+    if (y > 0 && y < 94) {
+      const angle = 45; // angle in degrees
+      setX(y);
+      setY(y * Math.tan((angle * Math.PI) / 180));
+    }
+    if (Math.abs(x) < 60 && x > 0) {
+      shardTrack.get(instrumentName).volume.value = Math.abs(x);
+    }
   };
 
   const getSoundHandler = soundName => {
@@ -179,11 +197,37 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
     return handler;
   };
 
+  const changeSize = () => {
+    groupEL.current.to({
+      scaleX: 1.05,
+      scaleY: 1.05,
+      duration: 0.2,
+      offsetX: 15,
+      offsetY: 15,
+    });
+    // to() is a method of `Konva.Node` instances
+  };
+
+  const returnSize = () => {
+    groupEL.current.to({
+      scaleX: 1.0,
+      scaleY: 1.0,
+      duration: 0.2,
+      offsetX: 0,
+      offsetY: 0,
+    });
+  };
+
+  const handleOnDragEnd = y => {
+    returnSize();
+  };
+
   return (
     <>
       {/* //this targets the node to trigger animation */}
-      <Layer ref={layerEL}>
+      <Group ref={layerEL}>
         <Group
+          ref={groupEL}
           draggable
           // pos gives x and y values on mouse drag event
           dragBoundFunc={pos => {
@@ -198,30 +242,47 @@ const Shard = ({ shardTrack, instrumentName, instrumentIndex, shapeObject }) => 
             }
             return coordinates;
           }}
-          onDragMove={() => {
-            setDrag(true);
-          }}
-          onDragEnd={() => {
-            setDrag(false);
+          onDragStart={changeSize}
+          onDragEnd={pos => {
+            handleOnDragEnd(pos);
           }}
         >
-          {shard.map(({ x, y, data, fill, stroke, strokeWidth, scale }, index) => {
-            return (
-              <Path
-                ref={inputEL}
-                key={instrumentName + index}
-                x={x}
-                y={y}
-                data={data}
-                fill={fill}
-                stroke={stroke}
-                strokeWidth={strokeWidth}
-                scale={scale}
-              />
-            );
-          })}
+          {shard.map(
+            (
+              {
+                x,
+                y,
+                data,
+                fill,
+                stroke,
+                strokeWidth,
+                scale,
+                fillLinearGradientStartPoint,
+                fillLinearGradientEndPoint,
+                fillLinearGradientColorStops,
+              },
+              index,
+            ) => {
+              return (
+                <Path
+                  ref={inputEL}
+                  key={instrumentName + index}
+                  x={x}
+                  y={y}
+                  data={data}
+                  fill={fill}
+                  stroke={stroke}
+                  strokeWidth={strokeWidth}
+                  scale={scale}
+                  fillLinearGradientStartPoint={fillLinearGradientStartPoint}
+                  fillLinearGradientEndPoint={fillLinearGradientEndPoint}
+                  fillLinearGradientColorStops={fillLinearGradientColorStops}
+                />
+              );
+            },
+          )}
         </Group>
-      </Layer>
+      </Group>
     </>
   );
 };

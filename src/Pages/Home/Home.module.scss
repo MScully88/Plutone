@@ -7,17 +7,10 @@ html {
 .homeContainer {
   background-color: #000000;
   min-height: 100vh;
-  overflow: hidden;
   color: $white;
 }
 
 .homeContainer__title {
-  position: absolute;
-  top: 45%;
-  left: 5%;
-  font-size: 4.7rem;
-  text-align: center;
-
   -webkit-animation: fadeinTitle 4s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadeinTitle 4s; /* Firefox < 16 */
   -ms-animation: fadeinTitle 4s; /* Internet Explorer */
@@ -28,46 +21,41 @@ html {
 // Links
 
 .homeContainer__links {
-  text-decoration: none;
-  position: absolute;
-  top: 70%;
-  left: 5%;
-  font-size: 2rem;
-  color: $white;
+  -webkit-animation: fadeinTitleEnter 6s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinTitleEnter 6s; /* Firefox < 16 */
+  -ms-animation: fadeinTitleEnter 6s; /* Internet Explorer */
+  -o-animation: fadeinTitleEnter 6s; /* Opera < 12.1 */
+  animation: fadeinTitleEnter 6s;
+}
 
+.homeContainer__links2 {
+  margin-top: 5vh;
+
+  -webkit-animation: fadeinTitleEnter 6s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinTitleEnter 6s; /* Firefox < 16 */
+  -ms-animation: fadeinTitleEnter 6s; /* Internet Explorer */
+  -o-animation: fadeinTitleEnter 6s; /* Opera < 12.1 */
+  animation: fadeinTitleEnter 6s;
+}
+
+.homeContainer__image {
+  -webkit-animation: fadeInImage 8s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeInImage 8s; /* Firefox < 16 */
+  -ms-animation: fadeInImage 8s; /* Internet Explorer */
+  -o-animation: fadeInImage 8s; /* Opera < 12.1 */
+  animation: fadeInImage 8s;
+}
+
+a {
+  color: $white;
+}
+
+.homeContainer__github {
   -webkit-animation: fadeinTitleEnter 8s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadeinTitleEnter 8s; /* Firefox < 16 */
   -ms-animation: fadeinTitleEnter 8s; /* Internet Explorer */
   -o-animation: fadeinTitleEnter 8s; /* Opera < 12.1 */
   animation: fadeinTitleEnter 8s;
-}
-
-.homeContainer__github {
-  color: $white;
-  text-decoration: none;
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-}
-
-.homeContainer__image {
-  position: absolute;
-  top: 30vh;
-  right: 5%;
-}
-
-img {
-  height: 50vh;
-
-  -webkit-animation: fadeInImage 7s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadeInImage 7s; /* Firefox < 16 */
-  -ms-animation: fadeInImage 7s; /* Internet Explorer */
-  -o-animation: fadeInImage 7s; /* Opera < 12.1 */
-  animation: fadeInImage 7s;
-}
-
-a {
-  color: $white;
 }
 
 // Keyframes for __elem__title
@@ -220,5 +208,204 @@ a {
   }
   to {
     opacity: 1;
+  }
+}
+
+// Media Queries for the home page
+
+// Extra small devices (phones, 600px and down)
+
+@media only screen and (max-width: 600px) {
+  // Title
+
+  .homeContainer__title {
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    left: 5%;
+  }
+
+  // Enter button
+
+  .homeContainer__links {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    font-size: 1.3rem;
+  }
+
+  // Image
+
+  img {
+    height: 25vh;
+  }
+
+  .homeContainer__image {
+    position: absolute;
+    top: 10vh;
+    left: 20%;
+  }
+
+  // Github links
+
+  .homeContainer__github {
+    text-decoration: none;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+  }
+}
+
+// Medium devices (laptops/desktops, 601px and 992px)
+
+@media (min-width: 601px) and (max-width: 992px) {
+  // Title
+
+  .homeContainer__title {
+    position: absolute;
+    font-size: 2.8rem;
+    top: 50%;
+    left: 10%;
+  }
+
+  // Enter button
+
+  .homeContainer__links {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    font-size: 1.5rem;
+  }
+
+  // About button
+
+  .homeContainer__links2 {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 1rem;
+  }
+
+  // Image
+
+  img {
+    height: 35vh;
+  }
+
+  .homeContainer__image {
+    position: absolute;
+    top: 7vh;
+    left: 30%;
+  }
+
+  // Github links
+
+  .homeContainer__github {
+    text-decoration: none;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+  }
+}
+
+// Large devices (laptops/desktops, 993px and 1200px)
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  // Title
+
+  .homeContainer__title {
+    position: absolute;
+    font-size: 3.5rem;
+    top: 50%;
+    left: 10%;
+  }
+
+  // Enter button
+
+  .homeContainer__links {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    font-size: 1.7rem;
+  }
+
+  // About button
+
+  .homeContainer__links2 {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  // Image
+
+  img {
+    height: 35vh;
+  }
+  .homeContainer__image {
+    position: absolute;
+    top: 7vh;
+    left: 30%;
+  }
+
+  .homeContainer__github {
+    text-decoration: none;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+  }
+}
+
+// Extra large devices (large laptops and desktops, 1201px and up)
+
+@media (min-width: 1201px) {
+  // Title
+
+  .homeContainer__title {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    font-size: 3.9rem;
+  }
+
+  // Enter button
+
+  .homeContainer__links {
+    text-decoration: none;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    font-size: 1.7rem;
+  }
+
+  // About button
+
+  .homeContainer__links2 {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 1.2rem;
+  }
+
+  // Image
+
+  .homeContainer__image {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+  }
+  img {
+    height: 50vh;
+  }
+
+  // Github links
+
+  .homeContainer__github {
+    text-decoration: none;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
   }
 }
