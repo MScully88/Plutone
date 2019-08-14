@@ -36,12 +36,14 @@ const About = () => {
             </div>
           </div>
           <div className={styles.teamContainer}>
-            <h5 className={styles.teamTitle}>Meet The Team</h5>
+            <h5 className={styles.teamTitle}>
+              <strong>Meet The Team</strong>
+            </h5>
             <div className={styles.teamCardContainer}>
               <div className={styles.teamCard}>
                 <img className={styles.claudio} src={Claudio} alt="Claudio" />
                 <div className={styles.claudioContainer}>
-                  <h4>Claudio Tocco</h4>
+                  <h5>Claudio Tocco</h5>
                   <a className={styles.links} href="https://github.com/ctocco">
                     Github
                   </a>
@@ -56,7 +58,7 @@ const About = () => {
               <div className={styles.teamCard}>
                 <img className={styles.michael} src={Michael} alt="Michael" />
                 <div className={styles.michaelContainer}>
-                  <h4>Michael Scully</h4>
+                  <h5>Michael Scully</h5>
                   <a className={styles.links} href="https://github.com/MScully88">
                     Github
                   </a>
