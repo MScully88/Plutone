@@ -12,12 +12,14 @@ As this was an experiment please feel free to use view code in order to see how 
 element work together. For example how to play multiple tracks in Tone.JS using React.
 If you have any questions we will try to get back to you as soon as possible.
 
-## Style Guide
-
 ### Branch Naming
 
 Type of issue/shortened name of project-no of issue/short desc
 e.g bug/plu-#1-fixButton
+
+### Style Guide
+
+We are following the Airbnb JavaScript Style Guide
 
 ## Folder Structure
 
@@ -96,26 +98,16 @@ The base folder contains all our base stylings
 For cleaner code we have configured these based on Airbnb eslint styling to insure my code stays clean
 and readable. [eslint](https://www.npmjs.com/package/eslint-config-airbnb)
 
-### Tech Stack
-
-| Client Side | Server side            |
-| ----------- | ---------------------- |
-| HTML5       | Current no server side |
-| SCSS        |
-| prop-types  |
-| tone        |
-| Konva       |
-| uuid        |
+| Tech Stack  |
+| ----------- |
+| ToneJS      |
+| Konva       |  |
 | react-konva |
-| PropTypes   |
 | Prettier    |
 | SCSS        |
-| Node-sass   |
-| Prettier    |
 | Eslint      |
 | Lint staged |
 | Now.zeit    |
-| Jest        |
 | JS ES6      |
 
 **Please check the package json for more specific dependencies**
