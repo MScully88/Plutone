@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <Router forceRefresh>
         {areTracksLoading ? (
           <Loading />
         ) : (
